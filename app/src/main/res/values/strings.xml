@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">TechTally</string>
+    <string name="button_1">Button</string>
+    <string name="mp_hello">HELLO</string>
+    <string name="small_logo">small logo</string>
+    <string name="phones_image">phones_image</string>
+    <string name="share_review_discover">share review discover</string>
+    <string name="application_name">TechTally</string>
+    <string name="splash_btn">Start</string>
+    <string name="brand_name">brand_name</string>
+    <!---->
+    <string name="google_logo">google_logo</string>
+    <string name="fb_logo">fb logo</string>
+    <string name="or_login_with">------Or login with------</string>
+    <string name="login">Login</string>
+    <string name="share_review_discover2">Share.Review.Discover</string>
+    <string name="m_logo">m_logo</string>
+    <string name="email_or_username">Email or Username</string>
+    <string name="password">Password</string>
+    <string name="welcome_back">Welcome Back!</string>
+
+    <string name="forgot_password">Forgot password?</string>
+    <string name="no_account_yet">Don\'t have an account yet?</string>
+    <!---->
+
+    <string name="login1">Login</string>
+    <string name="button_cp_page">Button</string>
+    <string name="button_cp1">Button</string>
+    <string name="button_cp2">Button</string>
+    <string name="cellphones_btn">CELLPHONES</string>
+    <string name="signup_btn" />
+    <string name="sign_up_btn">Don\'n have an account yet? <b> Sign up</b></string>
+    <string name="splash_image">splash_image</string>
+
+
+
+    <!--signup page-->
+    <string name="signup_username">Username</string>
+    <string name="signup_email">Email</string>
+    <string name="signup_password">Password</string>
+    <string name="signup_re_type_password">Re-type password</string>
+    <string name="create_account_btn">Create Account</string>
+    <string name="wctotechtally_img">wctotechtally</string>
+    <string name="wcback_btn">wcback</string>
+
+
+</resources>
