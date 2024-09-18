@@ -33,7 +33,6 @@
     <string name="splash_image">splash_image</string>
 
 
-
     <!--signup page-->
     <string name="signup_username">Username</string>
     <string name="signup_email">Email</string>
@@ -42,6 +41,13 @@
     <string name="create_account_btn">Create Account</string>
     <string name="wctotechtally_img">wctotechtally</string>
     <string name="wcback_btn">wcback</string>
-
-
+    <string name="continueasGuestBtn">Continue as Guest</string>
+    <string name="signupBtn">Don\'t have an account yet? Sign up</string>
+    <string name="strong_password">Strong password</string>
+    <string name="weak_password">Password must contain one special symbol (ex: !@#$*)</string>
+    <string name="emailAlert">email must contain(@ and .com)</string>
+    <string name="please_fill_all_fields">Please fill in all fields</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="weak_password_toast">Weak password, needs to add special symbols (!,@,#,$,*)</string>
+    <string name="signup_successful">Signup Successful</string>
 </resources>
