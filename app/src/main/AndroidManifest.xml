@@ -13,6 +13,21 @@
         android:theme="@style/Theme.TechTally"
         tools:targetApi="31">
         <activity
+            android:name=".TabletRatingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SmartphoneRatingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddNewDeviceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminDashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Iphone16Activity"
+            android:exported="false" />
+        <activity
             android:name=".ViewAllActivity"
             android:exported="false" />
         <activity
@@ -49,7 +64,7 @@
             android:name=".Login1Activity"
             android:exported="false" />
         <activity
-            android:name=".MainPageActivity"
+            android:name=".UserDashboardActivity"
             android:exported="false" />
         <activity
             android:name=".LoginPageActivity"

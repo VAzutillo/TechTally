@@ -14,7 +14,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
     // Binding object for accessing views in the layout
     private lateinit var binding: ActivityForgotpasswordBinding
     // Database helper to interact with the database
-    private lateinit var databaseHelper: DatabaseHelper
+    private lateinit var userDatabaseHelper: UserDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,8 +24,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
         binding = ActivityForgotpasswordBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize the DatabaseHelper
-        databaseHelper = DatabaseHelper(this)
+        // Initialize the UserDatabaseHelper
+        userDatabaseHelper = UserDatabaseHelper(this)
 
         // Adjust padding for edge-to-edge display to account for system bars
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

@@ -16,18 +16,16 @@ import com.example.techtally.databinding.ActivitySignupBinding
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignupBinding
-    private lateinit var databaseHelper: DatabaseHelper
+    private lateinit var userDatabaseHelper: UserDatabaseHelper
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
-        // Inflate the layout for this activity
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Initialize the DatabaseHelper
-        databaseHelper = DatabaseHelper(this)
+        // Initialize the UserDatabaseHelper
+        userDatabaseHelper = UserDatabaseHelper(this)
 
         // Add a TextWatcher to the password field to validate password input dynamically
         binding.signupPassword.addTextChangedListener(object : TextWatcher {
@@ -45,17 +43,16 @@ class SignupActivity : AppCompatActivity() {
                     binding.passwordHint.setTextColor(Color.RED) // Red color
                 }
             }
-
+            // Empty methods required by TextWatcher interface
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
         // Add a TextWatcher to the confirm password field to check if passwords match
         binding.signupConfirmPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                val password = binding.signupPassword.text.toString()
-                val confirmPassword = s?.toString() ?: ""
+                val password = binding.signupPassword.text.toString()   // Get the original password
+                val confirmPassword = s?.toString() ?: ""               // Get the confirm password input
 
                 // Check if passwords match
                 if (password == confirmPassword) {
@@ -70,9 +67,8 @@ class SignupActivity : AppCompatActivity() {
                     binding.confirmPasswordHint.setTextColor(Color.RED) // Red color
                 }
             }
-
+            // Empty methods required by TextWatcher interface
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
@@ -118,11 +114,11 @@ class SignupActivity : AppCompatActivity() {
 
     // Function to handle saving a new user to the database
     private fun signupDatabase(username: String, email: String, password: String) {
-        val insertedRowId = databaseHelper.insertUser(username, email, password)
+        val insertedRowId = userDatabaseHelper.insertUser(username, email, password)
         if (insertedRowId != -1L) {
             // Show a success message and navigate to the main page
             Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, MainPageActivity::class.java)
+            val intent = Intent(this, UserDashboardActivity::class.java)
             startActivity(intent)
             finish() // Close the signup activity
         } else {

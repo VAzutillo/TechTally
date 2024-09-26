@@ -1,0 +1,732 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserDashboardActivity">
+
+    <TextView
+        android:id="@+id/tv.share.review.discover"
+        android:layout_width="111dp"
+        android:layout_height="15dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Share.Review.Discover"
+        android:textColorHint="#FFFFFF"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.057" />
+
+    <TextView
+        android:id="@+id/welcomeTextView"
+        android:layout_width="125dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Hello, User!"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:id="@+id/viewAllButton"
+        android:layout_width="53dp"
+        android:layout_height="19dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/roboto_bold"
+        android:text="View all"
+        android:textColorHint="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.189" />
+
+    <TextView
+        android:id="@+id/tvDiscover"
+        android:layout_width="125dp"
+        android:layout_height="25dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Discover phones"
+        android:textColorHint="#FFFFFF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.191" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="330dp"
+        android:layout_height="400dp"
+        android:background="@drawable/border"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752">
+
+        <TextView
+            android:id="@+id/tvIphone16Description"
+            android:layout_width="312dp"
+            android:layout_height="85dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="263dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="52dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="The iPhone 16 display has rounded corners that follow a beautiful curved design, and these corners are within a standard rectangle. When measured as a standard rectangular shape, the screen is 6.12 inches diagonally (actual viewable area is less)."
+            android:textColor="@color/white"
+            android:textColorHint="#FFFFFF"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/iPhone16Image1"
+            android:layout_width="289dp"
+            android:layout_height="188dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="21dp"
+            android:layout_marginBottom="180dp"
+            app:srcCompat="@drawable/iphone" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="21dp"
+            android:layout_height="22dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="147dp"
+            android:layout_marginTop="354dp"
+            android:layout_marginEnd="162dp"
+            android:layout_marginBottom="24dp"
+            app:srcCompat="@drawable/techtallyrate"
+            tools:layout_editor_absoluteX="-33dp"
+            tools:layout_editor_absoluteY="474dp" />
+
+        <TextView
+            android:id="@+id/tvIphone16Title"
+            android:layout_width="95dp"
+            android:layout_height="27dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="232dp"
+            android:layout_marginEnd="235dp"
+            android:layout_marginBottom="141dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="iPhone16"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFFFF"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="-64dp"
+            tools:layout_editor_absoluteY="575dp" />
+
+        <TextView
+            android:id="@+id/numberOfSticks1"
+            android:layout_width="76dp"
+            android:layout_height="13dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="374dp"
+            android:layout_marginEnd="139dp"
+            android:layout_marginBottom="13dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="2 out of 5 sticks"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/SeeMoreBtn1"
+            android:layout_width="65dp"
+            android:layout_height="14dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="185dp"
+            android:layout_marginTop="322dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginBottom="64dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="See more..."
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/topRatedButton"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#2F2F2F"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Top rated"
+        android:textSize="14sp"
+        app:cornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.255" />
+
+    <Button
+        android:id="@+id/latestButton"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#2F2F2F"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Latest"
+        android:textSize="14sp"
+        app:cornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.255" />
+
+    <Button
+        android:id="@+id/mostViewedButton"
+        android:layout_width="110dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#2F2F2F"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Most viewed"
+        android:textSize="12sp"
+        app:cornerRadius="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.255" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout6"
+        android:layout_width="305dp"
+        android:layout_height="62dp"
+        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:boxStrokeColor="@color/black"
+        app:endIconTint="#2F2F2F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.107"
+        app:placeholderText="Search phones"
+        app:placeholderTextColor="@color/black"
+        app:startIconDrawable="@drawable/baseline_search_24"
+        app:startIconTint="#2F2F2F">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/baseline_search_filter"
+            android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/filterDropdown"
+        android:layout_width="360dp"
+        android:layout_height="730dp"
+        android:background="#2F2F2F"
+        android:backgroundTint="@color/whites"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableLayout
+            android:id="@+id/searchDevices"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="25dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="305dp"
+                    android:layout_height="62dp"
+                    app:boxBackgroundColor="@color/black"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="30dp"
+                    app:boxCornerRadiusBottomStart="30dp"
+                    app:boxCornerRadiusTopEnd="30dp"
+                    app:boxCornerRadiusTopStart="30dp"
+                    app:boxStrokeColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.531"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.107"
+                    app:placeholderText="Search devices"
+                    app:placeholderTextColor="@color/whites"
+                    app:startIconDrawable="@drawable/baseline_search_24"
+                    app:startIconTint="@color/whites">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:textColor="@color/whites"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/imSearchingFor"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvImSearchingFor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="10dp"
+                    android:text="Im searching for"
+                    android:textColor="#2F2F2F"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Apple"
+                        android:textColor="@color/whites" />
+
+                    <Button
+                        android:id="@+id/button16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Samsung"
+                        android:textColor="@color/whites" />
+
+                    <Button
+                        android:id="@+id/button15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Xiaomi"
+                        android:textColor="@color/whites" />
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="80dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Realme"
+                        android:textColor="@color/whites"
+                        tools:layout_editor_absoluteX="-44dp"
+                        tools:layout_editor_absoluteY="275dp" />
+
+                    <Button
+                        android:id="@+id/button27"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Latest"
+                        android:textColor="@color/whites"
+                        tools:layout_editor_absoluteX="-44dp"
+                        tools:layout_editor_absoluteY="307dp" />
+                </LinearLayout>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/Type"
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="10dp"
+                    android:text="Type"
+                    android:textColor="#2F2F2F"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="50dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/SmartphoneButton"
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Smartphone"
+                        android:textColor="@color/whites" />
+
+                    <Button
+                        android:id="@+id/TabletButton"
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="Tablet"
+                        android:textColor="@color/whites" />
+                </LinearLayout>
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/Rating"
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:padding="10dp"
+                    android:text="Rating"
+                    android:textColor="#2F2F2F"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="40dp">
+
+                <Button
+                    android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#2F2F2F"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="1 Tally"
+                    android:textColor="@color/whites" />
+
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#2F2F2F"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="2 Tally"
+                    android:textColor="@color/whites"
+                    android:textColorHighlight="@color/whites" />
+
+                <Button
+                    android:id="@+id/button8"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#2F2F2F"
+                    android:fontFamily="@font/roboto_bold"
+                    android:insetRight="0dp"
+                    android:text="3 Tally"
+                    android:textColor="@color/whites"
+                    app:iconPadding="0dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="350dp"
+                android:layout_height="match_parent"
+                android:paddingLeft="80dp">
+
+                <Button
+                    android:id="@+id/button10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#2F2F2F"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="4 Tally"
+                    android:textColor="@color/whites" />
+
+                <Button
+                    android:id="@+id/button11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:backgroundTint="#2F2F2F"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="5 Tally"
+                    android:textColor="@color/whites" />
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/PriceRange"
+            android:layout_width="349dp"
+            android:layout_height="179dp">
+
+            <TableRow
+                android:id="@+id/RowTextPriceRange"
+                android:layout_width="350dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/tvPriceRange"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_bold"
+                    android:paddingLeft="10dp"
+                    android:text="Price range"
+                    android:textColor="#2F2F2F"
+                    android:textSize="20sp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/RowPriceRange"
+                android:layout_width="350dp"
+                android:layout_height="127dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingLeft="30dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#2F2F2F"
+                        android:textColorHint="#2F2F2F"
+                        app:hintTextColor="#2F2F2F"
+                        tools:layout_editor_absoluteX="-70dp"
+                        tools:layout_editor_absoluteY="575dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#2F2F2F"
+                            android:fontFamily="@font/roboto_bold"
+                            android:hint="Minimum"
+                            android:textColorHint="#2F2F2F" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#2F2F2F"
+                        android:textColorHint="#2F2F2F"
+                        app:hintTextColor="#2F2F2F"
+                        tools:layout_editor_absoluteX="-65dp"
+                        tools:layout_editor_absoluteY="620dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#2F2F2F"
+                            android:fontFamily="@font/roboto_bold"
+                            android:hint="Maximum"
+                            android:textColorHint="#2F2F2F" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/RowResetApply"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="70dp">
+
+                    <Button
+                        android:id="@+id/resetButton"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="reset"
+                        android:textColor="@color/whites"
+                        tools:layout_editor_absoluteX="-85dp"
+                        tools:layout_editor_absoluteY="629dp" />
+
+                    <Button
+                        android:id="@+id/applyButton"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#2F2F2F"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="apply"
+                        android:textColor="@color/whites"
+                        tools:layout_editor_absoluteX="-22dp"
+                        tools:layout_editor_absoluteY="683dp" />
+                </LinearLayout>
+
+            </TableRow>
+
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:orientation="vertical"
+            android:paddingLeft="25dp"
+            tools:layout_editor_absoluteX="-162dp"
+            tools:layout_editor_absoluteY="649dp">
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottomNavigationView"
+                android:layout_width="310dp"
+                android:layout_height="55dp"
+
+                android:layout_margin="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:layout_marginBottom="0dp"
+                android:background="@drawable/bottom_nav_background"
+                android:paddingHorizontal="0dp"
+                android:paddingStart="0dp"
+                android:paddingLeft="0dp"
+                android:paddingEnd="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:pointerIcon="none"
+                android:visibility="visible"
+                app:backgroundTint="#2F2F2F"
+                app:itemIconSize="30dp"
+                app:itemIconTint="@color/whites"
+                app:itemPaddingBottom="0dp"
+                app:itemPaddingTop="0dp"
+                app:labelVisibilityMode="labeled"
+                app:menu="@menu/bottom_navigation_menu">
+
+            </com.google.android.material.bottomnavigation.BottomNavigationView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

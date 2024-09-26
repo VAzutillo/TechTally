@@ -50,4 +50,21 @@
     <string name="passwords_do_not_match">Passwords do not match</string>
     <string name="weak_password_toast">Weak password, needs to add special symbols (!,@,#,$,*)</string>
     <string name="signup_successful">Signup Successful</string>
+    <string name="left_arrow">Left Arrow</string>
+    <string name="right_arrow">Right Arrow</string>
+
+    <string-array name="phones_array">
+        <item>Apple</item>
+        <item>Asus</item>
+        <item>Honor</item>
+        <item>Huawei</item>
+        <item>Infinix</item>
+        <item>iTel</item>
+        <item>Oppo</item>
+        <item>Realme</item>
+        <item>Samsung</item>
+        <item>Vivo</item>
+        <item>Xiaomi</item>
+
+    </string-array>
 </resources>
