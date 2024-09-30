@@ -12,20 +12,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.techtally.databinding.ActivitySignupBinding
+import okhttp3.ResponseBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignupActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySignupBinding
-    private lateinit var userDatabaseHelper: UserDatabaseHelper
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // Initialize the UserDatabaseHelper
-        userDatabaseHelper = UserDatabaseHelper(this)
 
         // Add a TextWatcher to the password field to validate password input dynamically
         binding.signupPassword.addTextChangedListener(object : TextWatcher {
@@ -72,7 +73,7 @@ class SignupActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        // Get the user input by clicking create account button
+        // Handle the signup button click and call the registerUser function
         binding.button3.setOnClickListener {
             val signupUsername = binding.signupUsername.text.toString()
             val signupEmail = binding.signupEmail.text.toString()
@@ -91,9 +92,9 @@ class SignupActivity : AppCompatActivity() {
             else if (!containsSpecialCharacter(signupPassword)) {
                 Toast.makeText(this, "Weak password, needs to add special symbols (!,@,#,$,&,*)", Toast.LENGTH_SHORT).show()
             }
-            // Proceed to register the user and save to the database
+            // Proceed to register the user via API
             else {
-                signupDatabase(signupUsername, signupEmail, signupPassword)
+                registerUser(signupUsername, signupEmail, signupPassword, signupConfirmPassword) // Pass all required parameters
             }
         }
 
@@ -112,19 +113,28 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-    // Function to handle saving a new user to the database
-    private fun signupDatabase(username: String, email: String, password: String) {
-        val insertedRowId = userDatabaseHelper.insertUser(username, email, password)
-        if (insertedRowId != -1L) {
-            // Show a success message and navigate to the main page
-            Toast.makeText(this, "Signup Successful", Toast.LENGTH_SHORT).show()
-            val intent = Intent(this, UserDashboardActivity::class.java)
-            startActivity(intent)
-            finish() // Close the signup activity
-        } else {
-            // Show a failure message if signup failed
-            Toast.makeText(this, "Signup Failed", Toast.LENGTH_SHORT).show()
-        }
+    // Function to register user via API
+    private fun registerUser(username: String, email: String, password: String, password_confirmation: String) {
+        val request = SignupRequest(username, email, password, password_confirmation) // Include all parameters
+
+        RetrofitClient.api.signup(request).enqueue(object : Callback<ResponseBody> {
+            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+                if (response.isSuccessful) {
+                    // Handle successful registration
+                    Toast.makeText(this@SignupActivity, "Signup successful", Toast.LENGTH_SHORT).show()
+                    // Redirect to another activity if needed
+                } else {
+                    // Handle API errors
+                    Toast.makeText(this@SignupActivity, "Signup failed: ${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+
+            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+                // Handle failure
+                Toast.makeText(this@SignupActivity, "API call failed: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 
     // Function to check if the password contains at least one special character

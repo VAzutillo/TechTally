@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
 
     // Declare variables for view binding and database helper
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var userDatabaseHelper: UserDatabaseHelper
+
 
     // Hardcoded admin credentials for admin login
     private val ADMIN_USERNAME = "admin"
@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Initialize the UserDatabaseHelper for checking user credentials
-        userDatabaseHelper = UserDatabaseHelper(this)
+
 
         // Get the user input by clicking login button
         binding.button2.setOnClickListener {
@@ -38,22 +38,6 @@ class LoginActivity : AppCompatActivity() {
             val loginUserInput = binding.loginUserInput.text.toString()
             val loginPassword = binding.loginPassword.text.toString()
 
-            // Check if the input fields are empty and show a message if they are
-            if (loginUserInput.isEmpty() || loginPassword.isEmpty()) {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-            } else if ((loginUserInput == ADMIN_EMAIL || loginUserInput == ADMIN_USERNAME) && loginPassword == ADMIN_PASSWORD) {
-                // Admin login successful, navigate to AdminDashboardActivity
-                Toast.makeText(this, "Admin Login Successful", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, AdminDashboardActivity::class.java)
-                startActivity(intent)
-                finish()
-            } else if (Patterns.EMAIL_ADDRESS.matcher(loginUserInput).matches()) {
-                // If the input is an email, use the loginDatabase method to check loginDatabase
-                loginDatabase(null, loginUserInput, loginPassword, loginUserInput)
-            } else {
-                // If it's not an email, assume it's a username and check loginDatabase
-                loginDatabase(loginUserInput, null, loginPassword, loginUserInput)
-            }
         }
 
         // Adjust padding for edge-to-edge display
@@ -88,29 +72,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    // Function to check if the user exists in the database
-    private fun loginDatabase(username: String?, email: String?, password: String, loginUserInput: String) {
-        val userExists: Boolean = if (username != null) {
-            // Check if the user exists in the database based on username
-            userDatabaseHelper.readUser(username, password)
-        } else if (email != null) {
-            // If an email is provided, check if it exists with the user input password
-            userDatabaseHelper.readUserByEmail(email, password)
-        } else {
-            // No valid identifier provided
-            false
-        }
-        // Show appropriate message based on whether the user exists
-        if (userExists) {
-            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show()
-            // Start UserDashboardActivity and close the current activity
-            val intent = Intent(this, UserDashboardActivity::class.java)
-            intent.putExtra("USER_NAME", loginUserInput)  // Pass the user's name
-            startActivity(intent)
-            finish()
-        } else {
-            // Show message if account doesn't exist
-            Toast.makeText(this, "Account doesn't exist", Toast.LENGTH_SHORT).show()
-        }
-    }
+
+
 }

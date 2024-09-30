@@ -52,6 +52,7 @@
     <string name="signup_successful">Signup Successful</string>
     <string name="left_arrow">Left Arrow</string>
     <string name="right_arrow">Right Arrow</string>
+    <string name="share_review_discover_dashboard">Share.Review.Discover</string>
 
     <string-array name="phones_array">
         <item>Apple</item>

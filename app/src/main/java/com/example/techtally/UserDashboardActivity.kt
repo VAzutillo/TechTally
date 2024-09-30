@@ -57,12 +57,7 @@ class UserDashboardActivity : AppCompatActivity() {
             val intent = Intent(this, ViewAllActivity::class.java)
             startActivity(intent)
         }
-        // Navigate from UserDashboardActivity to Iphone16Activity
-        val iPhone16SeeMoreButton = findViewById<TextView>(R.id.SeeMoreBtn1)
-        iPhone16SeeMoreButton.setOnClickListener {
-            val intent = Intent(this, Iphone16Activity::class.java)
-            startActivity(intent)
-        }
+
         // Set up ImageView to navigate to Iphone16Activity when clicked
         val iPhone16Images = findViewById<ImageView>(R.id.iPhone16Image1)
         iPhone16Images.setOnClickListener {
