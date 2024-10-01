@@ -12,100 +12,125 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.techtally.databinding.ActivitySignupBinding
-import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
 class SignupActivity : AppCompatActivity() {
 
+    // Declare a variable for view binding to access views in the layout
     private lateinit var binding: ActivitySignupBinding
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        // Inflate the layout using view binding
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Add a TextWatcher to the password field to validate password input dynamically
+        // Add TextWatcher for username input to validate minimum and maximum length
+        binding.signupUsername.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                val username = s?.toString() ?: ""
+
+                // Validate minimum and maximum length for username
+                when {
+                    username.length < 8 -> {
+                        // Set text color to red and show a "minimum length" message
+                        binding.usernameHint.text = "The minimum is 8 characters"
+                        binding.usernameHint.setTextColor(Color.RED)
+                    }
+                    username.length > 16 -> {
+                        // Set text color to red and show a "maximum length" message
+                        binding.usernameHint.text = "The maximum is 16 characters"
+                        binding.usernameHint.setTextColor(Color.RED)
+                    }
+                    else -> {
+                        // Set text color to light green when the length is within valid range
+                        binding.usernameHint.text = "The minimum is 8 characters"
+                        binding.usernameHint.setTextColor(Color.parseColor("#32CD32")) // Light green
+                    }
+                }
+            }
+            // Unused, but required overrides for TextWatcher
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
+        // text watcher for password input to validate strength
         binding.signupPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val password = s?.toString() ?: ""
+                // Check if the password contains special characters for strength validation
                 if (containsSpecialCharacter(password)) {
-                    // Display "strong password" in light green if password contains special characters
-                    binding.signupPassword.setTextColor(Color.parseColor("#32CD32")) // Light green color
+                    // Set text color to green and show a "strong password" message
+                    binding.signupPassword.setTextColor(Color.parseColor("#32CD32")) // Light green
                     binding.passwordHint.text = getString(R.string.strong_password)
-                    binding.passwordHint.setTextColor(Color.parseColor("#32CD32")) // Light green color
+                    binding.passwordHint.setTextColor(Color.parseColor("#32CD32")) // Light green
                 } else {
-                    // Display "password must contain one special symbol" in red if not
-                    binding.signupPassword.setTextColor(Color.RED) // Red color
+                    // Set text color to red and show a "weak password" message
+                    binding.signupPassword.setTextColor(Color.RED) // Red
                     binding.passwordHint.text = getString(R.string.weak_password)
-                    binding.passwordHint.setTextColor(Color.RED) // Red color
+                    binding.passwordHint.setTextColor(Color.RED) // Red
                 }
             }
-            // Empty methods required by TextWatcher interface
+            // Unused, but required overrides for TextWatcher
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        // Add a TextWatcher to the confirm password field to check if passwords match
+        // text watcher to confirm the confirm password matches the password
         binding.signupConfirmPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                val password = binding.signupPassword.text.toString()   // Get the original password
-                val confirmPassword = s?.toString() ?: ""               // Get the confirm password input
+                val password = binding.signupPassword.text.toString()
+                val confirmPassword = s?.toString() ?: ""
 
-                // Check if passwords match
+                // Check if the confirm password matches the password
                 if (password == confirmPassword) {
-                    // Display "The password matched" in light green if they match
-                    binding.signupConfirmPassword.setTextColor(Color.parseColor("#32CD32")) // Light green color
+                    // Set text color to green and show a "password matched" message
+                    binding.signupConfirmPassword.setTextColor(Color.parseColor("#32CD32")) // Light green
                     binding.confirmPasswordHint.text = "The password matched"
-                    binding.confirmPasswordHint.setTextColor(Color.parseColor("#32CD32")) // Light green color
+                    binding.confirmPasswordHint.setTextColor(Color.parseColor("#32CD32")) // Light green
                 } else {
-                    // Display "Password did not match" in red if they do not match
-                    binding.signupConfirmPassword.setTextColor(Color.RED) // Red color
+                    // Set text color to red and show a "password did not match" message
+                    binding.signupConfirmPassword.setTextColor(Color.RED) // Red
                     binding.confirmPasswordHint.text = "Password did not match"
-                    binding.confirmPasswordHint.setTextColor(Color.RED) // Red color
+                    binding.confirmPasswordHint.setTextColor(Color.RED) // Red
                 }
             }
-            // Empty methods required by TextWatcher interface
+            // Unused, but required overrides for TextWatcher
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        // Handle the signup button click and call the registerUser function
+        // Handle the signup button click to submit the form
         binding.button3.setOnClickListener {
             val signupUsername = binding.signupUsername.text.toString()
             val signupEmail = binding.signupEmail.text.toString()
             val signupPassword = binding.signupPassword.text.toString()
             val signupConfirmPassword = binding.signupConfirmPassword.text.toString()
 
-            // Check if any of the fields are empty
-            if (signupUsername.isEmpty() || signupEmail.isEmpty() || signupPassword.isEmpty() || signupConfirmPassword.isEmpty()) {
+            if (signupUsername.length < 8 || signupUsername.length > 16) {  // Check if username length is valid before proceeding
+                Toast.makeText(this, "Username must be between 8 and 16 characters", Toast.LENGTH_SHORT).show()
+            } else if (signupEmail.isEmpty() || signupPassword.isEmpty() || signupConfirmPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-            }
-            // Check if passwords match
-            else if (signupPassword != signupConfirmPassword) {
+            } else if (signupPassword != signupConfirmPassword) {   // Validate if passwords do not match
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
-            }
-            // Check if the password contains special characters
-            else if (!containsSpecialCharacter(signupPassword)) {
-                Toast.makeText(this, "Weak password, needs to add special symbols (!,@,#,$,&,*)", Toast.LENGTH_SHORT).show()
-            }
-            // Proceed to register the user via API
-            else {
-                registerUser(signupUsername, signupEmail, signupPassword, signupConfirmPassword) // Pass all required parameters
+            } else if (!containsSpecialCharacter(signupPassword)) { // Validate if the password does not contain special characters
+                Toast.makeText(this, "Weak password, needs to add special characters (!,@,#,$,&,*)", Toast.LENGTH_SHORT).show()
+            } else {    // If everything is valid, proceed with user registration via API
+                registerUser(signupUsername, signupEmail, signupPassword, signupConfirmPassword)
             }
         }
 
-        // Set up window insets for edge-to-edge display
+        // Set up edge-to-edge padding for immersive display
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        // Navigate from signupPage to loginPage
+        // Navigate to login page
         val goToLogin = findViewById<Button>(R.id.button9)
         goToLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
@@ -113,31 +138,40 @@ class SignupActivity : AppCompatActivity() {
         }
     }
 
-    // Function to register user via API
-    private fun registerUser(username: String, email: String, password: String, password_confirmation: String) {
-        val request = SignupRequest(username, email, password, password_confirmation) // Include all parameters
 
-        RetrofitClient.api.signup(request).enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+
+    // Function to register a user by sending the user data to the API using Retrofit
+    private fun registerUser(username: String, email: String, password: String, password_confirmation: String) {
+        // Create a request object with the user data
+        val request = UserSignupRequest(username, email, password, password_confirmation)
+
+        // Make an API call to register the user
+        RetrofitClient.instance.registerUser(request).enqueue(object : Callback<SignupResponse> {
+            // Handle API response
+            override fun onResponse(call: Call<SignupResponse>, response: Response<SignupResponse>) {
                 if (response.isSuccessful) {
-                    // Handle successful registration
-                    Toast.makeText(this@SignupActivity, "Signup successful", Toast.LENGTH_SHORT).show()
-                    // Redirect to another activity if needed
+                    // Show a success message to the user
+                    Toast.makeText(this@SignupActivity, response.body()?.message ?: "Signup successful", Toast.LENGTH_SHORT).show()
+
+                    // Check if we should navigate to LoginActivity
+                if (response.body()?.navigate == true) {
+                    val intent = Intent(this@SignupActivity, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                    }
                 } else {
-                    // Handle API errors
+                    // Show an error message if signup failed
                     Toast.makeText(this@SignupActivity, "Signup failed: ${response.errorBody()?.string()}", Toast.LENGTH_SHORT).show()
                 }
             }
-
-
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                // Handle failure
+            // Handle API call failure
+            override fun onFailure(call: Call<SignupResponse>, t: Throwable) {
                 Toast.makeText(this@SignupActivity, "API call failed: ${t.message}", Toast.LENGTH_SHORT).show()
             }
         })
     }
 
-    // Function to check if the password contains at least one special character
+    // Function to check if the password contains special characters
     private fun containsSpecialCharacter(password: String): Boolean {
         val specialCharacters = "!@#\$&*"
         return password.any { it in specialCharacters }
