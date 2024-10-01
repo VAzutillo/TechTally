@@ -29,6 +29,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             // Finish MainActivity so that the user cannot return to it using the back button
             finish()
-        }, 500) // Delay of 500 milliseconds (0.5 seconds)
+        }, 1500) // Delay of 1500 milliseconds (1.5 seconds)
     }
 }

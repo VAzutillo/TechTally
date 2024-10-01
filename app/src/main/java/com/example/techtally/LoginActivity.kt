@@ -89,19 +89,16 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, UserDashboardActivity::class.java)
             startActivity(intent)
         }
-
-        // Navigate from loginPage to signupPage
-        val goToSignup = findViewById<Button>(R.id.button5)
-        goToSignup.setOnClickListener {
-            // Start SignupActivity
-            val intent = Intent(this, SignupActivity::class.java)
-            startActivity(intent)
-        }
-
         // Navigate from loginPage to forgotPasswordPage
         binding.forgotPasswordBtn.setOnClickListener {
             // Start ForgotPasswordActivity
             val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
+        // Navigate from loginPage to SignupPage
+        binding.ToSignUp.setOnClickListener {
+            // Start SignupActivity
+            val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
     }

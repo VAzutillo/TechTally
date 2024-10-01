@@ -29,7 +29,7 @@
     <string name="button_cp2">Button</string>
     <string name="cellphones_btn">CELLPHONES</string>
     <string name="signup_btn" />
-    <string name="sign_up_btn">Don\'n have an account yet? <b> Sign up</b></string>
+    <string name="sign_up_btn">Don\'n have an account yet?<b> Sign up</b></string>
     <string name="splash_image">splash_image</string>
 
 
@@ -53,6 +53,9 @@
     <string name="left_arrow">Left Arrow</string>
     <string name="right_arrow">Right Arrow</string>
     <string name="share_review_discover_dashboard">Share.Review.Discover</string>
+
+
+    <string name="login_textview">Already have an account?<b> Login</b></string>
 
     <string-array name="phones_array">
         <item>Apple</item>

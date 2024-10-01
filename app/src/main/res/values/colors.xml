@@ -5,4 +5,6 @@
     <color name="whites">#FFFFFF</color>
     <color name="color_active">#FFFFFF</color>
     <color name="color_inactive">#888888</color>
+    <color name="grey">#373636</color>
+    <color name="light_grey">#5B5A5A</color>
 </resources>

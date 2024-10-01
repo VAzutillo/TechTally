@@ -130,9 +130,9 @@ class SignupActivity : AppCompatActivity() {
             insets
         }
 
-        // Navigate to login page
-        val goToLogin = findViewById<Button>(R.id.button9)
-        goToLogin.setOnClickListener {
+        // Navigate from SignupPaqe to LoginPage
+        binding.ToLogIn.setOnClickListener {
+            // Start SignupActivity
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
