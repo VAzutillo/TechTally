@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#2F2F2F"
     tools:context=".UserDashboardActivity">
 
     <ImageButton
@@ -30,6 +31,7 @@
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/roboto_bold"
         android:text="@string/share_review_discover_dashboard"
+        android:textColor="@color/light_grey"
         android:textColorHint="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,6 +45,7 @@
         android:id="@+id/greetingTextView"
         android:layout_width="323dp"
         android:layout_height="25dp"
+        android:fontFamily="@font/roboto_bold"
         android:text="Login/Signup"
         android:textColor="@android:color/black"
         android:textSize="20sp"
@@ -63,11 +66,12 @@
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/roboto_bold"
         android:text="View all"
+        android:textColor="@color/light_grey"
         android:textColorHint="#FFFFFF"
-        android:textSize="14sp"
+        android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
+        app:layout_constraintHorizontal_bias="0.915"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.189" />
@@ -102,7 +106,9 @@
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.797" />
+        app:layout_constraintVertical_bias="0.797">
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/topRatedButton"
@@ -156,6 +162,7 @@
         android:id="@+id/textInputLayout6"
         android:layout_width="305dp"
         android:layout_height="62dp"
+        android:backgroundTint="#2F2F2F"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
@@ -179,6 +186,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp" />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="1dp"
+            android:layout_height="30dp"
+            android:background="?android:attr/listDivider" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -485,7 +498,7 @@
             <TableRow
                 android:id="@+id/RowTextPriceRange"
                 android:layout_width="350dp"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
 
             <TableRow
                 android:id="@+id/RowPriceRange"
@@ -496,7 +509,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
-                    android:paddingLeft="30dp"/>
+                    android:paddingLeft="30dp" />
 
             </TableRow>
 
@@ -540,6 +553,19 @@
         </TableLayout>
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="320dp"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
