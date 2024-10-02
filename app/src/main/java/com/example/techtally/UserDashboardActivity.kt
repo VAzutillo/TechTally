@@ -19,10 +19,7 @@ import com.google.android.material.textfield.TextInputEditText
 class UserDashboardActivity : AppCompatActivity() {
     // Declare BottomNavigationView, search bar, and dropdown layout
     private lateinit var binding: ActivityLoginBinding
-    private lateinit var bottomNavigationView: BottomNavigationView
-    private lateinit var searchBar: TextInputEditText
-    private lateinit var dropdownLayout: LinearLayout
-    private lateinit var greetingTextView: TextView  // Declare once here
+    private lateinit var greetingTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,8 +34,6 @@ class UserDashboardActivity : AppCompatActivity() {
 
         // Initialize views
         greetingTextView = findViewById(R.id.greetingTextView)
-        searchBar = findViewById(R.id.searchBar)
-        dropdownLayout = findViewById(R.id.filterDropdown)
 
         // Retrieve the intent extras for user info
         val isGuest = intent.getBooleanExtra("IS_GUEST", false)
@@ -81,29 +76,6 @@ class UserDashboardActivity : AppCompatActivity() {
         viewAllButton.setOnClickListener {
             val intent = Intent(this, ViewAllActivity::class.java)
             startActivity(intent)
-        }
-
-        // Handle clicks on the search bar's drawableEnd (i.e., the search icon)
-        searchBar.setOnTouchListener { _, event ->
-            val drawableEnd = 2 // Position of drawableEnd in compound drawables array
-
-            if (event.action == MotionEvent.ACTION_UP) {
-                val drawable = searchBar.compoundDrawables[drawableEnd]
-                // Check if the touch event occurred on the drawableEnd (search icon)
-                if (drawable != null) {
-                    if (event.rawX >= (searchBar.right - drawable.bounds.width())) {
-                        // Toggle visibility of dropdown layout
-                        dropdownLayout.visibility = if (dropdownLayout.visibility == View.GONE) View.VISIBLE else View.GONE
-                        return@setOnTouchListener true  // Handle the touch event
-                    }
-                }
-            }
-            false   // Allow other touch events to be processed
-        }
-
-        // Handle search bar focus change: show BottomNavigationView only when the search bar is focused
-        searchBar.setOnFocusChangeListener { _, hasFocus ->
-            bottomNavigationView.visibility = if (hasFocus) View.VISIBLE else View.GONE
         }
     }
 }

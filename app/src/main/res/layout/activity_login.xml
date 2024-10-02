@@ -134,19 +134,6 @@
         app:layout_constraintVertical_bias="0.63" />
 
     <TextView
-        android:id="@+id/errorMessageTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_red_dark"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.463"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.444" />
-
-    <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -161,8 +148,9 @@
 
     <ImageButton
         android:id="@+id/ContinueAsGuestBtn"
-        android:layout_width="55dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/rounded_button_background"
         android:backgroundTint="@color/grey"
         android:src="@drawable/baseline_person_24"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,14 +158,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.852" />
-
-    <TextView
-        android:id="@+id/usernameHintLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="124dp"
-        tools:layout_editor_absoluteY="271dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
