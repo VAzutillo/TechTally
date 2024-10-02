@@ -13,6 +13,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/rounded_button_background"
+        android:backgroundTint="@color/grey"
         android:src="@drawable/baseline_person_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,10 +52,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintHorizontal_bias="0.477"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <TextView
         android:id="@+id/viewAllButton"
@@ -99,15 +100,43 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="330dp"
-        android:layout_height="400dp"
+        android:layout_height="140dp"
         android:background="@drawable/border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.797">
+        app:layout_constraintVertical_bias="0.455">
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="146dp"
+            android:layout_height="119dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="98dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="86dp"
+            android:layout_marginBottom="21dp"
+            app:srcCompat="@drawable/samsung_galaxy_s24ultra" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="90dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginBottom="11dp"
+            android:text="Samsung Galaxy S24 Ultra"
+            android:textColor="#FFFFFF" />
     </RelativeLayout>
 
     <Button
@@ -160,7 +189,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout6"
-        android:layout_width="305dp"
+        android:layout_width="330dp"
         android:layout_height="62dp"
         android:backgroundTint="#2F2F2F"
         app:boxBackgroundMode="outline"
@@ -186,12 +215,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14sp" />
-
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="1dp"
-            android:layout_height="30dp"
-            android:background="?android:attr/listDivider" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
