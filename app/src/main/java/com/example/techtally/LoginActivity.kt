@@ -41,20 +41,21 @@ class LoginActivity : AppCompatActivity() {
             val loginRequest = LoginRequest(loginUserInput, loginPassword)
             // Make an API call to login the user using Retrofit
             RetrofitClient.instance.loginUser(loginRequest).enqueue(object : Callback<LoginResponse> {
-                // Handle the response from the API
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful) {
                         // Get the login response from the server
                         val loginResponse = response.body()
 
-                    // Check if the login was successful and navigate to UserDashboardActivity
-                    if (loginResponse != null && loginResponse.success) {
-                        // Navigate to UserDashboardActivity
-                        startActivity(Intent(this@LoginActivity, UserDashboardActivity::class.java))
-                        finish()
-                    } else {
-                        // Show the error message from the server if login failed
-                        Toast.makeText(this@LoginActivity, loginResponse?.message ?: "Login failed", Toast.LENGTH_SHORT).show()
+                        // Check if the login was successful
+                        if (loginResponse != null && loginResponse.success) {
+                            // Navigate to UserDashboardActivity and pass the username or email
+                            val intent = Intent(this@LoginActivity, UserDashboardActivity::class.java)
+                            intent.putExtra("USER_NAME", loginUserInput) // Pass username or email
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            // Show the error message from the server if login failed
+                            Toast.makeText(this@LoginActivity, loginResponse?.message ?: "Login failed", Toast.LENGTH_SHORT).show()
                         }
                     } else {
                         // Log the error response for debugging
@@ -80,15 +81,12 @@ class LoginActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        // Navigate from loginPage to MainPage
-        // If user doesn't want to log in, he/she can continue as a Guest
-        val goToMainPageActivity = findViewById<Button>(R.id.continueAsGuestBtn)
-        goToMainPageActivity.setOnClickListener {
-            // Start UserDashboardActivity
+        binding.ContinueAsGuestBtn.setOnClickListener {
             val intent = Intent(this, UserDashboardActivity::class.java)
+            intent.putExtra("IS_GUEST", true)  // Pass flag for guest login
             startActivity(intent)
         }
+
         // Navigate from loginPage to forgotPasswordPage
         binding.forgotPasswordBtn.setOnClickListener {
             // Start ForgotPasswordActivity
@@ -101,5 +99,5 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
+        }
     }
-}
