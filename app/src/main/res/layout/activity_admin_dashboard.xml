@@ -121,7 +121,7 @@
         app:srcCompat="@drawable/baseline_person2" />
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
+        android:id="@+id/relativeLayout2"
         android:layout_width="355dp"
         android:layout_height="500dp"
         android:background="@drawable/background"
