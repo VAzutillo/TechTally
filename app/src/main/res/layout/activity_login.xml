@@ -165,7 +165,7 @@
         android:layout_height="50dp"
         android:background="@drawable/rounded_button_background"
         android:backgroundTint="@color/grey"
-        android:src="@drawable/baseline_person_24"
+        android:src="@drawable/baseline_person_25"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

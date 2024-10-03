@@ -7,4 +7,5 @@
     <color name="color_inactive">#888888</color>
     <color name="grey">#373636</color>
     <color name="light_grey">#5B5A5A</color>
+    <color name="light_black">#2F2F2F</color>
 </resources>

@@ -222,6 +222,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout6"
+
         android:layout_width="330dp"
         android:layout_height="62dp"
         android:backgroundTint="#2F2F2F"
@@ -247,6 +248,9 @@
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:scrollHorizontally="true"
+            android:letterSpacing="0.1"
+            android:maxLines="1"
             android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -703,7 +707,7 @@
         app:layout_constraintVertical_bias="0.81" />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/samsungGalaxyS24SeeMoreBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"

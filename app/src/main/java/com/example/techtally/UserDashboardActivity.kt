@@ -18,13 +18,15 @@ import com.google.android.material.textfield.TextInputEditText
 
 class UserDashboardActivity : AppCompatActivity() {
     // Declare BottomNavigationView, search bar, and dropdown layout
-    private lateinit var binding: ActivityLoginBinding
+    private lateinit var binding: ActivityUserDashboardBinding
     private lateinit var greetingTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_user_dashboard)
+        // Initialize binding for the correct layout
+        binding = ActivityUserDashboardBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -75,6 +77,11 @@ class UserDashboardActivity : AppCompatActivity() {
         val viewAllButton = findViewById<TextView>(R.id.viewAllButton)
         viewAllButton.setOnClickListener {
             val intent = Intent(this, ViewAllActivity::class.java)
+            startActivity(intent)
+        }
+        binding.samsungGalaxyS24SeeMoreBtn.setOnClickListener {
+            // Start ForgotPasswordActivity
+            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
             startActivity(intent)
         }
     }

@@ -28,30 +28,6 @@ class SignupActivity : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // TextWatcher to validate username input (minimum and maximum length)
-        binding.signupUsername.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                val username = s?.toString() ?: ""  // Get the username input as a string
-
-                // Validate the length of the username between 8 and 16 characters
-                if (username.length < 8) {
-                    // Set text color to red and show a "minimum length" message
-                    binding.usernameHint.text = "The minimum is 8 characters"
-                    binding.usernameHint.setTextColor(Color.RED)
-                } else if (username.length > 16) {
-                    // Set text color to red and show a "maximum length" message
-                    binding.usernameHint.text = "The maximum is 16 characters"
-                    binding.usernameHint.setTextColor(Color.RED)
-                } else {
-                    // Set text color to light green when the length is within valid range
-                    binding.usernameHint.text = "The minimum is 8 characters"
-                    binding.usernameHint.setTextColor(Color.parseColor("#32CD32")) // Light green
-                }
-            }
-            // Unused, but required overrides for TextWatcher
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-        })
 
         // Check username field if empty it will display the message "Username is required"
         binding.signupUsername.setOnFocusChangeListener { _, hasFocus ->
@@ -175,9 +151,7 @@ class SignupActivity : AppCompatActivity() {
             val signupPassword = binding.signupPassword.text.toString()
             val signupConfirmPassword = binding.signupConfirmPassword.text.toString()
 
-            if (signupUsername.length < 8 || signupUsername.length > 16) {  // Check if username length is valid before proceeding
-                Toast.makeText(this, "Username must be between 8 and 16 characters", Toast.LENGTH_SHORT).show()
-            } else if (signupEmail.isEmpty() || signupPassword.isEmpty() || signupConfirmPassword.isEmpty()) {
+            if (signupEmail.isEmpty() || signupPassword.isEmpty() || signupConfirmPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             } else if (signupPassword != signupConfirmPassword) {   // Validate if passwords do not match
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
