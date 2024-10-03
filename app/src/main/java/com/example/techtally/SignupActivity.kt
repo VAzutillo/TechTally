@@ -28,50 +28,40 @@ class SignupActivity : AppCompatActivity() {
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Add TextWatcher for username input to validate minimum and maximum length
-        binding.signupUsername.addTextChangedListener(object : TextWatcher {
-            override fun afterTextChanged(s: Editable?) {
-                val username = s?.toString() ?: ""
 
-                // Validate minimum and maximum length for username
-                when {
-                    username.length < 8 -> {
-                        // Set text color to red and show a "minimum length" message
-                        binding.usernameHint.text = "The minimum is 8 characters"
-                        binding.usernameHint.setTextColor(Color.RED)
-                    }
-                    username.length > 16 -> {
-                        // Set text color to red and show a "maximum length" message
-                        binding.usernameHint.text = "The maximum is 16 characters"
-                        binding.usernameHint.setTextColor(Color.RED)
-                    }
-                    else -> {
-                        // Set text color to light green when the length is within valid range
-                        binding.usernameHint.text = "The minimum is 8 characters"
-                        binding.usernameHint.setTextColor(Color.parseColor("#32CD32")) // Light green
-                    }
+        // Check username field if empty it will display the message "Username is required"
+        binding.signupUsername.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                val username = binding.signupUsername.text.toString()
+                if (username.isEmpty()) {
+                    binding.usernameHint.text = "Username is required"
+                    binding.usernameHint.setTextColor(Color.RED)
                 }
             }
-            // Unused, but required overrides for TextWatcher
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-        })
+        }
 
-        // text watcher for password input to validate strength
+        // TextWatcher for password validation length and strength
         binding.signupPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
-                val password = s?.toString() ?: ""
-                // Check if the password contains special characters for strength validation
-                if (containsSpecialCharacter(password)) {
-                    // Set text color to green and show a "strong password" message
-                    binding.signupPassword.setTextColor(Color.parseColor("#32CD32")) // Light green
-                    binding.passwordHint.text = getString(R.string.strong_password)
-                    binding.passwordHint.setTextColor(Color.parseColor("#32CD32")) // Light green
-                } else {
-                    // Set text color to red and show a "weak password" message
+                val password = s?.toString() ?: ""  // Get the password input as a string
+
+                // Validate password length and check for special characters
+                if (password.length < 8 || password.length > 16) {
+                    // Show error message for invalid length
+                    binding.passwordHint.text = "The minimum is 8 characters and maximum of 16 characters"
+                    binding.passwordHint.setTextColor(Color.RED)
+                    // Resetting the password color to default (optional)
+                    binding.signupPassword.setTextColor(Color.BLACK)    // Reset password text color to default
+                } else if (!containsSpecialCharacter(password)) {
+                    // Show weak password message if it doesn't contain special characters
                     binding.signupPassword.setTextColor(Color.RED) // Red
                     binding.passwordHint.text = getString(R.string.weak_password)
                     binding.passwordHint.setTextColor(Color.RED) // Red
+                } else {
+                    // Show strong password message if valid
+                    binding.signupPassword.setTextColor(Color.parseColor("#32CD32")) // Light green
+                    binding.passwordHint.text = getString(R.string.strong_password)
+                    binding.passwordHint.setTextColor(Color.parseColor("#32CD32")) // Light green
                 }
             }
             // Unused, but required overrides for TextWatcher
@@ -79,7 +69,47 @@ class SignupActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
-        // text watcher to confirm the confirm password matches the password
+        // to check if password field is empty, if empty it will display the message "Password is required"
+        binding.signupPassword.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                val password = binding.signupPassword.text.toString()
+                if (password.isEmpty()) {
+                    binding.passwordHint.text = "Password is required"
+                    binding.passwordHint.setTextColor(Color.RED)
+                }
+            }
+        }
+
+        // TextWatcher for email validation
+        binding.signupEmail.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {
+                val email = s?.toString() ?: ""     // Get the email input as a string
+                // Check if the email ends with "@gmail.com"
+                if (email.endsWith("@gmail.com")) {
+                    binding.emailHint.text = "Valid email"
+                    binding.emailHint.setTextColor(Color.parseColor("#32CD32")) // Light green
+                } else {
+                    binding.emailHint.text = "Invalid email"
+                    binding.emailHint.setTextColor(Color.RED) // Red
+                }
+            }
+            // Unused, but required overrides for TextWatcher
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+        })
+
+        // to check if email field is empty, if empty it will display the message "Email is required"
+        binding.signupEmail.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                val email = binding.signupEmail.text.toString()
+                if (email.isEmpty()) {
+                    binding.emailHint.text = "Email is required"
+                    binding.emailHint.setTextColor(Color.RED)
+                }
+            }
+        }
+
+        // to validate if confirm password matches the password
         binding.signupConfirmPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val password = binding.signupPassword.text.toString()
@@ -103,6 +133,17 @@ class SignupActivity : AppCompatActivity() {
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
         })
 
+        // Check if confirm password field is empty, if empty it will display the message "Confirm password is required"
+        binding.signupConfirmPassword.setOnFocusChangeListener { _, hasFocus ->
+            if (!hasFocus) {
+                val confirmPassword = binding.signupConfirmPassword.text.toString()
+                if (confirmPassword.isEmpty()) {
+                    binding.confirmPasswordHint.text = "Confirm password is required"
+                    binding.confirmPasswordHint.setTextColor(Color.RED)
+                }
+            }
+        }
+
         // Handle the signup button click to submit the form
         binding.button3.setOnClickListener {
             val signupUsername = binding.signupUsername.text.toString()
@@ -110,9 +151,7 @@ class SignupActivity : AppCompatActivity() {
             val signupPassword = binding.signupPassword.text.toString()
             val signupConfirmPassword = binding.signupConfirmPassword.text.toString()
 
-            if (signupUsername.length < 8 || signupUsername.length > 16) {  // Check if username length is valid before proceeding
-                Toast.makeText(this, "Username must be between 8 and 16 characters", Toast.LENGTH_SHORT).show()
-            } else if (signupEmail.isEmpty() || signupPassword.isEmpty() || signupConfirmPassword.isEmpty()) {
+            if (signupEmail.isEmpty() || signupPassword.isEmpty() || signupConfirmPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             } else if (signupPassword != signupConfirmPassword) {   // Validate if passwords do not match
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()

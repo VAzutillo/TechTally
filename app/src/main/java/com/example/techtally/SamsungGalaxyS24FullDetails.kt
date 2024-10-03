@@ -2,33 +2,30 @@ package com.example.techtally
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.techtally.databinding.ActivitySamsungGalaxyS24FullDetailsBinding
+import com.example.techtally.databinding.ActivityUserDashboardBinding
 
-class MainActivity : AppCompatActivity() {
-
+class SamsungGalaxyS24FullDetails : AppCompatActivity() {
+    private lateinit var binding: ActivitySamsungGalaxyS24FullDetailsBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        binding = ActivitySamsungGalaxyS24FullDetailsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        supportActionBar?.hide()
-
-        // Set up a delayed task using a Handler
-        Handler().postDelayed({
-            // Create an Intent to start the LoginActivity
-            val intent = Intent(this@MainActivity, SignupActivity::class.java)
-            // Start the LoginActivity
+        val backToUserDashboard = findViewById<Button>(R.id.SamsungGalaxyS24BackButtonToUserDashboard)
+        backToUserDashboard.setOnClickListener {
+            val intent = Intent(this, UserDashboardActivity::class.java)
             startActivity(intent)
-            // Finish MainActivity so that the user cannot return to it using the back button
-            finish()
-        }, 1500) // Delay of 1500 milliseconds (1.5 seconds)
+        }
     }
 }
