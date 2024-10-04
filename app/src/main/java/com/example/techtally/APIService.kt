@@ -12,23 +12,27 @@ data class UserSignupRequest(
     val password: String,                 // Password field for registration
     val password_confirmation: String     // Password confirmation to ensure the user entered the same password twice
 )
+
 // Data class representing the response structure from the signup API.
 // It includes a message and a boolean indicating whether to navigate to another activity.
 data class SignupResponse(
     val message: String,                  // Message returned by the API, "Signup successful"
     val navigate: Boolean                 // Boolean indicating if the app should navigate to another activity after signup
 )
+
 // Data class representing the login request payload for the API.
 // It includes the fields necessary for logging in: username (or email) and password.
 data class LoginRequest(
     val username: String,                 // Username or email for login
     val password: String                  // Password for login
 )
+
 // Data class representing the response structure from the login API.
-// It includes a boolean indicating if the login was successful and a message.
+// It includes a boolean indicating if the login was successful, a message, and a role to differentiate between user and admin.
 data class LoginResponse(
     val success: Boolean,                 // Boolean indicating if the login was successful
-    val message: String                   // Message returned by the API, "Login successful" or "Invalid credentials"
+    val message: String,                  // Message returned by the API, "Login successful" or "Invalid credentials"
+    val role: String                      // Role returned by the API, either "admin" or "user"
 )
 
 // Retrofit interface defining the API endpoints for the app.
