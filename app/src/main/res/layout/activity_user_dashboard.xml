@@ -8,6 +8,7 @@
     android:backgroundTint="#2F2F2F"
     tools:context=".UserDashboardActivity">
 
+
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="130dp"
@@ -41,19 +42,21 @@
 
     </RelativeLayout>
 
+
     <ImageButton
         android:id="@+id/profileBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/rounded_button_background"
         android:backgroundTint="@color/grey"
-        android:src="@drawable/baseline_person_24"
+        android:src="@drawable/baseline_person_25"
+        android:contentDescription="@string/sign_up_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.032" />
+        app:layout_constraintVertical_bias="0.021" />
 
     <TextView
         android:id="@+id/tv.share.review.discover"
@@ -63,21 +66,20 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:fontFamily="@font/roboto_bold"
         android:text="@string/share_review_discover_dashboard"
         android:textColor="@color/light_grey"
         android:textColorHint="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07" />
+        app:layout_constraintVertical_bias="0.064" />
 
     <TextView
         android:id="@+id/greetingTextView"
-        android:layout_width="323dp"
+        android:layout_width="200dp"
         android:layout_height="30dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Login/Signup"
@@ -85,35 +87,36 @@
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.783"
+        app:layout_constraintHorizontal_bias="0.131"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.032" />
+        app:layout_constraintVertical_bias="0.021" />
+
 
     <TextView
         android:id="@+id/viewAllButton"
         android:layout_width="53dp"
-        android:layout_height="19dp"
+        android:layout_height="22dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:fontFamily="@font/roboto_bold"
+
         android:text="View all"
         android:textColor="@color/light_grey"
         android:textColorHint="#FFFFFF"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
+        app:layout_constraintHorizontal_bias="0.938"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.2" />
 
     <TextView
         android:id="@+id/tvDiscover"
         android:layout_width="125dp"
-        android:layout_height="25dp"
+        android:layout_height="22dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -124,98 +127,72 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.2" />
 
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout2"
-        android:layout_width="330dp"
-        android:layout_height="140dp"
-        android:background="@drawable/border"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardBackgroundColor="@color/light_black"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.455">
+        app:layout_constraintTop_toBottomOf="@+id/divider">
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="146dp"
-            android:layout_height="119dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="98dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="86dp"
-            android:layout_marginBottom="21dp"
-            app:srcCompat="@drawable/samsung_galaxy_s24ultra" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="90dp"
-            android:layout_marginTop="110dp"
-            android:layout_marginEnd="75dp"
-            android:layout_marginBottom="11dp"
-            android:text="Samsung Galaxy S24 Ultra"
-            android:textColor="#FFFFFF" />
-    </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/topRatedButton"
-        android:layout_width="110dp"
-        android:layout_height="51dp"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
         android:backgroundTint="#2F2F2F"
-        android:fontFamily="@font/roboto_bold"
+
         android:text="Top Rated"
-        android:textSize="12sp"
+        android:textSize="11sp"
         app:cornerRadius="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.016"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.255" />
 
     <Button
         android:id="@+id/latestButton"
-        android:layout_width="110dp"
-        android:layout_height="51dp"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
         android:backgroundTint="#2F2F2F"
-        android:fontFamily="@font/roboto_bold"
+
         android:text="Latest"
-        android:textSize="12sp"
+        android:textSize="11sp"
         app:cornerRadius="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.255" />
 
     <Button
         android:id="@+id/mostViewedButton"
-        android:layout_width="110dp"
-        android:layout_height="51dp"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
         android:backgroundTint="#2F2F2F"
-        android:fontFamily="@font/roboto_bold"
+
         android:text="Most Viewed"
-        android:textSize="12sp"
+        android:textSize="11sp"
         app:cornerRadius="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintHorizontal_bias="0.926"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.255" />
@@ -223,9 +200,10 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout6"
 
-        android:layout_width="330dp"
-        android:layout_height="62dp"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
         android:backgroundTint="#2F2F2F"
+        android:hint="Search devices"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
@@ -241,16 +219,15 @@
         app:layout_constraintVertical_bias="0.107"
         app:placeholderText="Search phones"
         app:placeholderTextColor="@color/black"
-        app:startIconDrawable="@drawable/baseline_search_24"
-        app:startIconTint="#2F2F2F">
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollHorizontally="true"
             android:letterSpacing="0.1"
             android:maxLines="1"
+            android:scrollHorizontally="true"
             android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -622,10 +599,9 @@
         android:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.342" />
+        app:layout_constraintVertical_bias="0.331" />
 
     <TextView
         android:id="@+id/textView11"
@@ -720,6 +696,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.81" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -124,8 +124,8 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="155dp"
-        android:layout_height="150dp"
+        android:layout_width="151dp"
+        android:layout_height="138dp"
         android:src="@drawable/tech"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
