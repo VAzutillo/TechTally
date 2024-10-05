@@ -30,6 +30,21 @@ class UserDashboardActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        val clickableImage1 = findViewById<ImageView>(R.id.samsungGalaxyS24Ultra)
+
+        clickableImage1.setOnClickListener{
+            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
+            startActivity(intent)
+        }
+        val clickableImage2 = findViewById<ImageView>(R.id.Iphone_16_Pro_Max)
+
+        clickableImage1.setOnClickListener{
+            val intent = Intent(this, Iphone16ProMaxFullDetails::class.java)
+            startActivity(intent)
+        }
+
+
+
 
 
 
