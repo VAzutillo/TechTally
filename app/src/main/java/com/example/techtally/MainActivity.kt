@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         // Set up a delayed task using a Handler
         Handler().postDelayed({
             // Create an Intent to start the LoginActivity
-            val intent = Intent(this@MainActivity, SignupActivity::class.java)
+            val intent = Intent(this@MainActivity, LoginActivity::class.java)
             // Start the LoginActivity
             startActivity(intent)
             // Finish MainActivity so that the user cannot return to it using the back button

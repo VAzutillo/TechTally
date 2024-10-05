@@ -132,24 +132,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.2" />
 
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        app:cardBackgroundColor="@color/light_black"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider">
-
-
-
-    </androidx.cardview.widget.CardView>
+    
 
     <Button
         android:id="@+id/topRatedButton"
@@ -204,7 +187,6 @@
 
         android:layout_width="320dp"
         android:layout_height="60dp"
-        android:backgroundTint="#2F2F2F"
         android:hint="Search devices"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="20dp"
@@ -212,6 +194,7 @@
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
         app:boxStrokeColor="@color/black"
+        app:endIconMode="none"
         app:endIconTint="#2F2F2F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -220,13 +203,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.107"
         app:placeholderText="Search phones"
-        app:placeholderTextColor="@color/black"
-        >
+        app:placeholderTextColor="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/rivet_icons_filter"
+            android:drawableTint="#2F2F2F"
             android:letterSpacing="0.1"
             android:maxLines="1"
             android:scrollHorizontally="true"
