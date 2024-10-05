@@ -629,6 +629,78 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.189" />
 
+    <FrameLayout
+        android:id="@+id/uploadDevicePopup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="180dp"
+            android:layout_gravity="center"
+            android:background="@drawable/brands_corner"
+            android:orientation="vertical"
+            android:paddingLeft="30dp">
+
+            <TextView
+                android:id="@+id/tvUploadDevice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingLeft="60dp"
+                android:paddingTop="50dp"
+                android:paddingBottom="25dp"
+                android:text="Upload Device?"
+                android:textColor="#2F2F2F"
+                android:textSize="20sp" />
+
+            <!-- Buttons Layout -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingTop="12dp">
+
+            <Button
+                android:id="@+id/YesBtn"
+                android:layout_width="10dp"
+                android:layout_height="33dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="40dp"
+                android:layout_weight="1"
+                android:backgroundTint="#4CAF50"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="Yes"
+                android:textColor="@color/whites"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/NoBtn"
+                android:layout_width="10dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginRight="60dp"
+                android:layout_weight="1"
+                android:backgroundTint="#CC0606"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="No"
+                android:textColor="@color/whites"
+                android:textSize="10sp" />
+        </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

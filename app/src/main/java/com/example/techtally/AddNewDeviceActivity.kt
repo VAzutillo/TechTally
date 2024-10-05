@@ -22,6 +22,10 @@ class AddNewDeviceActivity : AppCompatActivity() {
     private lateinit var btnUploadFromDevice: Button
     private lateinit var overviewPopup: FrameLayout
     private lateinit var btnContinue: Button
+    private lateinit var uploadDevicePopup: FrameLayout
+    private lateinit var YesBtn: Button
+    private lateinit var NoBtn: Button
+    private lateinit var uploadBtn: Button
 
     // New variables for specifications popup
     private lateinit var specificationsPopup: FrameLayout
@@ -44,6 +48,10 @@ class AddNewDeviceActivity : AppCompatActivity() {
         btnUploadFromDevice = binding.btnUploadFromDevice
         overviewPopup = binding.popupLayout
         btnContinue = binding.btnContinue
+        uploadDevicePopup = binding.uploadDevicePopup
+        YesBtn = binding.YesBtn
+        NoBtn = binding.NoBtn
+        uploadBtn = binding.uploadBtn
 
 
         // Initialize specifications popup elements
@@ -51,6 +59,20 @@ class AddNewDeviceActivity : AppCompatActivity() {
         specificationsBtn = binding.specificationsBtn // Make sure to define this in your XML
         backButton = binding.backButton // Make sure to define this in your XML
         continueButton = binding.continueButton // Make sure to define this in your XML
+
+        // Show popup when Upload button is clicked
+        uploadBtn.setOnClickListener {
+            uploadDevicePopup.visibility = View.VISIBLE
+        }
+
+        // Hide popup when Yes or No buttons are clicked
+        YesBtn.setOnClickListener {
+            uploadDevicePopup.visibility = View.GONE
+        }
+
+        NoBtn.setOnClickListener {
+            uploadDevicePopup.visibility = View.GONE
+        }
 
         // Show popup when Specifications button is clicked
         specificationsBtn.setOnClickListener {
