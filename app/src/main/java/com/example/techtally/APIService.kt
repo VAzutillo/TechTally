@@ -46,4 +46,6 @@ interface ApiService {
     // Sends a POST request to the "login" endpoint with a LoginRequest body and expects a LoginResponse.
     @POST("login")  // The API endpoint for logging in a user
     fun loginUser(@Body loginRequest: LoginRequest): Call<LoginResponse>
+
 }
+

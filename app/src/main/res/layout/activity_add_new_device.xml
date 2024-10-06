@@ -470,6 +470,7 @@
                 app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etProcessor"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#2F2F2F"
@@ -495,6 +496,7 @@
                 app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMemory"
                     android:layout_width="260dp"
                     android:layout_height="50dp"
                     android:background="#2F2F2F"
@@ -520,6 +522,7 @@
                 app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDisplay"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#2F2F2F"
@@ -545,6 +548,7 @@
                 app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBattery"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#2F2F2F"
@@ -569,6 +573,7 @@
                 app:boxBackgroundMode="outline">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etCamera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#2F2F2F"
