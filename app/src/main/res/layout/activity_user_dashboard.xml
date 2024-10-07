@@ -8,6 +8,58 @@
     android:backgroundTint="#2F2F2F"
     tools:context=".UserDashboardActivity">
 
+    <FrameLayout
+        android:id="@+id/profilePopup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:paddingLeft="160dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="779dp"
+            android:layout_gravity="center"
+            android:background="@drawable/profile_corner"
+            android:backgroundTint="#2F2F2F"
+            android:orientation="vertical"
+            android:padding="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#2F2F2F"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingTop="50dp">
+
+                <ImageButton
+                    android:id="@+id/profileBtn2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rounded_button_background"
+                    android:backgroundTint="@color/grey"
+                    android:src="@drawable/baseline_person_25" />
+
+                <TextView
+                    android:id="@+id/loginSignupBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:text="Signup/Login"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
@@ -58,6 +110,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.021" />
 
+
+
     <TextView
         android:id="@+id/tv.share.review.discover"
         android:layout_width="111dp"
@@ -82,7 +136,7 @@
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="Login/Signup"
+        android:text="Signup/Login"
         android:textColor="@android:color/black"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -133,7 +187,6 @@
         app:layout_constraintVertical_bias="0.2" />
 
 
-
     <Button
         android:id="@+id/topRatedButton"
         android:layout_width="100dp"
@@ -182,11 +235,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.255" />
 
-
-
-
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout6"
 
@@ -208,378 +256,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.107"
         app:placeholderText="Search phones"
-        app:placeholderTextColor="@color/black"
-        >
+        app:placeholderTextColor="@color/black">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/rivet_icons_filter2"
+            android:drawableTint="@color/grey"
             android:letterSpacing="0.1"
             android:maxLines="1"
             android:scrollHorizontally="true"
             android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <LinearLayout
-        android:id="@+id/filterDropdown"
-        android:layout_width="360dp"
-        android:layout_height="730dp"
-        android:background="#2F2F2F"
-        android:backgroundTint="@color/whites"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TableLayout
-            android:id="@+id/searchDevices"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-
-            <TableRow
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:paddingLeft="25dp">
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="305dp"
-                    android:layout_height="62dp"
-                    app:boxBackgroundColor="@color/black"
-                    app:boxBackgroundMode="outline"
-                    app:boxCornerRadiusBottomEnd="30dp"
-                    app:boxCornerRadiusBottomStart="30dp"
-                    app:boxCornerRadiusTopEnd="30dp"
-                    app:boxCornerRadiusTopStart="30dp"
-                    app:boxStrokeColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.531"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.107"
-                    app:placeholderText="Search devices"
-                    app:placeholderTextColor="@color/whites"
-                    app:startIconDrawable="@drawable/baseline_search_24"
-                    app:startIconTint="@color/whites">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:textColor="@color/whites"
-                        android:textSize="14sp" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/imSearchingFor"
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
-
-            <TableRow
-                android:layout_width="350dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tvImSearchingFor"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:paddingLeft="10dp"
-                    android:text="Im searching for"
-                    android:textColor="#2F2F2F"
-                    android:textSize="20sp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:paddingLeft="50dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/button17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="Apple"
-                        android:textColor="@color/whites" />
-
-                    <Button
-                        android:id="@+id/button16"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_weight="1"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="Samsung"
-                        android:textColor="@color/whites" />
-
-                    <Button
-                        android:id="@+id/button15"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="Xiaomi"
-                        android:textColor="@color/whites" />
-                </LinearLayout>
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:paddingLeft="80dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/button20"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="Realme"
-                        android:textColor="@color/whites"
-                        tools:layout_editor_absoluteX="-44dp"
-                        tools:layout_editor_absoluteY="275dp" />
-
-                    <Button
-                        android:id="@+id/button27"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="Latest"
-                        android:textColor="@color/whites"
-                        tools:layout_editor_absoluteX="-44dp"
-                        tools:layout_editor_absoluteY="307dp" />
-                </LinearLayout>
-
-            </TableRow>
-
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/Type"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-
-            <TableRow
-                android:layout_width="350dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tvType"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:paddingLeft="10dp"
-                    android:text="Type"
-                    android:textColor="#2F2F2F"
-                    android:textSize="20sp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:paddingLeft="50dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/SmartphoneButton"
-                        android:layout_width="130dp"
-                        android:layout_height="40dp"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="Smartphone"
-                        android:textColor="@color/whites" />
-
-                    <Button
-                        android:id="@+id/TabletButton"
-                        android:layout_width="130dp"
-                        android:layout_height="40dp"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="Tablet"
-                        android:textColor="@color/whites" />
-                </LinearLayout>
-
-            </TableRow>
-
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/Rating"
-            android:layout_width="match_parent"
-            android:layout_height="150dp">
-
-            <TableRow
-                android:layout_width="350dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/tvRating"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/roboto_bold"
-                    android:padding="10dp"
-                    android:text="Rating"
-                    android:textColor="#2F2F2F"
-                    android:textSize="20sp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:paddingLeft="40dp">
-
-                <Button
-                    android:id="@+id/button6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:backgroundTint="#2F2F2F"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="1 Tally"
-                    android:textColor="@color/whites" />
-
-                <Button
-                    android:id="@+id/button7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:backgroundTint="#2F2F2F"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="2 Tally"
-                    android:textColor="@color/whites"
-                    android:textColorHighlight="@color/whites" />
-
-                <Button
-                    android:id="@+id/button8"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:backgroundTint="#2F2F2F"
-                    android:fontFamily="@font/roboto_bold"
-                    android:insetRight="0dp"
-                    android:text="3 Tally"
-                    android:textColor="@color/whites"
-                    app:iconPadding="0dp" />
-            </TableRow>
-
-            <TableRow
-                android:layout_width="350dp"
-                android:layout_height="match_parent"
-                android:paddingLeft="80dp">
-
-                <Button
-                    android:id="@+id/button10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:backgroundTint="#2F2F2F"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="4 Tally"
-                    android:textColor="@color/whites" />
-
-                <Button
-                    android:id="@+id/button11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:backgroundTint="#2F2F2F"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="5 Tally"
-                    android:textColor="@color/whites" />
-            </TableRow>
-
-        </TableLayout>
-
-        <TableLayout
-            android:id="@+id/PriceRange"
-            android:layout_width="349dp"
-            android:layout_height="179dp">
-
-            <TableRow
-                android:id="@+id/RowTextPriceRange"
-                android:layout_width="350dp"
-                android:layout_height="match_parent" />
-
-            <TableRow
-                android:id="@+id/RowPriceRange"
-                android:layout_width="350dp"
-                android:layout_height="127dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingLeft="30dp" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/RowResetApply"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:orientation="horizontal"
-                    android:paddingLeft="70dp">
-
-                    <Button
-                        android:id="@+id/resetButton"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="reset"
-                        android:textColor="@color/whites"
-                        tools:layout_editor_absoluteX="-85dp"
-                        tools:layout_editor_absoluteY="629dp" />
-
-                    <Button
-                        android:id="@+id/applyButton"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#2F2F2F"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="apply"
-                        android:textColor="@color/whites"
-                        tools:layout_editor_absoluteX="-22dp"
-                        tools:layout_editor_absoluteY="683dp" />
-                </LinearLayout>
-
-            </TableRow>
-
-
-        </TableLayout>
-
-    </LinearLayout>
 
     <View
         android:id="@+id/divider"
@@ -606,9 +296,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.607" />
-
-
-
 
     <TextView
         android:id="@+id/textView12"
@@ -690,120 +377,276 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.81" />
 
-
-
-    <HorizontalScrollView
-        android:layout_width="320dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/rounded_corner"
-        android:fillViewport="true"
-        android:scrollbars="horizontal"
-        android:overScrollMode="always"
-
+    <FrameLayout
+        android:id="@+id/filterFrame"
+        android:layout_width="match_parent"
+        android:layout_height="780dp"
+        android:background="@drawable/profile_corner"
+        android:elevation="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_width="match_parent"
+            android:layout_height="780dp"
+            android:layout_gravity="bottom"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
 
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="130dp">
+            <!-- Row 1: Back button, Filters title, Check button -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/SamsungGalaxyS24Ultra"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:padding="15dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24 Ultra"
-                    android:src="@drawable/samsung_galaxy_s24ultra" />
+                <Button
+                    android:id="@+id/button_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FFFFFF"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:text="b"
+                    android:textColor="#2F2F2F"
+                    android:textSize="34sp"
+                    app:iconPadding="0dp" />
 
-            </FrameLayout>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_bold"
+                    android:gravity="center"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="20dp"
+                    android:paddingRight="115dp"
+                    android:text="Filters"
+                    android:textColor="#2F2F2F"
+                    android:textSize="24sp" />
 
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="130dp">
+                <Button
+                    android:id="@+id/button_check"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#FFFFFF"
+                    android:paddingTop="30dp"
+                    android:text="c"
+                    android:textColor="#2F2F2F"
+                    android:textSize="24sp" />
+            </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/Xiaomi_14_ultra"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:padding="15dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24 Ultra"
-                    android:src="@drawable/xiaomi_14_ultra" />
-            </FrameLayout>
+            <!-- Brand Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingLeft="30dp"
+                android:paddingTop="10dp"
+                android:text="Brand"
+                android:textColor="#2F2F2F"
+                android:textSize="16sp" />
 
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="130dp">
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal">
 
-                <ImageButton
-                    android:id="@+id/Iphone_16_Pro_Max"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:padding="15dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24 Ultra"
-                    android:src="@drawable/iphone_16_pro_max" />
-            </FrameLayout>
+                <Button
+                    android:id="@+id/button_apple"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:paddingLeft="30dp"
+                    android:text="Apple"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
 
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="130dp">
+                <Button
+                    android:id="@+id/button_samsung"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="Samsung"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
+            </LinearLayout>
 
-                <ImageButton
-                    android:id="@+id/Oppo_Reno_12_Pro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:padding="15dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24 Ultra"
-                    android:src="@drawable/oppo_reno_12_pro" />
-            </FrameLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal">
 
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="130dp">
+                <Button
+                    android:id="@+id/button_xiaomi"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="Xiaomi"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
 
-                <ImageButton
-                    android:id="@+id/Realme_13_Pro_Plus"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:padding="15dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24 Ultra"
-                    android:src="@drawable/realme_13_pro_plus" />
-            </FrameLayout>
+                <Button
+                    android:id="@+id/button_realme"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="Realme"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
+            </LinearLayout>
 
+            <Button
+                android:id="@+id/button_oppo"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="16dp"
+                android:backgroundTint="#D9D9D9"
+                android:text="Oppo"
+                android:textColor="#1E1E1E59"
+                app:cornerRadius="0dp"
+                app:iconPadding="0dp" />
 
+            <!-- Type Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingLeft="30dp"
+                android:text="Type"
+                android:textColor="#2F2F2F"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/button_smartphone"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="Smartphone"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
+
+                <Button
+                    android:id="@+id/button_tablet"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="Tablet"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
+            </LinearLayout>
+
+            <!-- Rating Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/roboto_bold"
+                android:paddingLeft="30dp"
+                android:text="Rating"
+                android:textColor="#2F2F2F"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Tally1Btn"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="1 Tally"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
+
+                <Button
+                    android:id="@+id/Tally2Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="2 Tally"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/Tally3Btn"
+                    android:layout_width="10dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="3 Tally"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
+
+                <Button
+                    android:id="@+id/Tally4Btn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D9D9D9"
+                    android:text="4 Tally"
+                    android:textColor="#1E1E1E59"
+                    app:cornerRadius="0dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/Tally5Btn"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:backgroundTint="#D9D9D9"
+                android:text="5 Tally"
+                android:textColor="#1E1E1E59"
+                app:cornerRadius="0dp" />
         </LinearLayout>
-
-
-
-
-
-    </HorizontalScrollView>
-
-
-
-
-
-
-
-
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
