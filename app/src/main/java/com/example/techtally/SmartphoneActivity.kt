@@ -19,7 +19,7 @@ class SmartphoneActivity : AppCompatActivity() {
             insets
         }
 
-        // Navigate from UserDashboardActivity to SmartphoneActivity
+        // Navigate from SmartphoneActivity to UserDashboardActivity
         val backToUserDashboardActivity = findViewById<ImageView>(R.id.smartphoneBackButton)
         backToUserDashboardActivity.setOnClickListener {
             val intent = Intent(this, UserDashboardActivity::class.java)

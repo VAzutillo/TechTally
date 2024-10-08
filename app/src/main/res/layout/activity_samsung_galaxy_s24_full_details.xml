@@ -100,21 +100,20 @@
                 android:layout_marginBottom="31dp"
                 app:srcCompat="@drawable/samsung_galaxy_s24" />
 
-            <Button
-                android:id="@+id/SamsungGalaxyS24BackButtonToUserDashboard"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/samsungGalaxyS24FullDetailsBackButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginStart="-2dp"
-                android:layout_marginTop="-2dp"
-                android:layout_marginEnd="274dp"
-                android:layout_marginBottom="287dp"
-                android:backgroundTint="#00000040"
-                android:text="b"
-                android:textSize="34sp" />
+                android:layout_marginStart="27dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="308dp"
+                android:layout_marginBottom="297dp"
+                android:background="#FFFFFF"
+                app:srcCompat="@drawable/vector" />
         </RelativeLayout>
 
         <TextView
