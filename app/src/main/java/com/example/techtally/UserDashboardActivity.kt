@@ -41,6 +41,8 @@ class UserDashboardActivity : AppCompatActivity() {
     private lateinit var buttonLenovo: Button           // Lenovo Button inside the pop up
     private lateinit var buttonInfinix: Button          // Infinix Button inside the pop up
     private lateinit var buttonGooglePixel: Button      // GooglePixel Button inside the pop up
+    private lateinit var button_back: ImageView         // Back Button inside the pop up
+    private lateinit var button_check: ImageView        // check Button inside the pop up
     // For type of device
     private lateinit var buttonSmartphone: Button       // Type of device button inside the pop up
     private lateinit var buttonTablet: Button           // Type of device button inside the pop up
@@ -90,6 +92,8 @@ class UserDashboardActivity : AppCompatActivity() {
         buttonLenovo = findViewById(R.id.button_lenovo)          // Initialize Brand Lenovo button inside the pop up
         buttonInfinix = findViewById(R.id.button_infinix)         // Initialize Brand Infinix button inside the pop up
         buttonGooglePixel = findViewById(R.id.button_googlePixel)     // Initialize Brand GooglePixel button inside the pop up
+        button_back = findViewById(R.id.button_back)                    // Initialize back button inside the pop up
+        button_check = findViewById(R.id.button_check)                  // Initialize Brand check button inside the pop up
         // Type of device button
         buttonSmartphone = findViewById(R.id.button_smartphone)     // Initialize type of device -Smartphone button inside pop up
         buttonTablet = findViewById(R.id.button_tablet)             // Initialize type of device -Tablet button inside pop up
@@ -188,8 +192,34 @@ class UserDashboardActivity : AppCompatActivity() {
             false
         }
 
+        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24Ultra)
+        clickImage1.setOnClickListener {
+            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
+            startActivity(intent)
+        }
+        val  clickImage2 = findViewById<ImageView>(R.id.Xiaomi_14_ultra)
+        clickImage2.setOnClickListener {
+            val intent = Intent(this, Xiaomi14UltraFullDetails::class.java)
+            startActivity(intent)
+        }
+        val  clickImage3 = findViewById<ImageView>(R.id.Iphone_16_Pro_Max)
+        clickImage3.setOnClickListener {
+            val intent = Intent(this, Iphone16ProMaxFullDetails::class.java)
+            startActivity(intent)
+        }
+        val  clickImage4 = findViewById<ImageView>(R.id.Oppo_Reno_12_Pro)
+        clickImage4.setOnClickListener {
+            val intent = Intent(this, OppoReno12ProFullDetails::class.java)
+            startActivity(intent)
+        }
+        val  clickImage5 = findViewById<ImageView>(R.id.Realme_13_Pro_Plus)
+        clickImage5.setOnClickListener {
+            val intent = Intent(this, Realme13ProPlusFullDetails::class.java)
+            startActivity(intent)
+        }
+
         // Close the search filter popup when the back button is clicked
-        val backButton = findViewById<Button>(R.id.button_back)
+        val backButton = findViewById<ImageView>(R.id.button_back)
         backButton.setOnClickListener {
             hideFilterFrame()
         }
