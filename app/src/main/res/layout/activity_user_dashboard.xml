@@ -305,17 +305,12 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <Button
+                <ImageView
                     android:id="@+id/button_back"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#FFFFFF"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="20dp"
-                    android:text="b"
-                    android:textColor="#2F2F2F"
-                    android:textSize="34sp"
-                    app:iconPadding="0dp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    app:srcCompat="@drawable/vector" />
 
                 <TextView
                     android:layout_width="0dp"
@@ -330,15 +325,13 @@
                     android:textColor="#2F2F2F"
                     android:textSize="24sp" />
 
-                <Button
+                <ImageView
                     android:id="@+id/button_check"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#FFFFFF"
-                    android:paddingTop="30dp"
-                    android:text="c"
-                    android:textColor="#2F2F2F"
-                    android:textSize="24sp" />
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/vector3" />
             </LinearLayout>
 
             <!-- Brand Section -->
