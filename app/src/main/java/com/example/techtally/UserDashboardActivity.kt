@@ -192,7 +192,8 @@ class UserDashboardActivity : AppCompatActivity() {
             false
         }
 
-        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24Ultra)
+        // Navigate to different pages in User Dashboard activity using horizontal scrollview
+        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24)
         clickImage1.setOnClickListener {
             val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
             startActivity(intent)
@@ -217,6 +218,27 @@ class UserDashboardActivity : AppCompatActivity() {
             val intent = Intent(this, Realme13ProPlusFullDetails::class.java)
             startActivity(intent)
         }
+
+
+
+        // Navigate to different pages in User Dashboard activity using vertical scrollview
+        val  clickImage6 = findViewById<ImageView>(R.id.samsung_galaxy_s24_1)
+        clickImage6.setOnClickListener {
+            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
+            startActivity(intent)
+        }
+        val  clickImage7 = findViewById<ImageView>(R.id.iphone_16_pro_max_1)
+        clickImage7.setOnClickListener {
+            val intent = Intent(this, Iphone16ProMaxFullDetails::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+
+
+
 
         // Close the search filter popup when the back button is clicked
         val backButton = findViewById<ImageView>(R.id.button_back)
@@ -248,13 +270,8 @@ class UserDashboardActivity : AppCompatActivity() {
             val intent = Intent(this, ViewAllActivity::class.java)
             startActivity(intent)
         }
-        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetails when image is clicked
-        binding.samsungGalaxyS24SeeMoreBtn.setOnClickListener {
-            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
-            startActivity(intent)
 
 
-        }
     }
 
     // function to change the appearance of selected and unselected buttons
