@@ -12,7 +12,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.techtally.databinding.ActivityUserDashboardBinding
@@ -253,22 +252,9 @@ class UserDashboardActivity : AppCompatActivity() {
         binding.samsungGalaxyS24SeeMoreBtn.setOnClickListener {
             val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
             startActivity(intent)
+
+
         }
-        val searchBar = findViewById<TextInputEditText>(R.id.searchBar)
-        val drawable = ContextCompat.getDrawable(this, R.drawable.rivet_icons_filter)
-
-        val widthInDp = 10
-        val heightInDp = 10
-
-// Convert dp to pixels
-        val widthInPx = (widthInDp * resources.displayMetrics.density).toInt()
-        val heightInPx = (heightInDp * resources.displayMetrics.density).toInt()
-
-// Set bounds for the drawable (15dp width and height)
-        drawable?.setBounds(0, 0, widthInPx, heightInPx)
-
-// Apply the drawable as the end drawable
-        searchBar.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, drawable, null)
     }
 
     // function to change the appearance of selected and unselected buttons
@@ -318,6 +304,7 @@ class UserDashboardActivity : AppCompatActivity() {
         animate.duration = 300
         filterFrame.startAnimation(animate)
         filterFrame.visibility = View.GONE
+
     }
 
 
