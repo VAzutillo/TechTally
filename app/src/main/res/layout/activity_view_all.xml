@@ -359,7 +359,7 @@
                 <ImageView
                     android:layout_width="130dp"
                     android:layout_height="130dp"
-                    app:srcCompat="@drawable/apple_ipad_13_pro" />
+                    app:srcCompat="@drawable/ipad_13_pro" />
 
             </LinearLayout>
 
@@ -438,7 +438,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone2 -->
+        <!-- New Device2 -->
         <LinearLayout
             android:id="@+id/linearLayout5"
             android:layout_width="360dp"
@@ -476,7 +476,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone2" />
+                        android:text="New Device2" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -537,7 +537,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone3 -->
+        <!-- New Device3 -->
         <LinearLayout
             android:id="@+id/linearLayout6"
             android:layout_width="360dp"
@@ -575,7 +575,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone3" />
+                        android:text="New Device3" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -636,7 +636,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone4 -->
+        <!-- New Device4 -->
         <LinearLayout
             android:id="@+id/linearLayout7"
             android:layout_width="360dp"
@@ -674,7 +674,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone4" />
+                        android:text="New Device4" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -735,7 +735,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone5 -->
+        <!-- New Device5 -->
         <LinearLayout
             android:id="@+id/linearLayout8"
             android:layout_width="360dp"
@@ -773,7 +773,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone5" />
+                        android:text="New Device5" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -834,7 +834,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone6 -->
+        <!-- New Device6 -->
         <LinearLayout
             android:id="@+id/linearLayout9"
             android:layout_width="360dp"
@@ -872,7 +872,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone6" />
+                        android:text="New Device6" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -933,7 +933,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone7 -->
+        <!-- New Device7 -->
         <LinearLayout
             android:id="@+id/linearLayout10"
             android:layout_width="360dp"
@@ -971,7 +971,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone7" />
+                        android:text="New Device7" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1032,7 +1032,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone8 -->
+        <!-- New Device8 -->
         <LinearLayout
             android:id="@+id/linearLayout11"
             android:layout_width="360dp"
@@ -1070,7 +1070,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone8" />
+                        android:text="New Device8" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1131,7 +1131,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone9 -->
+        <!-- New Device9 -->
         <LinearLayout
             android:id="@+id/linearLayout12"
             android:layout_width="360dp"
@@ -1169,7 +1169,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone9" />
+                        android:text="New Device9" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1230,7 +1230,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone10 -->
+        <!-- New Device10 -->
         <LinearLayout
             android:id="@+id/linearLayout13"
             android:layout_width="360dp"
@@ -1268,7 +1268,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone10" />
+                        android:text="New Device10" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1329,7 +1329,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone11 -->
+        <!-- New Device11 -->
         <LinearLayout
             android:id="@+id/linearLayout14"
             android:layout_width="360dp"
@@ -1367,7 +1367,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone11" />
+                        android:text="New Device11" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1428,7 +1428,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone12 -->
+        <!-- New Device12 -->
         <LinearLayout
             android:id="@+id/linearLayout15"
             android:layout_width="360dp"
@@ -1466,7 +1466,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone12" />
+                        android:text="New Device12" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1527,7 +1527,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone13 -->
+        <!-- New Device13 -->
         <LinearLayout
             android:id="@+id/linearLayout16"
             android:layout_width="360dp"
@@ -1565,7 +1565,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone13" />
+                        android:text="New Device13" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1626,7 +1626,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone14 -->
+        <!-- New Device14 -->
         <LinearLayout
             android:id="@+id/linearLayout17"
             android:layout_width="360dp"
@@ -1664,7 +1664,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone14" />
+                        android:text="New Device14" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1725,7 +1725,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone15 -->
+        <!-- New Device15 -->
         <LinearLayout
             android:id="@+id/linearLayout18"
             android:layout_width="360dp"
@@ -1763,7 +1763,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone15" />
+                        android:text="New Device15" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1824,7 +1824,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone16 -->
+        <!-- New Device16 -->
         <LinearLayout
             android:id="@+id/linearLayout19"
             android:layout_width="360dp"
@@ -1862,7 +1862,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone16" />
+                        android:text="New Device16" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -1923,7 +1923,7 @@
             </LinearLayout>
         </LinearLayout>
 
-        <!-- New Phone17 -->
+        <!-- New Device17 -->
         <LinearLayout
             android:id="@+id/linearLayout20"
             android:layout_width="360dp"
@@ -1961,7 +1961,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="New Phone1" />
+                        android:text="New Device17" />
                 </LinearLayout>
 
                 <LinearLayout

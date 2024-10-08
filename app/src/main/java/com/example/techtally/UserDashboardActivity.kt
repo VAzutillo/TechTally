@@ -46,6 +46,7 @@ class UserDashboardActivity : AppCompatActivity() {
     // For type of device
     private lateinit var buttonSmartphone: Button       // Type of device button inside the pop up
     private lateinit var buttonTablet: Button           // Type of device button inside the pop up
+    private lateinit var buttonLaptop: Button           // Type of device button inside the pop up
     // For ratings
     private lateinit var buttonTally1: Button           // Rate 1 Tally Button
     private lateinit var buttonTally2: Button           // Rate 2 Tally Button
@@ -97,6 +98,7 @@ class UserDashboardActivity : AppCompatActivity() {
         // Type of device button
         buttonSmartphone = findViewById(R.id.button_smartphone)     // Initialize type of device -Smartphone button inside pop up
         buttonTablet = findViewById(R.id.button_tablet)             // Initialize type of device -Tablet button inside pop up
+        buttonLaptop = findViewById(R.id.button_laptop)             // Initialize type of device -Laptop button inside pop up
         //  Rating button
         buttonTally1 = findViewById(R.id.Tally1Btn)             // Initialize 1 Tally button
         buttonTally2 = findViewById(R.id.Tally2Btn)             // Initialize 2 Tally button
@@ -105,15 +107,12 @@ class UserDashboardActivity : AppCompatActivity() {
         buttonTally5 = findViewById(R.id.Tally5Btn)             // Initialize 5 Tally button
 
 
-        // Change styles and color when selecting between Smartphone and Tablet filters
-        buttonSmartphone.setOnClickListener {
-            changeButtonStyle(buttonSmartphone, "#FFFFFF", "#2F2F2F")
-            changeButtonStyle(buttonTablet, "#1E1E1E59", "#D9D9D9")
-        }
-
-        buttonTablet.setOnClickListener {
-            changeButtonStyle(buttonTablet, "#FFFFFF", "#2F2F2F")
-            changeButtonStyle(buttonSmartphone, "#1E1E1E59", "#D9D9D9")
+        // Set click listeners for Tally rating buttons 1 to 5
+        val device = listOf(buttonSmartphone, buttonTablet, buttonLaptop, buttonTally4)
+        device.forEach { button ->
+            button.setOnClickListener {
+                handleTallyClick(button, device)
+            }
         }
 
         // Set click listeners for Tally rating buttons 1 to 5
@@ -192,7 +191,7 @@ class UserDashboardActivity : AppCompatActivity() {
             false
         }
 
-        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24Ultra)
+        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24)
         clickImage1.setOnClickListener {
             val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
             startActivity(intent)
@@ -248,12 +247,17 @@ class UserDashboardActivity : AppCompatActivity() {
             val intent = Intent(this, ViewAllActivity::class.java)
             startActivity(intent)
         }
-        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetails when image is clicked
-        binding.samsungGalaxyS24SeeMoreBtn.setOnClickListener {
-            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
-            startActivity(intent)
 
+    }
 
+    // function to change the appearance of selected and unselected buttons
+    private fun handleDeviceClick(selectedButton: Button, allButtons: List<Button>) {
+        allButtons.forEach { button ->
+            if (button == selectedButton) {
+                changeButtonStyle(button, "#FFFFFF", "#2F2F2F") // Selected state
+            } else {
+                changeButtonStyle(button, "#1E1E1E59", "#D9D9D9") // Default state
+            }
         }
     }
 

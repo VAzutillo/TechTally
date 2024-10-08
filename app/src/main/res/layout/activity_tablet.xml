@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="358dp"
     android:layout_height="778dp"
+    android:scrollbars="none"
     tools:layout_editor_absoluteX="1dp"
     tools:layout_editor_absoluteY="1dp"
     android:fillViewport="true">
@@ -47,12 +48,15 @@
             android:id="@+id/linearLayout1"
             android:layout_width="360dp"
             android:layout_height="130dp"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="110dp"
+            android:layout_marginEnd="20dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            tools:layout_editor_absoluteX="-1dp">
+            app:layout_constraintVertical_bias="0.0">
 
             <LinearLayout
                 android:layout_width="130dp"
@@ -161,7 +165,7 @@
                 <ImageView
                     android:layout_width="130dp"
                     android:layout_height="130dp"
-                    app:srcCompat="@drawable/apple_ipad_13_pro" />
+                    app:srcCompat="@drawable/ipad_13_pro" />
 
             </LinearLayout>
 
@@ -260,7 +264,7 @@
                 <ImageView
                     android:layout_width="130dp"
                     android:layout_height="130dp"
-                    app:srcCompat="@drawable/samsung_glaxy_tab_s10_ultra" />
+                    app:srcCompat="@drawable/galaxy_tab_s10_ultra" />
 
             </LinearLayout>
 
