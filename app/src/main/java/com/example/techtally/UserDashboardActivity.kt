@@ -222,6 +222,8 @@ class UserDashboardActivity : AppCompatActivity() {
         binding.samsungGalaxyS24SeeMoreBtn.setOnClickListener {
             val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
             startActivity(intent)
+
+
         }
     }
 
@@ -272,5 +274,8 @@ class UserDashboardActivity : AppCompatActivity() {
         animate.duration = 300
         filterFrame.startAnimation(animate)
         filterFrame.visibility = View.GONE
+
     }
+
+
 }
