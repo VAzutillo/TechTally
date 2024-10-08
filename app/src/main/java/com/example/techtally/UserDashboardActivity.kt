@@ -1,4 +1,5 @@
 package com.example.techtally
+import android.os.Handler
 import android.widget.ImageButton
 import android.widget.Toast
 import android.content.Intent
@@ -56,6 +57,10 @@ class UserDashboardActivity : AppCompatActivity() {
             val intent = Intent(this, Realme13ProPlusFullDetails::class.java)
             startActivity(intent)
         }
+
+
+
+
 
 
 

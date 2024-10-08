@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/samsung_galaxy_s24" />
 
-    </RelativeLayout>
+    </RelativeLayout> 
 
 
     <ImageButton
@@ -696,7 +696,7 @@
         android:layout_width="320dp"
         android:layout_height="150dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rounded_corner"
         android:fillViewport="true"
@@ -714,7 +714,9 @@
 
             <FrameLayout
                 android:layout_width="320dp"
-                android:layout_height="130dp">
+                android:layout_height="130dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
                 <ImageButton
                     android:id="@+id/SamsungGalaxyS24Ultra"
@@ -725,6 +727,15 @@
                     android:background="?attr/selectableItemBackground"
                     android:contentDescription="Samsung Galaxy S24 Ultra"
                     android:src="@drawable/samsung_galaxy_s24ultra" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="78dp"
+                    android:textColor="@color/white"
+                    android:text="Samsung Galaxy S24 Ultra"/>
+
 
             </FrameLayout>
 
@@ -741,6 +752,13 @@
                     android:background="?attr/selectableItemBackground"
                     android:contentDescription="Samsung Galaxy S24 Ultra"
                     android:src="@drawable/xiaomi_14_ultra" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="110dp"
+                    android:textColor="@color/white"
+                    android:text="Xiaomi 14 Ultra"/>
             </FrameLayout>
 
             <FrameLayout
@@ -752,10 +770,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="fitCenter"
-                    android:padding="15dp"
                     android:background="?attr/selectableItemBackground"
                     android:contentDescription="Samsung Galaxy S24 Ultra"
                     android:src="@drawable/iphone_16_pro_max" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="100dp"
+                    android:textColor="@color/white"
+                    android:text="Iphone 16 Pro Max"/>
+
             </FrameLayout>
 
             <FrameLayout
@@ -771,6 +796,14 @@
                     android:background="?attr/selectableItemBackground"
                     android:contentDescription="Samsung Galaxy S24 Ultra"
                     android:src="@drawable/oppo_reno_12_pro" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="105dp"
+                    android:textColor="@color/white"
+                    android:text="Oppo Reno 12 Pro"/>
+
             </FrameLayout>
 
             <FrameLayout
@@ -786,23 +819,19 @@
                     android:background="?attr/selectableItemBackground"
                     android:contentDescription="Samsung Galaxy S24 Ultra"
                     android:src="@drawable/realme_13_pro_plus" />
-            </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="100dp"
+                    android:textColor="@color/white"
+                    android:text="Realme 13 Pro Plus"/>
 
+            </FrameLayout>
 
         </LinearLayout>
 
-
-
-
-
     </HorizontalScrollView>
-
-
-
-
-
-
-
 
 
 
