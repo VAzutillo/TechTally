@@ -8,7 +8,7 @@ import android.view.View
 import android.view.animation.TranslateAnimation
 import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -25,8 +25,8 @@ class UserDashboardActivity : AppCompatActivity() {
     // For User's profile
     private lateinit var greetingTextView: TextView     // For tvLogin/Signup and For User's name
     private lateinit var profilePopup: FrameLayout      // Layout for profile pop up when click
-    private lateinit var profileBtn2: ImageButton       // Profile Logo and exit button for pop up
-    private lateinit var profileBtn: ImageButton        // Profile Logo and to view pop up
+    private lateinit var profileBtn2: ImageView         // Profile Logo and exit button for pop up
+    private lateinit var profileBtn: ImageView          // Profile Logo and to view pop up
     private lateinit var loginSignupBtn: TextView       // Another tvLogin/Signup and get User's name inside the pop up
     // For User's search filter
     private lateinit var filterFrame: FrameLayout       // Layout for search filter pop up
@@ -36,13 +36,25 @@ class UserDashboardActivity : AppCompatActivity() {
     private lateinit var buttonXiaomi: Button           // Xiaomi Button inside the pop up
     private lateinit var buttonRealme: Button           // Realme Button inside the pop up
     private lateinit var buttonOppo: Button             // Oppo Button inside the pop up
+    private lateinit var buttonVivo: Button             // Vivo Button inside the pop up
+    private lateinit var buttonHuawei: Button           // Huawei Button inside the pop up
+    private lateinit var buttonLenovo: Button           // Lenovo Button inside the pop up
+    private lateinit var buttonInfinix: Button          // Infinix Button inside the pop up
+    private lateinit var buttonGooglePixel: Button      // GooglePixel Button inside the pop up
+    // For type of device
     private lateinit var buttonSmartphone: Button       // Type of device button inside the pop up
     private lateinit var buttonTablet: Button           // Type of device button inside the pop up
+    // For ratings
     private lateinit var buttonTally1: Button           // Rate 1 Tally Button
     private lateinit var buttonTally2: Button           // Rate 2 Tally Button
     private lateinit var buttonTally3: Button           // Rate 3 Tally Button
     private lateinit var buttonTally4: Button           // Rate 4 Tally Button
     private lateinit var buttonTally5: Button           // Rate 5 Tally Button
+    // For logout
+    private lateinit var logoutBtn: ImageView           // LogoutImageView
+    private lateinit var logoutPopup: FrameLayout       // Layout logOutPop-up
+    private lateinit var LogoutYesBtn: Button           // Yes button inside pop-up
+    private lateinit var LogoutNoBtn: Button            // No button inside pop-up
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -73,15 +85,21 @@ class UserDashboardActivity : AppCompatActivity() {
         buttonXiaomi = findViewById(R.id.button_xiaomi)        // Initialize Brand Xiaomi button inside the pop up
         buttonRealme = findViewById(R.id.button_realme)        // Initialize Brand Realme button inside the pop up
         buttonOppo = findViewById(R.id.button_oppo)            // Initialize Brand Oppo button inside the pop up
+        buttonVivo = findViewById(R.id.button_vivo)            // Initialize Brand Vivo button inside the pop up
+        buttonHuawei = findViewById(R.id.button_huawei)          // Initialize Brand Huawei button inside the pop up
+        buttonLenovo = findViewById(R.id.button_lenovo)          // Initialize Brand Lenovo button inside the pop up
+        buttonInfinix = findViewById(R.id.button_infinix)         // Initialize Brand Infinix button inside the pop up
+        buttonGooglePixel = findViewById(R.id.button_googlePixel)     // Initialize Brand GooglePixel button inside the pop up
         // Type of device button
         buttonSmartphone = findViewById(R.id.button_smartphone)     // Initialize type of device -Smartphone button inside pop up
         buttonTablet = findViewById(R.id.button_tablet)             // Initialize type of device -Tablet button inside pop up
-        //Rating button
+        //  Rating button
         buttonTally1 = findViewById(R.id.Tally1Btn)             // Initialize 1 Tally button
         buttonTally2 = findViewById(R.id.Tally2Btn)             // Initialize 2 Tally button
         buttonTally3 = findViewById(R.id.Tally3Btn)             // Initialize 3 Tally button
         buttonTally4 = findViewById(R.id.Tally4Btn)             // Initialize 4 Tally button
         buttonTally5 = findViewById(R.id.Tally5Btn)             // Initialize 5 Tally button
+
 
         // Change styles and color when selecting between Smartphone and Tablet filters
         buttonSmartphone.setOnClickListener {
@@ -102,8 +120,9 @@ class UserDashboardActivity : AppCompatActivity() {
             }
         }
 
-        // Set click listeners for Brand buttons (Apple, Samsung, Xiaomi, Realme, Oppo)
-        val buttons = listOf(buttonApple, buttonSamsung, buttonXiaomi, buttonRealme, buttonOppo)
+        // Set click listeners for Brand buttons
+        val buttons = listOf(buttonApple, buttonSamsung, buttonXiaomi, buttonRealme, buttonOppo,
+                             buttonVivo, buttonHuawei, buttonLenovo, buttonInfinix, buttonGooglePixel)
         buttons.forEach { button ->
             button.setOnClickListener {
                 handleBrandsClick(button, buttons)
@@ -119,7 +138,7 @@ class UserDashboardActivity : AppCompatActivity() {
             // If user is a guest, display Login/Signup textView
             greetingTextView.text = "Login/Signup"
             greetingTextView.setOnClickListener {
-                val intent = Intent(this, SignupActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
         } else if (userName != null && userName.isNotEmpty()) {
@@ -134,7 +153,7 @@ class UserDashboardActivity : AppCompatActivity() {
         if (isGuest) {
             loginSignupBtn.text = "Login/Signup"
             loginSignupBtn.setOnClickListener {
-                val intent = Intent(this, SignupActivity::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
         } else if (userName != null && userName.isNotEmpty()) {
@@ -175,22 +194,22 @@ class UserDashboardActivity : AppCompatActivity() {
             hideFilterFrame()
         }
 
-        // Navigate from UserDashboardActivity to TopRatedActivity
-        val goTopRatedActivity = findViewById<Button>(R.id.topRatedButton)
-        goTopRatedActivity.setOnClickListener {
-            val intent = Intent(this, TopRatedActivity::class.java)
+        // Navigate from UserDashboardActivity to SmartphoneActivity
+        val goTopSmartphoneActivity = findViewById<ImageView>(R.id.smartphonBtn)
+        goTopSmartphoneActivity.setOnClickListener {
+            val intent = Intent(this, SmartphoneActivity::class.java)
             startActivity(intent)
         }
-        // Navigate from UserDashboardActivity to LatestActivity
-        val goToLatestActivity = findViewById<Button>(R.id.latestButton)
-        goToLatestActivity.setOnClickListener {
-            val intent = Intent(this, LatestActivity::class.java)
+        // Navigate from UserDashboardActivity to TabletActivity
+        val goToLaptopActivity = findViewById<ImageView>(R.id.laptopBtn)
+        goToLaptopActivity.setOnClickListener {
+            val intent = Intent(this, LaptopActivity::class.java)
             startActivity(intent)
         }
-        // Navigate from UserDashboardActivity to MostViewedActivity
-        val goToMostViewedActivity = findViewById<Button>(R.id.mostViewedButton)
-        goToMostViewedActivity.setOnClickListener {
-            val intent = Intent(this, MostViewedActivity::class.java)
+        // Navigate from UserDashboardActivity to LaptopActivity
+        val goToTabletActivity = findViewById<ImageView>(R.id.tabletBtn)
+        goToTabletActivity.setOnClickListener {
+            val intent = Intent(this, TabletActivity::class.java)
             startActivity(intent)
         }
         // Navigate from UserDashboardActivity to ViewAllActivity

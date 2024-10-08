@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ProfilePageActivity"
+            android:exported="false" />
+        <activity
             android:name=".OppoReno12ProFullDetails"
             android:exported="false" />
         <activity
@@ -52,13 +55,13 @@
             android:name=".ViewAllActivity"
             android:exported="false" />
         <activity
-            android:name=".MostViewedActivity"
+            android:name=".LaptopActivity"
             android:exported="false" />
         <activity
-            android:name=".LatestActivity"
+            android:name=".TabletActivity"
             android:exported="false" />
         <activity
-            android:name=".TopRatedActivity"
+            android:name=".SmartphoneActivity"
             android:exported="false" />
         <activity
             android:name=".NewPasswordActivity"
