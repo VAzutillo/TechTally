@@ -192,7 +192,7 @@ class UserDashboardActivity : AppCompatActivity() {
             false
         }
 
-        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24Ultra)
+        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24)
         clickImage1.setOnClickListener {
             val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
             startActivity(intent)
@@ -248,13 +248,7 @@ class UserDashboardActivity : AppCompatActivity() {
             val intent = Intent(this, ViewAllActivity::class.java)
             startActivity(intent)
         }
-        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetails when image is clicked
-        binding.samsungGalaxyS24SeeMoreBtn.setOnClickListener {
-            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
-            startActivity(intent)
 
-
-        }
     }
 
     // function to change the appearance of selected and unselected buttons
