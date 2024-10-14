@@ -16,6 +16,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".RateAndReviewActivity"
+            android:exported="false" />
+        <activity
             android:name=".ProfilePageActivity"
             android:exported="false" />
         <activity

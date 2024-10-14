@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -28,20 +29,34 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)  // Inflate the layout using view binding
         setContentView(binding.root)
 
+        // Check if the user is already logged in
+        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val isLoggedIn = sharedPreferences.getBoolean("IS_LOGGED_IN", false)
+        val userName = sharedPreferences.getString("USER_NAME", null)
+
+        // If the user is logged in, navigate to UserDashboardActivity
+        if (isLoggedIn && userName != null) {
+            val intent = Intent(this, UserDashboardActivity::class.java)
+            intent.putExtra("USER_NAME", userName)
+            startActivity(intent)
+            finish()
+            return
+        }
+
         // Get the user input by clicking the login button
         binding.button2.setOnClickListener {
             // Get user input from login fields
-            val loginUserInput = binding.loginUserInput.text.toString()
+            val loginInput = binding.loginUserInput.text.toString()
             val loginPassword = binding.loginPassword.text.toString()
 
             // Check if field is empty and show a message
-            if (loginUserInput.isEmpty() || loginPassword.isEmpty()) {
+            if (loginInput.isEmpty() || loginPassword.isEmpty()) {
                 Toast.makeText(this, "Please enter username/email and password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             // Check if admin is logging in with hardcoded credentials
-            if (loginUserInput == adminUsername && loginPassword == adminPassword) {
+            if (loginInput == adminUsername && loginPassword == adminPassword) {
                 // Navigate to AdminDashboardActivity for admin users
                 val intent = Intent(this@LoginActivity, AdminDashboardActivity::class.java)
                 intent.putExtra("ADMIN_NAME", adminUsername) // Pass hardcoded admin name
@@ -51,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             // Create a login request object with the user's input for regular login
-            val loginRequest = LoginRequest(loginUserInput, loginPassword)
+            val loginRequest = LoginRequest(loginInput, loginPassword)
 
             // Make an API call to login the user using Retrofit
             RetrofitClient.instance.loginUser(loginRequest).enqueue(object : Callback<LoginResponse> {
@@ -65,33 +80,37 @@ class LoginActivity : AppCompatActivity() {
                             // Check if the logged-in user is an admin or a regular user
                             when (loginResponse.role) {
                                 "admin" -> {
+                                    // Save user session
+                                    saveUserSession(loginInput, false) // Not a guest
                                     // Navigate to AdminDashboardActivity for admin users
                                     val intent = Intent(this@LoginActivity, AdminDashboardActivity::class.java)
-                                    intent.putExtra("ADMIN_NAME", loginUserInput) // Pass username or email
+                                    intent.putExtra("ADMIN_NAME", loginInput) // Pass username or email
                                     startActivity(intent)
                                     finish()
                                 }
                                 "user" -> {
+                                    // Save user session
+                                    saveUserSession(loginInput, false) // Not a guest
                                     // Navigate to UserDashboardActivity for regular users
                                     val intent = Intent(this@LoginActivity, UserDashboardActivity::class.java)
-                                    intent.putExtra("USER_NAME", loginUserInput) // Pass username or email
+                                    intent.putExtra("USER_NAME", loginInput) // Pass username or email
                                     startActivity(intent)
                                     finish()
                                 }
                                 else -> {
                                     // Handle unexpected roles or errors
-                                    Toast.makeText(this@LoginActivity, "Unexpected user role", Toast.LENGTH_SHORT).show()
+                                    showErrorDialog("Unexpected user role")
                                 }
                             }
                         } else {
-                            // Show the error message from the server if login failed
-                            Toast.makeText(this@LoginActivity, loginResponse?.message ?: "Login failed", Toast.LENGTH_SHORT).show()
+                            // Show the error dialog if login failed
+                            showErrorDialog("Invalid username/email or password") // Show this for invalid credentials
                         }
                     } else {
                         // Log the error response for debugging
                         Log.e("LoginActivity", "Error: ${response.errorBody()?.string()}")
-                        // Show a toast message indicating incorrect credentials
-                        Toast.makeText(this@LoginActivity, "Incorrect Username/Email or Password", Toast.LENGTH_SHORT).show()
+                        // Show the error dialog indicating incorrect credentials
+                        showErrorDialog("Invalid username/email or password") // Show this for invalid credentials
                     }
                 }
 
@@ -113,10 +132,15 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
-        // Handle guest login
         binding.ContinueAsGuestBtn.setOnClickListener {
+            val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+            val editor = sharedPreferences.edit()
+            editor.putBoolean("IS_GUEST", true) // Save guest status
+            editor.putBoolean("IS_LOGGED_IN", false) // Guest is not logged in
+            editor.apply()
+
             val intent = Intent(this, UserDashboardActivity::class.java)
-            intent.putExtra("IS_GUEST", true)  // Pass flag for guest login
+            intent.putExtra("IS_GUEST", true)  // Pass flag for guest
             startActivity(intent)
         }
 
@@ -133,5 +157,25 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    // Function to save user session data, including guest status
+    private fun saveUserSession(userName: String, isGuest: Boolean) {
+        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.putBoolean("IS_LOGGED_IN", true)  // Save login state
+        editor.putString("USER_NAME", userName)  // Save username
+        editor.putBoolean("IS_GUEST", isGuest)   // Save guest status
+        editor.apply()  // Apply changes
+    }
+
+    // Function to show error dialog with the provided message
+    private fun showErrorDialog(message: String) {
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Error")
+        builder.setMessage(message)
+        builder.setCancelable(true)
+        builder.setPositiveButton("Okay") { dialog, _ -> dialog.dismiss() }
+        builder.show()
     }
 }

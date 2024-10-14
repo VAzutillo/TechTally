@@ -2,35 +2,27 @@ package com.example.techtally
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
-
+class RateAndReviewActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_rate_and_review)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        supportActionBar?.hide()
-
-        // Set up a delayed task using a Handler
-        Handler().postDelayed({
-            // Create an Intent to start the LoginActivity
-            val intent = Intent(this@MainActivity, LoginActivity::class.java)
-            // Start the LoginActivity
+        // Navigate from UserDashboardActivity to LaptopActivity
+        val goToSamsungGalaxyS24FullDetails = findViewById<ImageView>(R.id.rateAndReviewBackButton)
+        goToSamsungGalaxyS24FullDetails.setOnClickListener {
+            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
             startActivity(intent)
-            // Finish MainActivity so that the user cannot return to it using the back button
-            finish()
-        }, 1500) // Delay of 1500 milliseconds (1.5 seconds)
+        }
     }
-
-
 }

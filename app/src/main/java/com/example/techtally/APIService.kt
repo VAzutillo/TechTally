@@ -3,6 +3,8 @@ package com.example.techtally
 import retrofit2.http.Body
 import retrofit2.http.POST
 import retrofit2.Call
+import retrofit2.http.GET
+import retrofit2.http.Path
 
 // Data class representing the user signup request payload for the API.
 // It includes the necessary fields for user registration: username, email, password, and password confirmation.
@@ -35,6 +37,13 @@ data class LoginResponse(
     val role: String                      // Role returned by the API, either "admin" or "user"
 )
 
+data class UsernameCheckResponse(
+    val exists: Boolean
+)
+data class EmailCheckResponse(
+    val exists: Boolean
+)
+
 // Retrofit interface defining the API endpoints for the app.
 interface ApiService {
     // Endpoint for user registration.
@@ -47,5 +56,9 @@ interface ApiService {
     @POST("login")  // The API endpoint for logging in a user
     fun loginUser(@Body loginRequest: LoginRequest): Call<LoginResponse>
 
-}
+    @GET("client/username/{username}")
+    fun checkUsername(@Path("username") username: String): Call<UsernameCheckResponse>
 
+    @GET("client/email/{email}")
+    fun checkEmail(@Path("email") email: String): Call<EmailCheckResponse>
+}
