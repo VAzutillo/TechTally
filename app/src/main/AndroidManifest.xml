@@ -16,6 +16,21 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".XiaomiPad6ProFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".RealmePad2FullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".OppoPad2FullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".Ipad13ProFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".GalaxyTabS10UltraFullDetails"
+            android:exported="false" />
+        <activity
             android:name=".RateAndReviewActivity"
             android:exported="false" />
         <activity

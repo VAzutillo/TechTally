@@ -153,19 +153,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.331" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_bold"
-        android:text="Devices"
-        android:textColor="#2F2F2F"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.067"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.607" />
 
     <FrameLayout
         android:id="@+id/filterFrame"
@@ -567,157 +554,11 @@
 
 
 
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="320dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/rounded_corner"
-        android:fillViewport="true"
-        android:overScrollMode="always"
-        android:scrollbars="none"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider">
-
-        <LinearLayout
-            android:layout_width="250dp"
-            android:layout_height="150dp"
-            android:orientation="horizontal">
-
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="140dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageButton
-                    android:id="@+id/SamsungGalaxyS24"
-                    android:layout_width="317dp"
-                    android:layout_height="140dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24"
-                    android:padding="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/samsung_galaxy_s24" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="78dp"
-                    android:text="Samsung Galaxy S24 Ultra"
-                    android:textColor="@color/white" />
-
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="140dp">
-
-                <ImageButton
-                    android:id="@+id/Xiaomi_14_ultra"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24 Ultra"
-                    android:padding="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/xiaomi_14_ultra" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="110dp"
-                    android:text="Xiaomi 14 Ultra"
-                    android:textColor="@color/white" />
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="140dp">
-
-                <ImageButton
-                    android:id="@+id/Iphone_16_Pro_Max"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24 Ultra"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/iphone_16_pro_max" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="100dp"
-                    android:text="Iphone 16 Pro Max"
-                    android:textColor="@color/white" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="140dp">
-
-                <ImageButton
-                    android:id="@+id/Oppo_Reno_12_Pro"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24 Ultra"
-                    android:padding="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/oppo_reno_12_pro" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="105dp"
-                    android:text="Oppo Reno 12 Pro"
-                    android:textColor="@color/white" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="140dp">
-
-                <ImageButton
-                    android:id="@+id/Realme_13_Pro_Plus"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="?attr/selectableItemBackground"
-                    android:contentDescription="Samsung Galaxy S24 Ultra"
-                    android:padding="15dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/realme_13_pro_plus" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom"
-                    android:layout_marginStart="100dp"
-                    android:text="Realme 13 Pro Plus"
-                    android:textColor="@color/white" />
-
-            </FrameLayout>
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
 
     <ScrollView
         android:layout_width="320dp"
-        android:layout_height="260dp"
+        android:layout_height="460dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="45dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rounded_vertical_scrollview"
         android:fillViewport="true"
@@ -727,7 +568,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
         app:layout_constraintVertical_bias="0.933">
 
         <LinearLayout
@@ -735,10 +575,172 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView"
+                android:layout_width="320dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/rounded_corner"
+                android:fillViewport="true"
+                android:overScrollMode="always"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider">
+
+                <LinearLayout
+                    android:layout_width="250dp"
+                    android:layout_height="150dp"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:layout_width="320dp"
+                        android:layout_height="140dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/SamsungGalaxyS24"
+                            android:layout_width="317dp"
+                            android:layout_height="140dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Samsung Galaxy S24"
+                            android:padding="15dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/samsung_galaxy_s24" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginStart="78dp"
+                            android:text="Samsung Galaxy S24 Ultra"
+                            android:textColor="@color/white" />
+
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="320dp"
+                        android:layout_height="140dp">
+
+                        <ImageView
+                            android:id="@+id/Xiaomi_14_ultra"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Samsung Galaxy S24 Ultra"
+                            android:padding="15dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/xiaomi_14_ultra" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginStart="110dp"
+                            android:text="Xiaomi 14 Ultra"
+                            android:textColor="@color/white" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="320dp"
+                        android:layout_height="140dp">
+
+                        <ImageView
+                            android:id="@+id/Iphone_16_Pro_Max"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Samsung Galaxy S24 Ultra"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/iphone_16_pro_max" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginStart="100dp"
+                            android:text="Iphone 16 Pro Max"
+                            android:textColor="@color/white" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="320dp"
+                        android:layout_height="140dp">
+
+                        <ImageView
+                            android:id="@+id/Oppo_Reno_12_Pro"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Samsung Galaxy S24 Ultra"
+                            android:padding="15dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/oppo_reno_12_pro" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginStart="105dp"
+                            android:text="Oppo Reno 12 Pro"
+                            android:textColor="@color/white" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="320dp"
+                        android:layout_height="140dp">
+
+                        <ImageView
+                            android:id="@+id/Realme_13_Pro_Plus"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="?attr/selectableItemBackground"
+                            android:contentDescription="Samsung Galaxy S24 Ultra"
+                            android:padding="15dp"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/realme_13_pro_plus" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginStart="100dp"
+                            android:text="Realme 13 Pro Plus"
+                            android:textColor="@color/white" />
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
+                android:layout_marginTop="10dp"
+                android:text="Devices"
+                android:textColor="#2F2F2F"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.051"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.57" />
+
+
             <FrameLayout
                 android:layout_width="320dp"
                 android:layout_height="150dp"
                 android:fillViewport="true"
+                android:layout_marginTop="10dp"
                 android:gravity="center_vertical"
                 android:orientation="vertical">
 
@@ -809,6 +811,7 @@
                     android:textSize="12sp" />
 
             </FrameLayout>
+
 
             <FrameLayout
                 android:layout_width="320dp"
@@ -1964,6 +1967,8 @@
         </LinearLayout>
     </ScrollView>
 
+
+    <!--Profile Pop-up-->
     <FrameLayout
         android:id="@+id/profilePopup"
         android:layout_width="match_parent"
