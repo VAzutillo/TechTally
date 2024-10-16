@@ -91,35 +91,35 @@
             android:orientation="horizontal">
 
             <Button
-
+                android:id="@+id/rateAndReviewButtonTally1"
                 android:layout_width="15dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="50dp"
                 android:backgroundTint="#D9D9D9" />
 
             <Button
-
+                android:id="@+id/rateAndReviewButtonTally2"
                 android:layout_width="15dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
                 android:backgroundTint="#D9D9D9" />
 
             <Button
-
+                android:id="@+id/rateAndReviewButtonTally3"
                 android:layout_width="15dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
                 android:backgroundTint="#D9D9D9" />
 
             <Button
-
+                android:id="@+id/rateAndReviewButtonTally4"
                 android:layout_width="15dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
                 android:backgroundTint="#D9D9D9" />
 
             <Button
-
+                android:id="@+id/rateAndReviewButtonTally5"
                 android:layout_width="15dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="40dp"
@@ -165,6 +165,7 @@
                     app:boxStrokeWidth="2dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/rateAndReviewComment"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Type here..."
@@ -182,6 +183,7 @@
                 android:orientation="vertical">
 
                 <Button
+                    android:id="@+id/rateAndReviewSubmitButton"
                     android:layout_width="310dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"

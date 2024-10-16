@@ -3,6 +3,7 @@ package com.example.techtally
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,5 +26,12 @@ class SmartphoneActivity : AppCompatActivity() {
             val intent = Intent(this, UserDashboardActivity::class.java)
             startActivity(intent)
         }
+
+        // Navigate from SmartphoneActivity to UserDashboardActivity
+        //val goToSamsungGalaxyS24FullDetails = findViewById<TextView>(R.id.SmartPhoneSamsungGalaxyS24SeeMoreButton)
+       // goToSamsungGalaxyS24FullDetails.setOnClickListener {
+         //   val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
+           // startActivity(intent)
+       // }
     }
 }

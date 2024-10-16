@@ -44,6 +44,24 @@ data class EmailCheckResponse(
     val exists: Boolean
 )
 
+data class ReviewRequest(
+    val username: String,
+    val rating: Int,
+    val comment: String?
+)
+
+data class ReviewResponse(
+    val success: Boolean,
+    val message: String,
+    val data: ReviewData?
+)
+data class ReviewData(
+    val id: Int, // Adjust based on your database schema
+    val username: String,
+    val rating: Int,
+    val comment: String?
+)
+
 // Retrofit interface defining the API endpoints for the app.
 interface ApiService {
     // Endpoint for user registration.
@@ -61,4 +79,10 @@ interface ApiService {
 
     @GET("client/email/{email}")
     fun checkEmail(@Path("email") email: String): Call<EmailCheckResponse>
+
+    @POST("review")
+    fun submitReview(@Body reviewRequest: ReviewRequest): Call<ReviewResponse>
+
+    @GET("review") // Change to your actual endpoint
+    fun getReviews(): Call<List<Review>>
 }

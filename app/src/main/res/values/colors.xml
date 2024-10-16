@@ -12,5 +12,8 @@
     <color name="original_button_color">#FF5733</color>
     <color name="original_text_color">#FFFFFF</color>
     <color name="grey1">#878686</color>
+    <color name="default_color">#FFFFFF</color>
+    <color name="backgroundColorOfButton">#D9D9D9</color>
+    <color name="red">#FF0000</color>
 
 </resources>

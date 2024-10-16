@@ -31,6 +31,9 @@
             android:name=".GalaxyTabS10UltraFullDetails"
             android:exported="false" />
         <activity
+            android:name=".SamsungGalaxyS24ReviewsPage"
+            android:exported="false" />
+        <activity
             android:name=".RateAndReviewActivity"
             android:exported="false" />
         <activity

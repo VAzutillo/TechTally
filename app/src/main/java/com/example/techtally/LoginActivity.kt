@@ -3,6 +3,8 @@ package com.example.techtally
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -49,9 +51,19 @@ class LoginActivity : AppCompatActivity() {
             val loginInput = binding.loginUserInput.text.toString()
             val loginPassword = binding.loginPassword.text.toString()
 
-            // Check if field is empty and show a message
+            // Check if fields are empty and show the hint by changing text color to red
+            if (loginInput.isEmpty()) {
+                binding.loginUsernameEmailHint.setHintTextColor(resources.getColor(R.color.red)) // Change hint text color to red
+                binding.loginUsernameEmailHint.hint = "username/email is required"
+            }
+
+            if (loginPassword.isEmpty()) {
+                binding.loginPasswordHint.setHintTextColor(resources.getColor(R.color.red)) // Change hint text color to red
+                binding.loginPasswordHint.hint = "password is required"
+            }
+
+            // Return early if either field is empty
             if (loginInput.isEmpty() || loginPassword.isEmpty()) {
-                Toast.makeText(this, "Please enter username/email and password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -133,7 +145,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.ContinueAsGuestBtn.setOnClickListener {
-            val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
             val editor = sharedPreferences.edit()
             editor.putBoolean("IS_GUEST", true) // Save guest status
             editor.putBoolean("IS_LOGGED_IN", false) // Guest is not logged in
@@ -169,13 +180,28 @@ class LoginActivity : AppCompatActivity() {
         editor.apply()  // Apply changes
     }
 
-    // Function to show error dialog with the provided message
     private fun showErrorDialog(message: String) {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage(message)
-        builder.setCancelable(true)
-        builder.setPositiveButton("Okay") { dialog, _ -> dialog.dismiss() }
-        builder.show()
+        // Inflate the custom layout using a layout inflater
+        val dialogView = layoutInflater.inflate(R.layout.login_error_dialog, null)
+
+        // Create an AlertDialog builder and set the custom layout
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setView(dialogView)
+
+        // Get references to the views in the custom layout
+        val dialogMessage = dialogView.findViewById<TextView>(R.id.loginErrorMessage)
+        val dialogButton = dialogView.findViewById<Button>(R.id.loginErrorOkayBtn)
+
+        // Set the title and message
+        dialogMessage.text = message
+
+        // Create and show the dialog
+        val dialog = dialogBuilder.create()
+
+        // Set the click listener for the button
+        dialogButton.setOnClickListener {
+            dialog.dismiss()
+        }
+        dialog.show()
     }
 }
