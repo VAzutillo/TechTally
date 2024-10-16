@@ -585,7 +585,7 @@
                 android:background="@drawable/rounded_corner"
                 android:fillViewport="true"
                 android:overScrollMode="always"
-                android:scrollbars="none"
+                android:scrollbars="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/divider">

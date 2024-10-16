@@ -26,6 +26,12 @@ class SmartphoneActivity : AppCompatActivity() {
             val intent = Intent(this, UserDashboardActivity::class.java)
             startActivity(intent)
         }
+        // Navigate from SmartphoneActivity to SamsungGalaxyS24UltraFullDetails
+        val SamsungGalaxyS24UltraSeeMoreBTN = findViewById<TextView>(R.id.SamsungGalaxyS24UltraSeeMoreButton)
+        SamsungGalaxyS24UltraSeeMoreBTN.setOnClickListener {
+            val intent = Intent(this, SamsungGalaxyS24UltraSeeMoreBTN::class.java)
+            startActivity(intent)
+        }
 
         // Navigate from SmartphoneActivity to UserDashboardActivity
         //val goToSamsungGalaxyS24FullDetails = findViewById<TextView>(R.id.SmartPhoneSamsungGalaxyS24SeeMoreButton)
