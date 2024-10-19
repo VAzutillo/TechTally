@@ -12,13 +12,12 @@
 
 
 
-    <ImageButton
+    <ImageView
         android:id="@+id/profileBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:background="@drawable/rounded_button_background"
         android:backgroundTint="@color/grey"
-        android:src="@drawable/baseline_person_25"
+        android:src="@drawable/guest"
         android:contentDescription="@string/sign_up_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,6 +92,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/roboto_bold"
+        android:hint="Search Devices"
         android:text="Discover phones"
         android:textColorHint="#FFFFFF"
         android:textSize="16sp"
@@ -109,33 +109,35 @@
 
         android:layout_width="320dp"
         android:layout_height="60dp"
-        android:backgroundTint="#2F2F2F"
-        android:hint="Search devices"
+        android:backgroundTint="#000000"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
         app:boxCornerRadiusTopEnd="20dp"
         app:boxCornerRadiusTopStart="20dp"
         app:boxStrokeColor="@color/black"
-        app:endIconTint="#2F2F2F"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.531"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107"
-        app:placeholderText="Search phones"
-        app:placeholderTextColor="@color/black">
+        app:layout_constraintVertical_bias="0.107">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/rivet_icons_filter"
-            android:drawableTint="@color/grey"
+            android:background="@drawable/rounded_corner"
+            android:drawableEnd="@drawable/rivet"
+            android:drawableTint="@color/white"
+            android:ellipsize="end"
+            android:hint="Search Devices"
+            android:inputType="text"
             android:letterSpacing="0.1"
             android:maxLines="1"
             android:scrollHorizontally="true"
+            android:textColor="@color/default_color"
+            android:textColorHint="@color/default_color"
             android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>

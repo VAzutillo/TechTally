@@ -28,7 +28,7 @@ class SamsungGalaxyS24ReviewsPage : AppCompatActivity() {
         // Set up the RecyclerView with a LinearLayoutManager
         reviewsRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Initialize the adapter here to avoid NullPointerException
+        // Initialize the adapter
         reviewsAdapter = ReviewsAdapter(reviewsList)
         reviewsRecyclerView.adapter = reviewsAdapter
 
@@ -50,7 +50,7 @@ class SamsungGalaxyS24ReviewsPage : AppCompatActivity() {
         backButton.setOnClickListener {
             val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
             startActivity(intent) // Start SamsungGalaxyS24FullDetails activity
-            finish() // Optionally call finish() to remove the current activity from the back stack
+            finish()
         }
     }
 

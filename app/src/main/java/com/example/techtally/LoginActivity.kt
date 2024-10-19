@@ -22,8 +22,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
 
     // Hardcoded admin credentials for direct login without registration
-    private val adminUsername = "admin"
-    private val adminPassword = "admin123"
+    //private val adminUsername = "admin"
+    //private val adminPassword = "admin123"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -67,15 +67,15 @@ class LoginActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // Check if admin is logging in with hardcoded credentials
-            if (loginInput == adminUsername && loginPassword == adminPassword) {
-                // Navigate to AdminDashboardActivity for admin users
-                val intent = Intent(this@LoginActivity, AdminDashboardActivity::class.java)
-                intent.putExtra("ADMIN_NAME", adminUsername) // Pass hardcoded admin name
-                startActivity(intent)
-                finish()
-                return@setOnClickListener
-            }
+            //    Check if admin is logging in with hardcoded credentials
+            //    if (loginInput == adminUsername && loginPassword == adminPassword) {
+            //    Navigate to AdminDashboardActivity for admin users
+            //    val intent = Intent(this@LoginActivity, AdminDashboardActivity::class.java)
+            //    intent.putExtra("ADMIN_NAME", adminUsername) // Pass hardcoded admin name
+            //    startActivity(intent)
+            //    finish()
+            //    return@setOnClickListener
+            //    }
 
             // Create a login request object with the user's input for regular login
             val loginRequest = LoginRequest(loginInput, loginPassword)

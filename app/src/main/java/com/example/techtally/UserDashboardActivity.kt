@@ -80,45 +80,47 @@ class UserDashboardActivity : AppCompatActivity() {
         profileBtn = binding.profileBtn                             // Initialize profile button for close pop up
         loginSignupBtn = binding.loginSignupBtn                     // Initialize tvLoginSignup and User's name inside the pop up
         // For search filter
-        // Layout and Brands button
-        filterFrame = findViewById(R.id.filterFrame)           // Initialize Layout search filter pop up
-        searchBar = findViewById(R.id.searchBar)               // Initialize search bar
-        buttonApple = findViewById(R.id.button_apple)          // Initialize Brand Apple button inside the pop up
-        buttonSamsung = findViewById(R.id.button_samsung)      // Initialize Brand Samsung button inside the pop up
-        buttonXiaomi = findViewById(R.id.button_xiaomi)        // Initialize Brand Xiaomi button inside the pop up
-        buttonRealme = findViewById(R.id.button_realme)        // Initialize Brand Realme button inside the pop up
-        buttonOppo = findViewById(R.id.button_oppo)            // Initialize Brand Oppo button inside the pop up
-        buttonVivo = findViewById(R.id.button_vivo)            // Initialize Brand Vivo button inside the pop up
-        buttonHuawei = findViewById(R.id.button_huawei)          // Initialize Brand Huawei button inside the pop up
-        buttonLenovo = findViewById(R.id.button_lenovo)          // Initialize Brand Lenovo button inside the pop up
-        buttonInfinix = findViewById(R.id.button_infinix)         // Initialize Brand Infinix button inside the pop up
-        buttonGooglePixel = findViewById(R.id.button_googlePixel)     // Initialize Brand GooglePixel button inside the pop up
+        // Initialize search filter layout and buttons
+        filterFrame = findViewById(R.id.filterFrame)                // Initialize Layout search filter pop up
+        searchBar = findViewById(R.id.searchBar)                    // Initialize search bar
+        buttonApple = findViewById(R.id.button_apple)               // Initialize Brand Apple button inside the pop up
+        buttonSamsung = findViewById(R.id.button_samsung)           // Initialize Brand Samsung button inside the pop up
+        buttonXiaomi = findViewById(R.id.button_xiaomi)             // Initialize Brand Xiaomi button inside the pop up
+        buttonRealme = findViewById(R.id.button_realme)             // Initialize Brand Realme button inside the pop up
+        buttonOppo = findViewById(R.id.button_oppo)                 // Initialize Brand Oppo button inside the pop up
+        buttonVivo = findViewById(R.id.button_vivo)                 // Initialize Brand Vivo button inside the pop up
+        buttonHuawei = findViewById(R.id.button_huawei)             // Initialize Brand Huawei button inside the pop up
+        buttonLenovo = findViewById(R.id.button_lenovo)             // Initialize Brand Lenovo button inside the pop up
+        buttonInfinix = findViewById(R.id.button_infinix)           // Initialize Brand Infinix button inside the pop up
+        buttonGooglePixel = findViewById(R.id.button_googlePixel)       // Initialize Brand GooglePixel button inside the pop up
         button_back = findViewById(R.id.button_back)                    // Initialize back button inside the pop up
         button_check = findViewById(R.id.button_check)                  // Initialize Brand check button inside the pop up
-        // Type of device button
+        // Initialize device type buttons (Smartphone and Tablet)
         buttonSmartphone = findViewById(R.id.button_smartphone)     // Initialize type of device -Smartphone button inside pop up
         buttonTablet = findViewById(R.id.button_tablet)             // Initialize type of device -Tablet button inside pop up
-        //  Rating button
+        // Initialize rating buttons
         buttonTally1 = findViewById(R.id.Tally1Btn)             // Initialize 1 Tally button
         buttonTally2 = findViewById(R.id.Tally2Btn)             // Initialize 2 Tally button
         buttonTally3 = findViewById(R.id.Tally3Btn)             // Initialize 3 Tally button
         buttonTally4 = findViewById(R.id.Tally4Btn)             // Initialize 4 Tally button
         buttonTally5 = findViewById(R.id.Tally5Btn)             // Initialize 5 Tally button
-
+        // Initialize logout button
         logoutBtn = findViewById(R.id.logoutBtn)
+
+        // Display the logout confirmation popup
         logoutBtn.setOnClickListener {
             showLogoutDialog()
         }
 
         // Change styles and color when selecting between Smartphone and Tablet filters
         buttonSmartphone.setOnClickListener {
-            changeButtonStyle(buttonSmartphone, "#FFFFFF", "#2F2F2F")
-            changeButtonStyle(buttonTablet, "#1E1E1E59", "#D9D9D9")
+            changeButtonStyle(buttonSmartphone, "#FFFFFF", "#2F2F2F")   // Selected style
+            changeButtonStyle(buttonTablet, "#1E1E1E59", "#D9D9D9")     // Unselected style
         }
 
         buttonTablet.setOnClickListener {
-            changeButtonStyle(buttonTablet, "#FFFFFF", "#2F2F2F")
-            changeButtonStyle(buttonSmartphone, "#1E1E1E59", "#D9D9D9")
+            changeButtonStyle(buttonTablet, "#FFFFFF", "#2F2F2F")           // Selected style
+            changeButtonStyle(buttonSmartphone, "#1E1E1E59", "#D9D9D9")     // Unselected style
         }
 
         // Set click listeners for Tally rating buttons 1 to 5
@@ -129,33 +131,36 @@ class UserDashboardActivity : AppCompatActivity() {
             }
         }
 
-        // Set click listeners for Brand buttons
+        // Set up click listeners for brand buttons inside the search filter popup
         val buttons = listOf(buttonApple, buttonSamsung, buttonXiaomi, buttonRealme, buttonOppo,
                              buttonVivo, buttonHuawei, buttonLenovo, buttonInfinix, buttonGooglePixel)
         buttons.forEach { button ->
             button.setOnClickListener {
-                handleBrandsClick(button, buttons)
+                handleBrandsClick(button, buttons)  // Handle button selection
             }
         }
 
+        // Get SharedPreferences data for user login and guest status
         val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
         val isLoggedIn = sharedPreferences.getBoolean("IS_LOGGED_IN", false)
-        val isGuest = sharedPreferences.getBoolean("IS_GUEST", false) // Retrieve guest status
+        val isGuest = sharedPreferences.getBoolean("IS_GUEST", false)
         val userName = sharedPreferences.getString("USER_NAME", "")
-
         val greetingTextView: TextView = findViewById(R.id.greetingTextView)
         val loginSignupBtn: TextView = findViewById(R.id.loginSignupBtn)
 
+        // Update UI based on login or guest status
         if (isGuest) {
             // If the user is a guest, display "Login/Signup"
             greetingTextView.text = "Login/Signup"
             greetingTextView.setOnClickListener {
+                // Navigate from UserDashboardActivity to LoginActivity
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
-
+            // If the user is a guest, display "Login/Signup" inside the profile popup
             loginSignupBtn.text = "Login/Signup"
             loginSignupBtn.setOnClickListener {
+                // Navigate from profile popup to LoginActivity
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
@@ -164,13 +169,12 @@ class UserDashboardActivity : AppCompatActivity() {
             greetingTextView.text = "Hello, $userName!"
             loginSignupBtn.text = "$userName!"
         } else {
-            // Default case, in case guest or login status isn't set
+            // Default case show "Login/Signup"
             greetingTextView.text = "Login/Signup"
             greetingTextView.setOnClickListener {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
-
             loginSignupBtn.text = "Login/Signup"
             loginSignupBtn.setOnClickListener {
                 val intent = Intent(this, LoginActivity::class.java)
@@ -180,11 +184,13 @@ class UserDashboardActivity : AppCompatActivity() {
 
         // Show popup when profile button is clicked
         profileBtn.setOnClickListener {
+            // Show profile popup
             profilePopup.visibility = View.VISIBLE
         }
 
         // Hide popup when profile button2 is clicked
         profileBtn2.setOnClickListener {
+            // Hide profile popup
             profilePopup.visibility = View.GONE
         }
 
@@ -196,7 +202,7 @@ class UserDashboardActivity : AppCompatActivity() {
                     val bounds: Rect = drawableEnd.bounds
                     val drawableStart = searchBar.width - searchBar.paddingEnd - bounds.width()
                     if (event.x >= drawableStart) {
-                        showFilterFrame()
+                        showFilterFrame()   // Show search filter popup
                         return@setOnTouchListener true
                     }
                 }
@@ -231,9 +237,11 @@ class UserDashboardActivity : AppCompatActivity() {
             val intent = Intent(this, Realme13ProPlusFullDetails::class.java)
             startActivity(intent)
         }
-        /// Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
+
+        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
         val goTopSamsungGalaxyS24FullDetails = findViewById<TextView>(R.id.samsungGalaxyS24SeeMoreButton)
         goTopSamsungGalaxyS24FullDetails.setOnClickListener {
+            // if the user is guess pass it to SamsungGalaxyS24FullDetails
             val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
             intent.putExtra("IS_GUEST", false) // Pass the guest flag
             startActivity(intent)
@@ -244,7 +252,7 @@ class UserDashboardActivity : AppCompatActivity() {
         // Close the search filter popup when the back button is clicked
         val backButton = findViewById<ImageView>(R.id.button_back)
         backButton.setOnClickListener {
-            hideFilterFrame()
+            hideFilterFrame()   // hide search filter popup
         }
 
         // Navigate from UserDashboardActivity to SmartphoneActivity
@@ -273,20 +281,19 @@ class UserDashboardActivity : AppCompatActivity() {
         }
 
     }
+    // Show logout confirmation dialog popup
     private fun showLogoutDialog() {
         // Inflate the custom layout
         val dialogView = layoutInflater.inflate(R.layout.logout_dialog, null)
-
         val builder = AlertDialog.Builder(this)
         builder.setView(dialogView) // Set the custom layout as the dialog view
 
         // Find buttons in the custom layout
         val logoutYesBtn = dialogView.findViewById<Button>(R.id.LogoutYesBtn)
         val logoutNoBtn = dialogView.findViewById<Button>(R.id.LogoutNoBtn)
-
         val dialog = builder.create()
 
-        // Set click listener for the Yes button
+        // Handle 'Yes' button click - logs the user out
         logoutYesBtn.setOnClickListener {
             // Clear login information
             val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
@@ -300,14 +307,12 @@ class UserDashboardActivity : AppCompatActivity() {
             // Redirect to LoginActivity
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
-            finish() // Optional: close this activity
+            finish() // close this activity
         }
-
-        // Set click listener for the No button
+        // Handle 'No' button click - closes the dialog
         logoutNoBtn.setOnClickListener {
-            dialog.dismiss() // Just dismiss the dialog
+            dialog.dismiss() // dismiss the dialog
         }
-
         dialog.show() // Show the dialog
     }
     override fun onBackPressed() {
@@ -319,7 +324,7 @@ class UserDashboardActivity : AppCompatActivity() {
         // Inflate the custom layout for the dialog
         val dialogView = layoutInflater.inflate(R.layout.exit_dialog, null)
 
-        // Create an AlertDialog.Builder and set the custom view
+        // Create an AlertDialog and set the custom view
         val builder = AlertDialog.Builder(this)
         builder.setView(dialogView)
 
@@ -332,26 +337,23 @@ class UserDashboardActivity : AppCompatActivity() {
 
         // Set click listener for the Yes button
         exitYesButton.setOnClickListener {
-            finishAffinity() // Exit the app
-            dialog.dismiss()
+            finishAffinity()    // Exit the app
+            dialog.dismiss()    // close the dialog
         }
-
         // Set click listener for the No button
         exitNoButton.setOnClickListener {
-            dialog.dismiss() // Dismiss the dialog
+            dialog.dismiss() // close the dialog
         }
-
         // Show the dialog
         dialog.show()
     }
 
-    // Method to clear user session data (if applicable)
+    // Method to clear user session data if the user logged-out
     private fun clearUserSession() {
-        // For example, if you're using SharedPreferences to store user data
         val sharedPreferences = getSharedPreferences("user_prefs", MODE_PRIVATE)
         val editor = sharedPreferences.edit()
-        editor.clear() // Clear all data
-        editor.apply()
+        editor.clear()  // Clear all data
+        editor.apply()  // apply the changes
     }
 
     // function to change the appearance of selected and unselected buttons
@@ -403,6 +405,4 @@ class UserDashboardActivity : AppCompatActivity() {
         filterFrame.visibility = View.GONE
 
     }
-
-
 }

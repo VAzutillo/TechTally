@@ -14,7 +14,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".SmartphoneActivity">
+        tools:context=".SamsungGalaxyS24FullDetails">
 
     <!-- Background of the picture -->
         <RelativeLayout
@@ -134,10 +134,11 @@
                         android:id="@+id/percentageOfRatings"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="140dp"
+                        android:layout_marginLeft="120dp"
+                        android:fontFamily="@font/roboto_bold"
                         android:text="0"
                         android:textColor="#2F2F2F"
-                        android:textSize="28sp" />
+                        android:textSize="26sp" />
 
                     <ImageView
                         android:id="@+id/percentageLogo"
@@ -159,7 +160,7 @@
                         android:id="@+id/numberOfReviews"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="130dp"
+                        android:layout_marginLeft="120dp"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />

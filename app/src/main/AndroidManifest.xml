@@ -16,10 +16,10 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".VivoX100ProFullDetails"
+            android:name=".SamsungGalaxyS24UltraFullDetails"
             android:exported="false" />
         <activity
-            android:name=".SamsungGalaxyS24UltraFullDetails"
+            android:name=".VivoX100ProFullDetails"
             android:exported="false" />
         <activity
             android:name=".samsung_galaxy_s24ultra_full_details"

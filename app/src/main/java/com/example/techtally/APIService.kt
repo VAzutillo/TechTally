@@ -4,6 +4,7 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 // Data class representing the user signup request payload for the API.
@@ -61,6 +62,10 @@ data class ReviewData(
     val rating: Int,
     val comment: String?
 )
+data class RatingUpdateRequest(
+    val numberOfReviews: Int,
+    val percentageOfRatings: Float
+)
 
 // Retrofit interface defining the API endpoints for the app.
 interface ApiService {
@@ -83,6 +88,8 @@ interface ApiService {
     @POST("review")
     fun submitReview(@Body reviewRequest: ReviewRequest): Call<ReviewResponse>
 
-    @GET("review") // Change to your actual endpoint
+    @GET("review")
     fun getReviews(): Call<List<Review>>
+
+
 }
