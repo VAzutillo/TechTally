@@ -131,8 +131,10 @@
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/rivet_icons_filter"
             android:drawableTint="@color/grey"
+            android:drawableEnd="@drawable/rivet_icons_filter"
+            android:ellipsize="end"
+            android:inputType="text"
             android:letterSpacing="0.1"
             android:maxLines="1"
             android:scrollHorizontally="true"
@@ -518,14 +520,14 @@
 
     <ImageView
         android:id="@+id/smartphonBtn"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263"
+        app:layout_constraintVertical_bias="0.275"
         app:srcCompat="@drawable/smartphone" />
 
     <ImageView
@@ -602,14 +604,14 @@
                         android:orientation="horizontal">
 
                         <ImageView
-                            android:id="@+id/SamsungGalaxyS24"
+                            android:id="@+id/SamsungGalaxyS24Ultra"
                             android:layout_width="317dp"
                             android:layout_height="140dp"
                             android:background="?attr/selectableItemBackground"
                             android:contentDescription="Samsung Galaxy S24"
                             android:padding="15dp"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/samsung_galaxy_s24" />
+                            android:src="@drawable/samsung_galaxy_s24ultra" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -826,9 +828,8 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:background="@drawable/rounded_corner"
-                    android:padding="10dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/iphone_16_pro_max" />
+                    android:src="@drawable/iphone_16_pro_max_2" />
 
                 <TextView
                     android:layout_width="180dp"

@@ -206,9 +206,9 @@ class UserDashboardActivity : AppCompatActivity() {
 
 
 
-        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24)
+        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24Ultra)
         clickImage1.setOnClickListener {
-            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
+            val intent = Intent(this, SamsungGalaxyS24UltraFullDetails::class.java)
             startActivity(intent)
         }
         val  clickImage2 = findViewById<ImageView>(R.id.Xiaomi_14_ultra)

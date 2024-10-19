@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/tabletBackButton"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:layout_marginTop="35dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
         android:text="Tablets"
-        android:textSize="24sp"
+        android:textSize="28sp"
         android:layout_marginTop="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
