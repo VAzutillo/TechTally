@@ -160,6 +160,10 @@
                     app:boxCornerRadiusBottomEnd="20dp"
                     app:boxCornerRadiusBottomStart="20dp"
                     app:boxCornerRadiusTopEnd="20dp"
+                    android:inputType="text"
+                    android:letterSpacing="0.1"
+                    android:maxLines="8"
+                    android:scrollbars="vertical"
                     app:boxCornerRadiusTopStart="20dp"
                     app:boxStrokeColor="#2F2F2F"
                     app:boxStrokeWidth="2dp">

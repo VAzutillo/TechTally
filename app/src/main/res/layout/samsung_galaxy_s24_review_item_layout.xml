@@ -66,6 +66,11 @@
             android:id="@+id/commentOfTheUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="12sp" />
+            android:layout_marginEnd="40dp"
+            android:textSize="12sp"
+            android:scrollHorizontally="false"
+            android:inputType="text"
+            android:letterSpacing="0.1"
+            android:maxLines="5"/>
     </LinearLayout>
 </LinearLayout>

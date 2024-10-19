@@ -160,7 +160,7 @@
                         android:id="@+id/numberOfReviews"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="120dp"
+                        android:layout_marginLeft="130dp"
                         android:fontFamily="@font/roboto_bold"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />

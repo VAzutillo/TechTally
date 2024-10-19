@@ -378,7 +378,7 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/lenovo_thinkpad_t14s" />
+                    android:src="@drawable/huawei_matebook_x_pro" />
 
                 <TextView
                     android:layout_width="180dp"
