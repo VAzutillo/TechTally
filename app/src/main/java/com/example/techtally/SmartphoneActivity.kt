@@ -32,6 +32,7 @@ class SmartphoneActivity : AppCompatActivity() {
             val intent = Intent(this, SamsungGalaxyS24UltraSeeMoreBTN::class.java)
             startActivity(intent)
         }
+
         // Navigate from SmartphoneActivity to SamsungGalaxyS24FullDetails
         val goToSamsungGalaxyS24FullDetails = findViewById<TextView>(R.id.smartphoneSamsungGalaxyS24SeeMoreButton)
         goToSamsungGalaxyS24FullDetails.setOnClickListener {
@@ -39,8 +40,8 @@ class SmartphoneActivity : AppCompatActivity() {
             startActivity(intent)
         }
         // Navigate from SmartphoneActivity to Iphone16ProMaxFullDetails
-        val goToSamsungIphone16ProMaxFullDetails = findViewById<TextView>(R.id.smartphoneIphone16ProMaxSeeMoreButton)
-        goToSamsungIphone16ProMaxFullDetails.setOnClickListener {
+        val goToIphone16ProMaxFullDetails = findViewById<TextView>(R.id.smartphoneIphone16ProMaxSeeMoreButton)
+        goToIphone16ProMaxFullDetails.setOnClickListener {
             val intent = Intent(this, Iphone16ProMaxFullDetails::class.java)
             startActivity(intent)
         }
@@ -52,7 +53,7 @@ class SmartphoneActivity : AppCompatActivity() {
         }
         // Navigate from SmartphoneActivity to VivoX100ProFullDetails
         val goToVivoX100ProFullDetails = findViewById<TextView>(R.id.smartphoneVivoX100ProSeeMoreButton)
-            goToVivoX100ProFullDetails.setOnClickListener {
+        goToVivoX100ProFullDetails.setOnClickListener {
             val intent = Intent(this, VivoX100ProFullDetails::class.java)
             startActivity(intent)
         }
@@ -60,6 +61,30 @@ class SmartphoneActivity : AppCompatActivity() {
         val goToRealme13ProPlusFullDetails = findViewById<TextView>(R.id.smartphoneRealme13ProPlusSeeMoreButton)
         goToRealme13ProPlusFullDetails.setOnClickListener {
             val intent = Intent(this, Realme13ProPlusFullDetails::class.java)
+            startActivity(intent)
+        }
+        // Navigate from SmartphoneActivity to GooglePixel9ProFullDetails
+        val goToGooglePixel9ProFullDetails = findViewById<TextView>(R.id.smartphoneGooglePixel9ProSeeMoreButton)
+        goToGooglePixel9ProFullDetails.setOnClickListener {
+            val intent = Intent(this, smartphoneGooglePixel9ProFullDetails::class.java)
+            startActivity(intent)
+        }
+        // Navigate from SmartphoneActivity to OppoReno12ProFullDetails
+        val goToOppoReno12ProFullDetails = findViewById<TextView>(R.id.smartphoneOppoReno12ProSeeMoreButton)
+        goToOppoReno12ProFullDetails.setOnClickListener {
+            val intent = Intent(this, smartphoneOppoReno12ProFullDetails::class.java)
+            startActivity(intent)
+        }
+        // Navigate from SmartphoneActivity to Xiaomi14UltraFullDetails
+        val goToXiaomi14UltraFullDetails = findViewById<TextView>(R.id.smartphoneXiaomi14UltraSeeMoreButton)
+        goToXiaomi14UltraFullDetails.setOnClickListener {
+            val intent = Intent(this, Xiaomi14UltraFullDetails::class.java)
+            startActivity(intent)
+        }
+        // Navigate from SmartphoneActivity to InfinixNote40ProPlusFullDetails
+        val goToInfinixNote40ProPlusFullDetails = findViewById<TextView>(R.id.smartphoneInfinixNote40ProPlusSeeMoreButton)
+        goToInfinixNote40ProPlusFullDetails.setOnClickListener {
+            val intent = Intent(this, smartphoneInfinixNote40PlusFullDetails::class.java)
             startActivity(intent)
         }
     }

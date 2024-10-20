@@ -110,6 +110,8 @@
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:backgroundTint="#000000"
+        app:hintTextColor="@color/white"
+        app:hintEnabled="false"
         app:boxBackgroundMode="outline"
         app:boxCornerRadiusBottomEnd="20dp"
         app:boxCornerRadiusBottomStart="20dp"
@@ -136,8 +138,8 @@
             android:letterSpacing="0.1"
             android:maxLines="1"
             android:scrollHorizontally="true"
-            android:textColor="@color/default_color"
-            android:textColorHint="@color/default_color"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -521,13 +523,13 @@
     <ImageView
         android:id="@+id/smartphonBtn"
         android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_height="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintHorizontal_bias="0.143"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263"
+        app:layout_constraintVertical_bias="0.275"
         app:srcCompat="@drawable/smartphone" />
 
     <ImageView
@@ -559,7 +561,7 @@
 
     <ScrollView
         android:layout_width="320dp"
-        android:layout_height="510dp"
+        android:layout_height="490dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/rounded_vertical_scrollview"
@@ -583,7 +585,6 @@
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="320dp"
                 android:layout_height="140dp"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/rounded_corner"
                 android:fillViewport="true"
                 android:overScrollMode="always"
@@ -594,7 +595,7 @@
 
                 <LinearLayout
                     android:layout_width="250dp"
-                    android:layout_height="150dp"
+                    android:layout_height="140dp"
                     android:orientation="horizontal">
 
                     <FrameLayout
@@ -608,10 +609,10 @@
                             android:layout_width="317dp"
                             android:layout_height="140dp"
                             android:background="?attr/selectableItemBackground"
-                            android:contentDescription="Samsung Galaxy S24"
-                            android:padding="15dp"
+                            android:contentDescription="Samsung Galaxy S24 Ultra"
+                            android:padding="20dp"
                             android:scaleType="fitCenter"
-                            android:src="@drawable/samsung_galaxy_s24" />
+                            android:src="@drawable/samsung_galaxy_s24ultra" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -721,6 +722,13 @@
                 </LinearLayout>
 
             </HorizontalScrollView>
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="130dp"
+                app:srcCompat="@drawable/carousel"/>
 
             <TextView
                 android:id="@+id/textView11"

@@ -14,7 +14,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".Iphone16ProMaxFullDetails">
+        tools:context=".smartphoneInfinixNote40PlusFullDetails">
 
         <!-- Background of the picture -->
         <RelativeLayout
@@ -41,7 +41,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="51dp"
                 android:layout_marginBottom="40dp"
-                app:srcCompat="@drawable/iphone_16_pro_max" />
+                app:srcCompat="@drawable/infinix_note_40_pro_plus_img2" />
 
             <ImageView
                 android:id="@+id/samsungGalaxyS24FullDetailsBackButton"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
                 android:paddingLeft="30dp"
-                android:text="Iphone 16 Pro Max"
+                android:text="Infinix Note 40 Pro+"
                 android:textColor="#2F2F2F"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -209,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="iPhone 16 Pro Max features a 6.9-inch OLED display, A18 Bionic chip, and a triple-camera system with a 48 MP main sensor. It offers sleek design, long-lasting battery, and advanced iOS 18 features for a top-tier experience."
+                android:text="Infinix NOTE 40 Pro+ features a 6.78-inch curved AMOLED display, a MediaTek Dimensity 7020 chip, and 12GB RAM for smooth performance. It supports 100W fast charging, reaching 50% in 8 minutes, and has a 108MP main camera​"
                 android:textColor="#2F2F2F"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -371,7 +371,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="6.9”"
+                        android:text="6.78”"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />
 
@@ -387,7 +387,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="8GB RAM"
+                        android:text="12GB RAM"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -416,7 +416,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="48MP"
+                        android:text="108MP"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />
 
@@ -431,7 +431,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="4685mAh"
+                        android:text="4600mAh"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -488,7 +488,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="LTPO Super Retina XDR OLED, 120Hz, HDR10, Dolby Vision, 1000 nits (typ), 2000 nits (HBM)"
+                    android:text="AMOLED, 1B colors, 120Hz, 1300 nits (peak)"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -518,7 +518,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="6.9 inches, 115.6 cm2 (~91.4% screen-to-body ratio)"
+                    android:text=" 6.78 inches, 109.9 cm2 (~89.8% screen-to-body ratio)"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -547,7 +547,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text=" 1320 x 2868 pixels, 19.5:9 ratio (~460 ppi density)"
+                    android:text=" 1080 x 2436 pixels (~393 ppi density)"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
@@ -601,7 +601,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="  48 MP, f/1.8, 24mm (wide), 1/1.28, 1.22µm, dual pixel PDAF, sensor-shift OIS 12 MP, f/2.8, 120mm (periscope telephoto), 1/3.06, 1.12µm, dual pixel PDAF, 3D sensor‑shift OIS, 5x optical zoom 48 MP, f/2.2, 13mm (ultrawide), 0.7µm, PDAF TOF 3D LiDAR scanner (depth"
+                    android:text="108 MP, f/1.8, 24mm (wide), 1/1.67, 0.64µm, PDAF, OIS 2 MP, f/2.4 2 MP, f/2.4"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -629,7 +629,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
-                    android:text=" : Dual-LED dual-tone flash, HDR (photo/panorama)"
+                    android:text="Dual-LED flash, HDR, panorama"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -658,7 +658,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="4K@24/25/30/60/100/120fps, 1080p@25/30/60/120/240fps, 10-bit HDR, Dolby Vision HDR (up to 60fps), ProRes, 3D (spatial) video/audio, stereo sound rec.SELFIE C"
+                    android:text=" 1440p@30fps, 1080p@30/60fps"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
@@ -712,7 +712,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="256GB 8GB RAM, 512GB 8GB RAM, 1TB 8GB RAM"
+                    android:text="256GB 12GB RAM, 512GB 12GB RAM"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>>
@@ -766,7 +766,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text=" Li-Ion 4685 mAh, non-removable Wired, PD2.0, 50% in 30 min (advertised) 25W wireless (MagSafe), 15W wireless (China only) 15W wireless (Qi2) 4.5W reverse wired"
+                    android:text=" 4600 mAh, non-removable 100W wired, 50% in 12 min (advertised) 20W wireless MagCharge Reverse wired Reverse wireless"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -826,7 +826,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="256GB 8GB RAM"
+                        android:text="256GB 12GB RAM"
                         android:textSize="16sp" />
 
                     <TextView
@@ -834,7 +834,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="₱82,990"
+                        android:text="₱14,000"
                         android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -855,7 +855,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="512GB 8GB RAM"
+                        android:text="512GB 12GB RAM"
                         android:textSize="16sp" />
 
                     <TextView
@@ -863,7 +863,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="₱92,990"
+                        android:text="₱18,000"
                         android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -884,7 +884,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="1TB 8GB RAM"
+                        android:text=""
                         android:textSize="16sp" />
 
                     <TextView
@@ -892,7 +892,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="₱102,990"
+                        android:text=""
                         android:textSize="16sp" />
                 </LinearLayout>
                 <LinearLayout
@@ -941,5 +941,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
-
 

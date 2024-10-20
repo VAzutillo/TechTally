@@ -62,7 +62,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout1"
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
@@ -134,7 +133,7 @@
                     android:textSize="13sp" />
 
                 <TextView
-                    android:id="@+id/GalaxyTabS10UltraSeeMoreButton"
+                    android:id="@+id/tabletGalaxyTabS10UltraSeeMoreButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -145,6 +144,8 @@
                     android:textSize="12sp" />
 
             </FrameLayout>
+
+
 
             <FrameLayout
                 android:layout_width="320dp"
@@ -207,7 +208,7 @@
                     android:textSize="13sp" />
 
                 <TextView
-                    android:id="@+id/Ipad13ProSeeMoreButton"
+                    android:id="@+id/tabletIpad13ProSeeMoreButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -231,7 +232,7 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/oppo_pad_2" />
+                    android:src="@drawable/oppo_pad_2_img1" />
 
 
                 <TextView
@@ -280,7 +281,7 @@
                     android:textSize="13sp" />
 
                 <TextView
-                    android:id="@+id/OppoPad2SeeMoreButton"
+                    android:id="@+id/tabletOppoPad2SeeMoreButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -304,7 +305,7 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/realme_pad_2" />
+                    android:src="@drawable/realme_pad_2_img1" />
 
 
                 <TextView
@@ -353,7 +354,7 @@
                     android:textSize="13sp" />
 
                 <TextView
-                    android:id="@+id/RealmePad2SeeMoreButton"
+                    android:id="@+id/tabletRealmePad2SeeMoreButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -377,7 +378,7 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/xioami_pad_6_pro" />
+                    android:src="@drawable/xiaomi_pad_6_pro_img1" />
 
 
                 <TextView
@@ -426,7 +427,7 @@
                     android:textSize="13sp" />
 
                 <TextView
-                    android:id="@+id/XiaomiPad6ProSeeMoreButton"
+                    android:id="@+id/tabletXiaomiPad6ProSeeMoreButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
@@ -438,10 +439,91 @@
 
             </FrameLayout>
 
+            <FrameLayout
+                android:layout_width="320dp"
+                android:layout_height="150dp"
+                android:fillViewport="true"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="150dp"
+                    android:scaleType="fitCenter"
+                    android:padding="5dp"
+                    android:src="@drawable/lenovo_chromebook_duet_11" />
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="65dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="30dp"
+                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="180dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Lenovo Chromebook Duet 11"
+                    android:textColor="@color/light_black"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="2dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="100dp"
+                    android:background="?android:attr/listDivider" />
+
+                <ImageView
+
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="7dp"
+                    app:srcCompat="@drawable/userdashboard_logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0 out of 5"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:id="@+id/tabletLenovoChromebookDuet11SeeMoreButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="SEE MORE"
+                    android:textColor="@color/light_grey"
+                    android:textSize="12sp" />
+
+            </FrameLayout>
+
+            <View
+                android:layout_width="300dp"
+                android:layout_height="1dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="130dp"
+                android:background="#2F2F2F"
+                android:backgroundTint="#2F2F2F" />
+
+
+
 
         </LinearLayout>
-
-
 
     </ScrollView>
 

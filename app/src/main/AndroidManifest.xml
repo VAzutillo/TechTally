@@ -16,6 +16,24 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".smartphoneInfinixNote40PlusFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".smartphoneRealmeC61FullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".smartphoneXiaomiRedmiNote14_5G_FullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".smartphoneXiaomiRedmiNote14_5G"
+            android:exported="false" />
+        <activity
+            android:name=".smartphoneOppoReno12ProFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".smartphoneGooglePixel9ProFullDetails"
+            android:exported="false" />
+        <activity
             android:name=".SamsungGalaxyS24UltraFullDetails"
             android:exported="false" />
         <activity
