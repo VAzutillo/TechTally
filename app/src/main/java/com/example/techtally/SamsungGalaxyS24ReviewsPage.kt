@@ -25,8 +25,11 @@ class SamsungGalaxyS24ReviewsPage : AppCompatActivity() {
         // Find the RecyclerView in activity_reviews_page.xml
         reviewsRecyclerView = findViewById(R.id.reviewsRecyclerView)
 
-        // Set up the RecyclerView with a LinearLayoutManager
-        reviewsRecyclerView.layoutManager = LinearLayoutManager(this)
+        // Set up the RecyclerView with a LinearLayoutManager in reverse order
+        val layoutManager = LinearLayoutManager(this)
+        layoutManager.reverseLayout = true // Reverse layout to show newest items at the top
+        layoutManager.stackFromEnd = true  // Stack items from the end
+        reviewsRecyclerView.layoutManager = layoutManager
 
         // Initialize the adapter
         reviewsAdapter = ReviewsAdapter(reviewsList)
@@ -37,18 +40,20 @@ class SamsungGalaxyS24ReviewsPage : AppCompatActivity() {
 
         // Check if there's a new review passed from RateAndReviewActivity
         intent.getParcelableExtra<Review>("NEW_REVIEW")?.let { newReview ->
-            reviewsList.add(newReview) // Add the new review to the list
-            reviewsAdapter.notifyItemInserted(reviewsList.size - 1) // Notify adapter
+            reviewsList.add(0, newReview) // Add the new review at the top of the list
+            reviewsAdapter.notifyItemInserted(0) // Notify adapter that an item was inserted at position 0
+            reviewsRecyclerView.scrollToPosition(0) // Scroll to the top of the list
             onReviewSubmitted() // Call to update number of reviews
         }
 
         // Fetch reviews from the API
         fetchReviews()
 
-        // Set up back button click listener
         val backButton: ImageView = findViewById(R.id.samsungGalaxyS24ReviewsPageBackButton)
         backButton.setOnClickListener {
-            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
+            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java).apply {
+                putParcelableArrayListExtra("REVIEWS_LIST", ArrayList(reviewsList)) // Pass the reviews list
+            }
             startActivity(intent) // Start SamsungGalaxyS24FullDetails activity
             finish()
         }

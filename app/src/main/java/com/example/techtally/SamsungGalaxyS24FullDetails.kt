@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ScrollView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -12,7 +13,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.techtally.databinding.ActivitySamsungGalaxyS24FullDetailsBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SamsungGalaxyS24FullDetails : AppCompatActivity() {
     // Binding object to access views in the activity's layout
@@ -20,6 +26,10 @@ class SamsungGalaxyS24FullDetails : AppCompatActivity() {
     // Variables to track if the user is a guest and the number of reviews
     private var isGuest: Boolean = true  // This flag determines if the user is a guest or logged in
     private var numberOfReviews: Int = 0 // Track the number of reviews
+
+    private lateinit var reviewsRecyclerView: RecyclerView
+    private lateinit var reviewsAdapter: ReviewsAdapter
+    private val reviewsList = mutableListOf<Review>()
 
     // to track the clicked state of each rating button (5 buttons total)
     private var buttonStates = BooleanArray(5) // Track states for five buttons
@@ -46,6 +56,18 @@ class SamsungGalaxyS24FullDetails : AppCompatActivity() {
             insets
         }
 
+        // Initialize the RecyclerView and set the layout manager
+        reviewsRecyclerView = findViewById(R.id.reviewsRecyclerView)
+        val layoutManager = LinearLayoutManager(this).apply {
+            reverseLayout = true // Reverse layout to show newest items at the top
+            stackFromEnd = true  // Stack items from the end
+        }
+        reviewsRecyclerView.layoutManager = layoutManager // Set the layout manager
+        reviewsAdapter = ReviewsAdapter(reviewsList)
+        reviewsRecyclerView.adapter = reviewsAdapter
+
+        // The rest of your onCreate code...
+
         // Retrieve the percentage of ratings from shared preferences
         percentageOfRatings = getPercentageOfRatings()
 
@@ -57,6 +79,35 @@ class SamsungGalaxyS24FullDetails : AppCompatActivity() {
 
         // Retrieve the guest status from the intent if passed from LoginActivity
         isGuest = intent.getBooleanExtra("IS_GUEST", true)
+
+        // Retrieve the reviews list from intent
+        intent.getParcelableArrayListExtra<Review>("REVIEWS_LIST")?.let { reviews ->
+            reviewsList.addAll(0, reviews) // Add the received reviews to the list
+            reviewsAdapter.notifyDataSetChanged() // Notify adapter about the changes
+            reviewsAdapter.notifyItemInserted(0)
+            reviewsRecyclerView.scrollToPosition(0)
+        }
+
+        fetchReviews()
+
+        val scrollView: ScrollView = findViewById(R.id.SamsungGalaxyS24FullDetailsScrollView) // Replace with your actual ScrollView ID
+        val backToTopTextView: TextView = findViewById(R.id.SamsungS24BackToTop)
+
+        backToTopTextView.setOnClickListener {
+            scrollView.scrollTo(0, 0) // Scroll to the top of the ScrollView
+        }
+
+        val goToSamsungGalaxyS24SeeAllRatingsAndReviews1 = findViewById<ImageView>(R.id.SamsungS24SeeAllReviews1)
+        goToSamsungGalaxyS24SeeAllRatingsAndReviews1.setOnClickListener {
+            val intent = Intent(this, SamsungGalaxyS24ReviewsPage::class.java)
+            startActivity(intent)
+        }
+
+        val goToSamsungGalaxyS24SeeAllRatingsAndReviews2 = findViewById<TextView>(R.id.SamsungS24SeeAllReviews2)
+        goToSamsungGalaxyS24SeeAllRatingsAndReviews2.setOnClickListener {
+            val intent = Intent(this, SamsungGalaxyS24ReviewsPage::class.java)
+            startActivity(intent)
+        }
 
         // Navigate back to UserDashboardActivity when back button is clicked
         val backToSamsungGalaxyS24FullDetails = findViewById<ImageView>(R.id.samsungGalaxyS24FullDetailsBackButton)
@@ -80,6 +131,33 @@ class SamsungGalaxyS24FullDetails : AppCompatActivity() {
         calculateAndSavePercentageOfRatings()
     }
 
+    private fun fetchReviews() {
+        RetrofitClient.apiService.getReviews().enqueue(object : Callback<List<Review>> {
+            override fun onResponse(call: Call<List<Review>>, response: Response<List<Review>>) {
+                if (response.isSuccessful && response.body() != null) {
+                    reviewsList.clear() // Clear existing data
+                    reviewsList.addAll(response.body()!!) // Add the fetched reviews
+
+                    // Log the reviews
+                    Log.d("SamsungGalaxyS24FullDetails", "Fetched Reviews: $reviewsList")
+
+                    // Update the number of reviews
+                    numberOfReviews = reviewsList.size // Update the number of reviews
+
+                    // Notify the adapter that data has changed
+                    reviewsAdapter.notifyDataSetChanged()
+                } else {
+                    Log.e("SamsungGalaxyS24FullDetails", "Error: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<List<Review>>, t: Throwable) {
+                Log.e("SamsungGalaxyS24FullDetails", "Failure: ${t.message}")
+            }
+        })
+    }
+
+
     // onResume is called when the activity is resumed after being paused
     override fun onResume() {
         super.onResume()
@@ -98,55 +176,23 @@ class SamsungGalaxyS24FullDetails : AppCompatActivity() {
         Log.d("SamsungGalaxyS24FullDetails", "isGuest: $isGuest") // Debug log
     }
 
-    // Set up click listeners for all relevant buttons and views
     private fun setupClickListeners() {
-        // Set click listeners for the buttons (updated IDs)
         binding.samsungGalaxyS24FullDetailsRateButtonTally1.setOnClickListener { handleButtonClick(0, binding.samsungGalaxyS24FullDetailsRateButtonTally1) }
         binding.samsungGalaxyS24FullDetailsRateButtonTally2.setOnClickListener { handleButtonClick(1, binding.samsungGalaxyS24FullDetailsRateButtonTally2) }
         binding.samsungGalaxyS24FullDetailsRateButtonTally3.setOnClickListener { handleButtonClick(2, binding.samsungGalaxyS24FullDetailsRateButtonTally3) }
         binding.samsungGalaxyS24FullDetailsRateButtonTally4.setOnClickListener { handleButtonClick(3, binding.samsungGalaxyS24FullDetailsRateButtonTally4) }
         binding.samsungGalaxyS24FullDetailsRateButtonTally5.setOnClickListener { handleButtonClick(4, binding.samsungGalaxyS24FullDetailsRateButtonTally5) }
-
-        // Set click listener for the 'Write a review' button
-        binding.samsungGalaxyS24FullDetailsWriteAndReviewButton.setOnClickListener { handleTextViewClick() }
     }
 
-    // Handle the 'Write a review' button click
-    private fun handleTextViewClick() {
-        Log.d("SamsungGalaxyS24FullDetails", "Write a review clicked. isGuest: $isGuest")
-        if (isGuest) {
-            // Show a custom dialog if the user is a guest
-            showCustomDialog2()
-        } else {
-            // Get the selected rating from the Write and Review button's tag
-            val selectedRating = binding.samsungGalaxyS24FullDetailsWriteAndReviewButton.getTag() as? Int ?: 0
-
-            // Retrieve the username from shared preferences
-            val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
-            val userName = sharedPreferences.getString("USER_NAME", "Guest") ?: "Guest"
-
-            // Navigate to the RateAndReviewActivity, passing the selected rating and username
-            val intent = Intent(this, RateAndReviewActivity::class.java).apply {
-                putExtra("SELECTED_RATING", selectedRating) // Pass the selected rating
-                putExtra("USER_NAME", userName) // Pass the username (consistent key)
-            }
-            startActivityForResult(intent, REQUEST_CODE_REVIEW) // Use startActivityForResult to get back data
-        }
-    }
-
-    // Handle rating button clicks and change button colors accordingly
     private fun handleButtonClick(index: Int, button: Button) {
-        Log.d("SamsungGalaxyS24FullDetails", "Button clicked: $index. isGuest: $isGuest") // Log button clicks
+        Log.d("SamsungGalaxyS24FullDetails", "Button clicked: $index. isGuest: $isGuest")
         if (isGuest) {
-            // Show alert dialog if the user is a guest
             showCustomDialog2()
         } else {
-            // If the user is logged in, change the background tint of the clicked button and previous buttons
-            button.backgroundTintList = ContextCompat.getColorStateList(this, R.color.black) // Change clicked button color to #2F2F2F
+            button.backgroundTintList = ContextCompat.getColorStateList(this, R.color.black)
 
-            // Update the button states (clicked or not) and change background color
             for (i in buttonStates.indices) {
-                buttonStates[i] = i <= index // Set button states based on the clicked button
+                buttonStates[i] = i <= index
                 val targetButton = when (i) {
                     0 -> binding.samsungGalaxyS24FullDetailsRateButtonTally1
                     1 -> binding.samsungGalaxyS24FullDetailsRateButtonTally2
@@ -155,19 +201,23 @@ class SamsungGalaxyS24FullDetails : AppCompatActivity() {
                     4 -> binding.samsungGalaxyS24FullDetailsRateButtonTally5
                     else -> null
                 }
-                // Change the button color based on whether it has been clicked or not
                 targetButton?.backgroundTintList = if (buttonStates[i]) {
-                    ContextCompat.getColorStateList(this, R.color.black) // Change to #2F2F2F
+                    ContextCompat.getColorStateList(this, R.color.black)
                 } else {
-                    ContextCompat.getColorStateList(this, R.color.backgroundColorOfButton) // Reset to default color
+                    ContextCompat.getColorStateList(this, R.color.backgroundColorOfButton)
                 }
             }
-            // Store the selected rating in the button's tag
-            val selectedRating = index + 1 // Rating from 1 to 5
-            binding.samsungGalaxyS24FullDetailsWriteAndReviewButton.setTag(selectedRating) // Store rating in the button's tag
-            // Save the vote count for the selected rating
+            val selectedRating = index + 1
             saveVotesCount(selectedRating, getVotesCount(selectedRating) + 1)
 
+            val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+            val userName = sharedPreferences.getString("USER_NAME", "Guest") ?: "Guest"
+
+            val intent = Intent(this, RateAndReviewActivity::class.java).apply {
+                putExtra("SELECTED_RATING", selectedRating)
+                putExtra("USER_NAME", userName)
+            }
+            startActivityForResult(intent, REQUEST_CODE_REVIEW)
         }
     }
 

@@ -247,6 +247,15 @@ class UserDashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        // Navigate from UserDashboardActivity to SamsungGalaxyS24UltraFullDetailsActivity
+        val goToSamsungGalaxyS24UltraFullDetails = findViewById<TextView>(R.id.samsungGalaxyS24UltraSeeMoreButton)
+        goToSamsungGalaxyS24UltraFullDetails.setOnClickListener {
+            // if the user is guess pass it to SamsungGalaxyS24FullDetails
+            val intent = Intent(this, SamsungGalaxyS24UltraFullDetails::class.java)
+            intent.putExtra("IS_GUEST", false) // Pass the guest flag
+            startActivity(intent)
+        }
+
 
 
         // Close the search filter popup when the back button is clicked
