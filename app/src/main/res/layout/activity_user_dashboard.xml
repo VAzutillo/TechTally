@@ -791,13 +791,25 @@
                     app:srcCompat="@drawable/userdashboard_logo" />
 
                 <TextView
+                    android:id="@+id/SamsungS24percentageOfRatings1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="30dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="4.5 out of 5"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="70dp"
+                    android:layout_marginTop="50dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="out of 5"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 

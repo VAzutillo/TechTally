@@ -1,5 +1,6 @@
 package com.example.techtally
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
@@ -328,6 +329,19 @@ class UserDashboardActivity : AppCompatActivity() {
         // Show confirmation dialog when back button is pressed
         showExitConfirmationDialog()
     }
+    override fun onResume() {
+        super.onResume()
+
+        // Assuming you want to refresh the percentageOfRatings
+        // You can also call a method to refresh data here
+        val sharedPreferences = getSharedPreferences("RatingsPrefs", MODE_PRIVATE)
+        val percentageOfRatings = sharedPreferences.getFloat("PERCENTAGE_OF_RATINGS", 0f)
+
+        // Update your UI or perform any necessary actions based on the retrieved percentageOfRatings
+        val percentageTextView = findViewById<TextView>(R.id.SamsungS24percentageOfRatings1)
+        percentageTextView.text = String.format("%.2f", percentageOfRatings)
+    }
+
 
     private fun showExitConfirmationDialog() {
         // Inflate the custom layout for the dialog
