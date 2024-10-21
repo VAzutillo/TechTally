@@ -92,8 +92,11 @@ class RateAndReviewActivity : AppCompatActivity() {
         val rateOfTheUser = selectedRating // Use selectedRating
         val commentOfTheUser = commentInput.text.toString()
 
+        calculatePercentageOfRatings(rateOfTheUser)
+
         // Retrieve the username based on the guest status
-        val sharedPreferences = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+        val sharedPreferences = getSharedPreferences("RatingsPrefs", MODE_PRIVATE)
+        val percentageOfRatings = sharedPreferences.getFloat("PERCENTAGE_OF_RATINGS", 0.0f)
         val isGuest = sharedPreferences.getBoolean("IS_GUEST", false)
         val userName = if (isGuest) "Guest" else sharedPreferences.getString("USER_NAME", null)
 
@@ -111,8 +114,6 @@ class RateAndReviewActivity : AppCompatActivity() {
                     val newReview = Review(userName ?: "Guest", rateOfTheUser, commentOfTheUser)
 
 
-                    // Calculate and save the updated percentage of ratings
-                    calculatePercentageOfRatings(rateOfTheUser)
 
                     // Prepare the intent to send back the result
                     val resultIntent = Intent()
@@ -138,11 +139,6 @@ class RateAndReviewActivity : AppCompatActivity() {
             }
         })
     }
-
-
-
-
-
 
     // Implement this method to return the updated number of reviews
     private fun getUpdatedNumberOfReviews(): Int {
