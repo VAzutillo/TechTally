@@ -3,6 +3,7 @@ package com.example.techtally
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,5 +25,11 @@ class LaptopActivity : AppCompatActivity() {
             val intent = Intent(this, UserDashboardActivity::class.java)
             startActivity(intent)
         }
+        val goToMacbookM3ProFullDetailsActivity = findViewById<TextView>(R.id.laptopMacBookM3ProSeeMoreButton)
+        goToMacbookM3ProFullDetailsActivity.setOnClickListener {
+            val intent = Intent(this, laptopMacbookM3ProFullDetails::class.java)
+            startActivity(intent)
+        }
+
     }
 }
