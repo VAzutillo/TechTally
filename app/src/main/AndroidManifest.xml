@@ -16,6 +16,52 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".laptopHuaweiMatebookXProFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopSamsungGalaxyBook3FullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopAppleM2MacBookPro14FullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopLenovoThinkPadT14sFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopHuaweiMatebook15FullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopXiaomiNotebookPro120gFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopXiaomiMatebookPro120gFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopXiaomiMatebookPro120G"
+            android:exported="false" />
+        <activity
+            android:name=".laptopLenovoLegion7iFullDetails"
+            android:exported="false"
+            android:theme="@style/Theme.TechTally" />
+        <activity
+            android:name=".xiaomiLaptopMatebookPro120gFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".lenovoLegion7iFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopLenovoLegion7i"
+            android:exported="false" />
+        <activity
+            android:name=".laptopAppleMacbookM3ProFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopSamsungGalaxyBook4SeriesFullDetails"
+            android:exported="false" />
+        <activity
+            android:name=".laptopSamsungGalaxyBook4Series"
+            android:exported="false" />
+        <activity
             android:name=".laptopMacbookM3ProFullDetails"
             android:exported="false" />
         <activity
@@ -44,7 +90,8 @@
             android:exported="false" />
         <activity
             android:name=".samsung_galaxy_s24ultra_full_details"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".XiaomiPad6ProFullDetails"
             android:exported="false" />
@@ -68,7 +115,8 @@
             android:exported="false" />
         <activity
             android:name=".ProfilePageActivity"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".OppoReno12ProFullDetails"
             android:exported="false" />
@@ -83,7 +131,8 @@
             android:exported="false" />
         <activity
             android:name=".viewpager"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".SamsungGalaxyS24FullDetails"
             android:exported="false" />
@@ -128,22 +177,27 @@
             android:exported="false" />
         <activity
             android:name=".Login1"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".login_1"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".SignUpPageActivity"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".Login1Activity"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".UserDashboardActivity"
             android:exported="false" />
         <activity
             android:name=".LoginPageActivity"
-            android:exported="false" />
+            android:exported="false"
+            tools:ignore="MissingClass" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

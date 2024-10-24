@@ -14,9 +14,9 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".SamsungGalaxyS24FullDetails">
+        tools:context=".SamsungGalaxyBook4Series">
 
-    <!-- Background of the picture -->
+        <!-- Background of the picture -->
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
@@ -41,10 +41,10 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="51dp"
                 android:layout_marginBottom="40dp"
-                app:srcCompat="@drawable/samsung_galaxy_s24" />
+                app:srcCompat="@drawable/lenovo_legion_7i" />
 
             <ImageView
-                android:id="@+id/samsungGalaxyS24FullDetailsBackButton"
+                android:id="@+id/laptopLenovoLegion7ISeeMoreButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentStart="true"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
                 android:paddingLeft="20dp"
-                android:text="Samsung Galaxy S24"
+                android:text="Lenovo Legion 7i"
                 android:textColor="#2F2F2F"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="20dp"
-                    android:text="Smartphone"
+                    android:text="Laptop"
                     android:textColor="#2F2F2F"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -209,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:text="With a refined design, tons of power, a  built-in stylus, helpful AI tools, and seven years of promised updates, the Samsung Galaxy S24 Ultra is one of the best Android phones you can buy for the long haul."
+                android:text="Lenovo Legion 7i is a high-performance gaming laptop, designed for gamers and creators, offering powerful hardware, advanced cooling, and a stunning display for an immersive gaming experience."
                 android:textColor="#2F2F2F"
                 android:textSize="14sp" />
         </LinearLayout>
@@ -217,7 +217,7 @@
         <LinearLayout
             android:id="@+id/rateThisDevice1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="236dp"
             android:layout_marginStart="1dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="1dp"
@@ -375,7 +375,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="6.2”"
+                        android:text="16”"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />
 
@@ -391,7 +391,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="8-core"
+                        android:text="Core-i9"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />
                 </LinearLayout>
@@ -409,12 +409,11 @@
                     android:orientation="horizontal">
 
 
-
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="45dp"
                         android:layout_marginStart="40dp"
-                        app:srcCompat="@drawable/processor_logo"/>
+                        app:srcCompat="@drawable/processor_logo" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -422,7 +421,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="8/12GB RAM"
+                        android:text="16GB RAM      "
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />
 
@@ -438,7 +437,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="4000mAh"
+                        android:text="99.99Wh"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />
 
@@ -461,7 +460,7 @@
                         android:layout_width="40dp"
                         android:layout_height="45dp"
                         android:layout_marginStart="40dp"
-                        app:srcCompat="@drawable/camera_logo"/>
+                        app:srcCompat="@drawable/camera_logo" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -469,7 +468,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="15dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="50MP"
+                        android:text="720p"
                         android:textColor="#2F2F2F"
                         android:textSize="16sp" />
 
@@ -477,10 +476,7 @@
             </LinearLayout>
 
 
-
         </LinearLayout>
-
-
 
 
         <LinearLayout
@@ -533,7 +529,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="Android 14, up to 7 major Android Upgrades, One UI 6.1.1"
+                    android:text="Windows 11 Home /Pro"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -563,7 +559,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="Qualcomm SM8650-AC Snapdragon 8 Gen 3(4 nm)"
+                    android:text="Intel 13th Gen Core H-series"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -592,9 +588,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="8-core (1x3.39GHz Cortex-A720 And 2x2.2GHz Cortex-A520)"
+                    android:text="Up to Intel Core i9-13900HX"
                     android:textSize="16sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -620,12 +617,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="Adreno 750 (1 GHz)"
+                    android:text="Intel Iris Xe Graphics"
                     android:textSize="16sp" />
 
 
             </LinearLayout>
-
 
 
             <LinearLayout
@@ -668,7 +664,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="Dynamic LTPO AMOLED 2X, 120Hz, HDR10+,2600nits (peak)"
+                    android:text="IPS, Anti-glare with Dolby Vision, NVIDIA G-SYNC"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -697,7 +693,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="6.2 inches, 44.4cm2, (90.9% screen-to-body-ratio)"
+                    android:text="16 inches"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -726,7 +722,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="1080 x 2340 pixels, 19.5:9 ratio (~416 ppi density)"
+                    android:text="2560 x 1600 pixels (WQXGA), 165Hz refresh rate"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
@@ -796,7 +792,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="50 MP, f/1.8, 24mm (wide), 1/1.56&quot;,  1.0µm, dual pixel PDAF, OIS 10 MP,  f/2.4, 67mm (telephoto), 1/3.94&quot;,  1.0µm, PDAF, OIS, 3x optical zoom  12 MP, f/2.2, 13mm, 120˚ (ultrawide),  1/2.55&quot; 1.4µm, Super Steady video."
+                    android:text="None"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -824,7 +820,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
-                    android:text="LED flash, auto-HDR, panorama "
+                    android:text="None"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -853,9 +849,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="8K@24/30fps, 4K@30/60fps, 1080p @30/60/240fps, HDR10+, stereo  sound rec., gyro-EIS"
+                    android:text="None"
                     android:textSize="16sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -895,7 +892,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
                         android:layout_marginRight="40dp"
-                        android:text="32 MP,f/2.0.20mm (ultrawide)"
+                        android:text="720p HD Webcam with e-shutter"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -923,7 +920,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
-                        android:text="HDR"
+                        android:text="Dual array microphones, privacy shutter"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -952,7 +949,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
                         android:layout_marginRight="40dp"
-                        android:text="4K@30/60fps, 1080p@30/60fps"
+                        android:text="720p video recording at 30fps"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -1009,7 +1006,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
-                    android:text="No"
+                    android:text="None"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -1032,10 +1029,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="128GB 8GB RAM, 256GB  8GB RAM, 256GB 12GB RAM,  512GB 8GB RAM UFS 3.1 - 128GB only UFS 4.0"
+                    android:text="512GB SSD | 16GB RAM, 1TB SSD | 32GB RAM, 2TB SSD | 32GB RAM"
                     android:textSize="16sp" />
             </LinearLayout>
-        </LinearLayout>>
+        </LinearLayout>
+        >
 
         <LinearLayout
             android:id="@+id/Battery1"
@@ -1086,7 +1084,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:text="Li-Ion 4000 mAh, non-removable"
+                    android:text="99.99Wh Li-Polymer battery"
                     android:textSize="16sp" />
 
                 <LinearLayout
@@ -1114,7 +1112,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
                         android:layout_marginRight="40dp"
-                        android:text="100W wired, 50% in 14 min (advertised) 50W wireless Reverse wired"
+                        android:text="330W Slim Adapter for rapid charging"
                         android:textSize="16sp" />
                 </LinearLayout>
 
@@ -1133,7 +1131,8 @@
                     android:background="#2F2F2F"
                     android:backgroundTint="#2F2F2F" />
             </LinearLayout>
-        </LinearLayout>>
+        </LinearLayout>
+        >
 
         <LinearLayout
             android:id="@+id/Pricing1"
@@ -1176,7 +1175,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="128GB 8GB RAM"
+                        android:text="512GB 16GB RAM   "
                         android:textSize="16sp" />
 
                     <TextView
@@ -1184,36 +1183,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="₱53,990"
-                        android:textSize="16sp" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="256GB 8GB RAM"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:fontFamily="@font/roboto_bold"
-                        android:text="₱84,990"
+                        android:text="₱159,990"
                         android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -1234,7 +1204,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="512GB 8GB RAM"
+                        android:text="1TB 32GB RAM        "
                         android:textSize="16sp" />
 
                     <TextView
@@ -1242,7 +1212,36 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="50dp"
                         android:fontFamily="@font/roboto_bold"
-                        android:text="₱92,990"
+                        android:text="₱179,990"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="2TB SSD 32GB RAM"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="50dp"
+                        android:fontFamily="@font/roboto_bold"
+                        android:text="₱199,990"
                         android:textSize="16sp" />
                 </LinearLayout>
             </LinearLayout>
@@ -1260,7 +1259,14 @@
                     android:background="#2F2F2F"
                     android:backgroundTint="#2F2F2F" />
             </LinearLayout>
-        </LinearLayout>>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="relativeLayout" />
+        >
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
