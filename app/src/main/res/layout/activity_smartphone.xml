@@ -97,7 +97,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="iPhone 16 Pro Max features a 6.9-inch OLED display, A18 Bionic chip And more..."
                     android:textSize="13sp" />
 
                 <TextView
@@ -117,23 +117,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -170,7 +172,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Samsung Galaxy S24 Ultra has a 6.8-inch QHD+ AMOLED display, Snapdragon 8 Gen 3 chip, and up to 1TB storage."
                     android:textSize="13sp" />
 
                 <TextView
@@ -190,23 +192,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -243,7 +247,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Google Pixel 9 Pro features a 6.7-inch OLED display, Google’s latest Tensor processor and more."
                     android:textSize="13sp" />
 
                 <TextView
@@ -263,23 +267,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -309,7 +315,7 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    android:padding="10dp"
+                    android:padding="5dp"
                     android:src="@drawable/vivo_x100_pro" />
 
                 <TextView
@@ -317,7 +323,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Vivo X100 Pro features a 6.78-inch AMOLED display, MediaTek Dimensity 9300 chip, and a 50MP main and more. "
                     android:textSize="13sp" />
 
                 <TextView
@@ -337,23 +343,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -390,7 +398,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Realme 13 Pro Plus features a dual 50MP camera setup for enhanced photography, and more."
                     android:textSize="13sp" />
 
                 <TextView
@@ -410,23 +418,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -464,7 +474,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Oppo Reno 12 Pro features a 6.7-inch AMOLED display, MediaTek Dimensity 7300 processor and more."
                     android:textSize="13sp" />
 
                 <TextView
@@ -484,23 +494,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -537,7 +549,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Infinix NOTE 40 Pro+ features a 6.78-inch curved AMOLED display, a MediaTek Dimensity 7020 chip and more. "
                     android:textSize="13sp" />
 
                 <TextView
@@ -557,23 +569,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -632,23 +646,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -685,7 +701,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Xiaomi 14 Ultra has a 6.73-inch LTPO AMOLED display, Snapdragon 8 Gen 3 processor and more."
                     android:textSize="13sp" />
 
                 <TextView
@@ -705,23 +721,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 

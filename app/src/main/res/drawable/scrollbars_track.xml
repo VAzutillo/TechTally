@@ -1,0 +1,6 @@
+<!-- scrollbar_track.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size android:height="5dp" />
+    <size android:width="5dp" />
+    <solid android:color="@color/backgroundColorOfButton" /> <!-- Light gray track -->
+</shape>

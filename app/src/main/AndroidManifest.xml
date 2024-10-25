@@ -62,6 +62,12 @@
             android:name=".laptopSamsungGalaxyBook4Series"
             android:exported="false" />
         <activity
+            android:name=".ExampleViewPager"
+            android:exported="false" />
+        <activity
+            android:name=".LenovoChromebookDuet11"
+            android:exported="false" />
+        <activity
             android:name=".laptopMacbookM3ProFullDetails"
             android:exported="false" />
         <activity
