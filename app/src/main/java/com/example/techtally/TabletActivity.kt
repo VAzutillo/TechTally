@@ -55,5 +55,11 @@ class TabletActivity : AppCompatActivity() {
             val intent = Intent(this, XiaomiPad6ProFullDetails::class.java)
             startActivity(intent)
         }
+        // Navigate from TabletActivity to LenovoChromebookDuet11FullDetails
+        val tabletLenovoChromebookDuet11SeeMoreBTN = findViewById<TextView>(R.id.tabletLenovoChromebookDuet11SeeMoreButton)
+        tabletLenovoChromebookDuet11SeeMoreBTN.setOnClickListener {
+            val intent = Intent(this, LenovoChromebookDuet11::class.java)
+            startActivity(intent)
+        }
     }
 }

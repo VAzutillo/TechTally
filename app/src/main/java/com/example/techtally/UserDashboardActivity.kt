@@ -285,16 +285,17 @@ class UserDashboardActivity : AppCompatActivity() {
 
 
 
+        // diko alam kong need pa to
+        val searchBar: TextInputEditText = findViewById(R.id.searchBar)
+        val profileBtn: ImageView = findViewById(R.id.profileBtn)
 
-
-
-
-
-
-
-
-
-
+        searchBar.setOnFocusChangeListener { _, hasFocus ->
+            if (hasFocus) {
+                profileBtn.visibility = View.GONE // Hide the ImageView
+            } else {
+                profileBtn.visibility = View.VISIBLE // Show the ImageView
+            }
+        }
 
 
 
@@ -323,6 +324,50 @@ class UserDashboardActivity : AppCompatActivity() {
             intent.putExtra("IS_GUEST", false) // Pass the guest flag
             startActivity(intent)
         }
+
+
+        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
+        val iphone16ProMaxFullDetails = findViewById<TextView>(R.id.iphone16ProMaxSeeMoreButton)
+        iphone16ProMaxFullDetails.setOnClickListener {
+            val intent = Intent(this, Iphone16ProMaxFullDetails::class.java)
+            startActivity(intent)
+        }
+        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
+        val xiaomiNotebookProFullDetails = findViewById<TextView>(R.id.xiaomiNotebookProSeeMoreButton)
+        xiaomiNotebookProFullDetails.setOnClickListener {
+            val intent = Intent(this, xiaomiNotebookProFullDetails::class.java)
+            startActivity(intent)
+        }
+        //
+        val ipad13ProFullDetails = findViewById<TextView>(R.id.ipad13ProSeeMoreButton)
+        ipad13ProFullDetails.setOnClickListener {
+            val intent = Intent(this, Ipad13ProFullDetails::class.java)
+            startActivity(intent)
+        }
+        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
+        val oppoPad2FullDetails = findViewById<TextView>(R.id.oppoPad2SeeMoreButton)
+        oppoPad2FullDetails.setOnClickListener {
+            val intent = Intent(this, OppoPad2FullDetails::class.java)
+            startActivity(intent)
+        }
+        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
+        val galaxyBook4SeriesFullDetails = findViewById<TextView>(R.id.galaxyBook4SeeMoreButton)
+        galaxyBook4SeriesFullDetails.setOnClickListener {
+            val intent = Intent(this, laptopSamsungGalaxyBook4SeriesFullDetails::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

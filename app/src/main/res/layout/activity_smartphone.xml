@@ -148,7 +148,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -223,7 +227,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -298,7 +306,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -374,7 +386,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -449,7 +465,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -525,7 +545,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -600,7 +624,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -752,7 +780,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
