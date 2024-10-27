@@ -651,7 +651,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Samsung Galaxy S24 features a 6.2-inch Dynamic AMOLED 2X display with a 120Hz adaptive refresh rate and more."
                     android:textSize="13sp"
                     android:paddingBottom="2dp"/>
 
@@ -737,7 +737,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Samsung Galaxy S24 Ultra has a 6.8-inch QHD+ AMOLED display, Snapdragon 8 Gen 3 chip, and more."
                     android:textSize="13sp" />
 
                 <View
@@ -811,7 +811,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Iphone 16 Pro Max"
+                    android:text="Apple iPhone 16 Pro Max"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 
@@ -821,7 +821,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Apple iPhone 16 Pro Max features a 6.9-inch OLED display, A18 Bionic chip, and a triple-camera and more."
                     android:textSize="13sp" />
 
                 <View
@@ -891,7 +891,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Xioami Notebook Pro"
+                    android:text="Xiaomi Notebook Pro"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 
@@ -902,7 +902,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Xiaomi Notebook Pro features a 120Hz 2.5K display, 12th Gen Intel Core i5, NVIDIA GeForce and more."
                     android:textSize="13sp" />
 
                 <View
@@ -914,88 +914,6 @@
                     android:background="?android:attr/listDivider" />
 
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:layout_marginStart="145dp"
-                    android:layout_marginTop="116dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="0"
-                    android:textColor="#2F2F2F"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="35dp"
-                    android:layout_marginTop="50dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="out of 5 Tally"
-                    android:textColor="#2F2F2F"
-                    android:textSize="13sp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="116dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="SEE MORE"
-                    android:textColor="@color/light_grey"
-                    android:textSize="12sp"
-                    android:background="@drawable/underline_effect"
-                    android:focusable="true"
-                    android:clickable="true"
-                    android:paddingBottom="2dp"/>
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="20dp"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="130dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/rounded_corner"
-                    android:padding="20dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/xiaomi_redmi_note_14_5g" />
-
-                <TextView
-                    android:layout_width="180dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Xioami Redmi Note 14 5G"
-                    android:textColor="@color/light_black"
-                    android:textSize="15sp" />
-
-
-                <TextView
-
-                    android:layout_width="180dp"
-                    android:layout_height="65dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
-                    android:textSize="13sp" />
-
-                <View
-
-                    android:layout_width="180dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="100dp"
-                    android:background="?android:attr/listDivider" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -1057,7 +975,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Ipad 13 Pro"
+                    android:text="Apple iPad 13 Pro"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 
@@ -1068,7 +986,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Apple iPad Pro 13 (2024) features a 13-inch OLED display and is powered by the M4 chip and more."
                     android:textSize="13sp" />
 
                 <View
@@ -1127,7 +1045,7 @@
                     android:background="@drawable/rounded_corner"
                     android:padding="5dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/oppo_pad_2" />
+                    android:src="@drawable/oppo_pad_2_img1" />
 
                 <TextView
                     android:layout_width="180dp"
@@ -1146,7 +1064,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Oppo Pad 2 features an 11.6-inch 2K display with a 144Hz refresh rate, 8GB of RAM and more."
                     android:textSize="13sp" />
 
                 <View
@@ -1213,7 +1131,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Galaxy Book4 Series"
+                    android:text="Galaxy Book4"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 
@@ -1224,7 +1142,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Samsung Galaxy Book 4 is a sleek and lightweight laptop designed for portability and productivity and more."
                     android:textSize="13sp" />
 
                 <View
@@ -1283,7 +1201,7 @@
                     android:background="@drawable/rounded_corner"
                     android:padding="10dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/galaxy_tab_s10_ultra" />
+                    android:src="@drawable/samsung_galaxy_tab10_s10ultra_img2" />
 
                 <TextView
                     android:layout_width="180dp"
@@ -1302,7 +1220,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Samsung Galaxy Tab S10 Ultra features a 14.6-inch Super AMOLED display and powerful processors and more."
                     android:textSize="13sp" />
 
                 <View
@@ -1380,7 +1298,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Oppo Reno 12 Pro features a 6.7-inch AMOLED display, MediaTek Dimensity 7300 processor and more."
                     android:textSize="13sp" />
 
                 <View
@@ -1439,7 +1357,7 @@
                     android:background="@drawable/rounded_corner"
                     android:padding="0dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/oppo_pad_2" />
+                    android:src="@drawable/oppo_pad_2_img1" />
 
                 <TextView
                     android:layout_width="180dp"
@@ -1458,7 +1376,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Oppo Pad 2 features an 11.6-inch 2K display with a 144Hz refresh rate, 8GB of RAM and more."
                     android:textSize="13sp" />
 
                 <View
@@ -1488,83 +1406,6 @@
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
                     android:text="out of 5 Tally"
-                    android:textColor="#2F2F2F"
-                    android:textSize="13sp" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="116dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="SEE MORE"
-                    android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
-
-            </FrameLayout>
-
-            <FrameLayout
-                android:layout_width="320dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="20dp"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
-
-                <ImageButton
-                    android:layout_width="130dp"
-                    android:layout_height="150dp"
-                    android:background="@drawable/rounded_corner"
-                    android:padding="10dp"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/xiaomi_redmi_note_14_5g" />
-
-                <TextView
-                    android:layout_width="180dp"
-                    android:layout_height="20dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="Xiaomi Redmi Note 14 5G"
-                    android:textColor="@color/light_black"
-                    android:textSize="15sp" />
-
-
-                <TextView
-
-                    android:layout_width="180dp"
-                    android:layout_height="65dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
-                    android:textSize="13sp" />
-
-                <View
-
-                    android:layout_width="180dp"
-                    android:layout_height="2dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="100dp"
-                    android:background="?android:attr/listDivider" />
-
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
-
-                <TextView
-
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
-                    android:layout_marginTop="50dp"
-                    android:fontFamily="@font/roboto_bold"
-                    android:text="4.5 out of 5"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -1613,7 +1454,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Google Pixel 9 Pro features a 6.7-inch OLED display, Google’s latest Tensor processor and more."
                     android:textSize="13sp" />
 
                 <View
@@ -1672,7 +1513,7 @@
                     android:background="@drawable/rounded_corner"
                     android:padding="10dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/xioami_pad_6_pro" />
+                    android:src="@drawable/xiaomi_pad_6_pro_img1" />
 
                 <TextView
                     android:layout_width="180dp"
@@ -1691,7 +1532,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Xiaomi Pad 6 Pro features an 11-inch 144Hz display, Snapdragon 8+ Gen 1 processor, and more."
                     android:textSize="13sp" />
 
                 <View
@@ -1769,7 +1610,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Xiaomi Notebook Pro features a 120Hz 2.5K display, 12th Gen Intel Core i5, NVIDIA GeForce and more."
                     android:textSize="13sp" />
 
                 <View
@@ -1847,7 +1688,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
+                    android:text="Realme Pad 2 features an 11.5-inch 2K display with a 120Hz refresh rate, MediaTek Helio G99 processor and more."
                     android:textSize="13sp" />
 
                 <View
