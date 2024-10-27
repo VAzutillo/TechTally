@@ -1,14 +1,19 @@
 package com.example.techtally
-
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.view.animation.TranslateAnimation
 import android.widget.Button
 import android.widget.FrameLayout
+import android.widget.HorizontalScrollView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -213,31 +218,93 @@ class UserDashboardActivity : AppCompatActivity() {
 
 
 
-        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24)
-        clickImage1.setOnClickListener {
-            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
-            startActivity(intent)
+
+
+
+        class ImageAdapter(
+            private val context: Context,
+            private val images: List<Int>,
+            private val titles: List<String>
+        ) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
+
+            inner class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+                val imageView: ImageView = view.findViewById(R.id.samsung_galaxy_s24_ultra)
+                val imageTitle: TextView = view.findViewById(R.id.ImageTitle1)
+            }
+
+            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
+                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_image, parent, false)
+                return ImageViewHolder(view)
+            }
+
+            override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
+                holder.imageView.setImageResource(images[position])
+                holder.imageTitle.text = titles[position]
+
+                // Set an OnClickListener for each image based on position
+                holder.imageView.setOnClickListener {
+                    val intent = when (position) {
+                        0 -> Intent(context, SamsungGalaxyS24UltraFullDetails::class.java)
+                        1 -> Intent(context, Xiaomi14UltraFullDetails::class.java)
+                        2 -> Intent(context, Iphone16ProMaxFullDetails::class.java)
+                        3 -> Intent(context, smartphoneOppoReno12ProFullDetails::class.java)
+                        4 -> Intent(context, Realme13ProPlusFullDetails::class.java)
+                        else -> null
+                    }
+                    intent?.let { context.startActivity(it) }
+                }
+            }
+
+            override fun getItemCount() = images.size
         }
-        val  clickImage2 = findViewById<ImageView>(R.id.Xiaomi_14_ultra)
-        clickImage2.setOnClickListener {
-            val intent = Intent(this, Xiaomi14UltraFullDetails::class.java)
-            startActivity(intent)
-        }
-        val  clickImage3 = findViewById<ImageView>(R.id.Iphone_16_Pro_Max)
-        clickImage3.setOnClickListener {
-            val intent = Intent(this, Iphone16ProMaxFullDetails::class.java)
-            startActivity(intent)
-        }
-        val  clickImage4 = findViewById<ImageView>(R.id.Oppo_Reno_12_Pro)
-        clickImage4.setOnClickListener {
-            val intent = Intent(this, OppoReno12ProFullDetails::class.java)
-            startActivity(intent)
-        }
-        val  clickImage5 = findViewById<ImageView>(R.id.Realme_13_Pro_Plus)
-        clickImage5.setOnClickListener {
-            val intent = Intent(this, Realme13ProPlusFullDetails::class.java)
-            startActivity(intent)
-        }
+
+        val images = listOf(
+            R.drawable.samsung_galaxy_s24ultra,
+            R.drawable.xiaomi_14_ultra,
+            R.drawable.iphone_16_pro_max,
+            R.drawable.oppo_reno_12_pro,
+            R.drawable.realme_13_pro_plus
+        )
+
+        val titles = listOf(
+            "Samsung Galaxy S24 Ultra",
+            "Xiaomi 14 Ultra",
+            "iPhone 16 Pro Max",
+            "Oppo Reno 12 Pro",
+            "Realme 13 Pro Plus"
+        )
+
+        val recyclerView: RecyclerView = findViewById(R.id.RecyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.adapter = ImageAdapter(this, images, titles) // Pass the context as 'this'
+
+        val snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(recyclerView)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
         val goTopSamsungGalaxyS24FullDetails = findViewById<TextView>(R.id.samsungGalaxyS24SeeMoreButton)
@@ -428,4 +495,5 @@ class UserDashboardActivity : AppCompatActivity() {
         filterFrame.visibility = View.GONE
 
     }
+
 }

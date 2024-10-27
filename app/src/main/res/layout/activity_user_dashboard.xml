@@ -24,7 +24,9 @@
         app:layout_constraintHorizontal_bias="0.94"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.021"
+        android:clickable="false"
+        android:focusable="false"/>
 
 
 
@@ -578,155 +580,21 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="155dp">
-
-                <HorizontalScrollView
-                    android:id="@+id/horizontalScrollView"
-                    android:layout_width="320dp"
-                    android:layout_height="155dp"
-                    android:background="@drawable/rounded_corner"
-                    android:scrollbarThumbHorizontal="@drawable/scrollbar_thumb"
-                    android:scrollbarTrackHorizontal="@drawable/scrollbars_track"
-                    android:fillViewport="true"
-                    android:overScrollMode="always"
-                    android:scrollbars="horizontal"
-                    android:fadeScrollbars="true"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <LinearLayout
-                        android:layout_width="250dp"
-                        android:layout_height="140dp"
-                        android:orientation="horizontal">
-
-                        <FrameLayout
-                            android:layout_width="320dp"
-                            android:layout_height="140dp"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:id="@+id/SamsungGalaxyS24"
-                                android:layout_width="317dp"
-                                android:layout_height="140dp"
-                                android:background="?attr/selectableItemBackground"
-                                android:contentDescription="Samsung Galaxy S24 Ultra"
-                                android:padding="20dp"
-                                android:scaleType="fitCenter"
-                                android:src="@drawable/samsung_galaxy_s24ultra" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_marginStart="78dp"
-                                android:text="Samsung Galaxy S24 Ultra"
-                                android:textColor="@color/white" />
-
-
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:layout_width="320dp"
-                            android:layout_height="140dp">
-
-                            <ImageView
-                                android:id="@+id/Xiaomi_14_ultra"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="?attr/selectableItemBackground"
-                                android:contentDescription="Samsung Galaxy S24 Ultra"
-                                android:padding="15dp"
-                                android:scaleType="fitCenter"
-                                android:src="@drawable/xiaomi_14_ultra" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_marginStart="110dp"
-                                android:text="Xiaomi 14 Ultra"
-                                android:textColor="@color/white" />
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:layout_width="320dp"
-                            android:layout_height="140dp">
-
-                            <ImageView
-                                android:id="@+id/Iphone_16_Pro_Max"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="?attr/selectableItemBackground"
-                                android:contentDescription="Samsung Galaxy S24 Ultra"
-                                android:scaleType="fitCenter"
-                                android:src="@drawable/iphone_16_pro_max" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_marginStart="100dp"
-                                android:text="Iphone 16 Pro Max"
-                                android:textColor="@color/white" />
-
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:layout_width="320dp"
-                            android:layout_height="140dp">
-
-                            <ImageView
-                                android:id="@+id/Oppo_Reno_12_Pro"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="?attr/selectableItemBackground"
-                                android:contentDescription="Samsung Galaxy S24 Ultra"
-                                android:padding="15dp"
-                                android:scaleType="fitCenter"
-                                android:src="@drawable/oppo_reno_12_pro" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_marginStart="105dp"
-                                android:text="Oppo Reno 12 Pro"
-                                android:textColor="@color/white" />
-
-                        </FrameLayout>
-
-                        <FrameLayout
-                            android:layout_width="320dp"
-                            android:layout_height="140dp">
-
-                            <ImageView
-                                android:id="@+id/Realme_13_Pro_Plus"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="?attr/selectableItemBackground"
-                                android:contentDescription="Samsung Galaxy S24 Ultra"
-                                android:padding="15dp"
-                                android:scaleType="fitCenter"
-                                android:src="@drawable/realme_13_pro_plus" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="bottom"
-                                android:layout_marginStart="100dp"
-                                android:text="Realme 13 Pro Plus"
-                                android:textColor="@color/white" />
-
-                        </FrameLayout>
-
-                    </LinearLayout>
-
-                </HorizontalScrollView>
-
-            </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/RecyclerView"
+                android:layout_width="320dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="25dp"
+                android:scrollbarThumbHorizontal="@drawable/scrollbar_thumb"
+                android:scrollbarTrackHorizontal="@drawable/scrollbars_track"
+                android:background="@drawable/rounded_corner"
+                android:orientation="horizontal"
+                android:scrollbars="horizontal"
+                android:fillViewport="true"
+                android:fadeScrollbars="true"
+                android:fadingEdgeLength="@dimen/cardview_default_radius"
+                android:overScrollMode="always"
+                tools:listitem="@layout/item_image"/>
 
 
 
@@ -761,7 +629,10 @@
                     android:background="@drawable/rounded_corner"
                     android:padding="10dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/samsung_galaxy_s24" />
+                    android:src="@drawable/samsung_galaxy_s24"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
                 <TextView
                     android:layout_width="180dp"
@@ -771,7 +642,8 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="Samsung Galaxy S24"
                     android:textColor="@color/light_black"
-                    android:textSize="15sp" />
+                    android:textSize="15sp"
+                    android:paddingBottom="2dp"/>
 
 
                 <TextView
@@ -780,7 +652,8 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
                     android:text="Discover the epic Galaxy S24 and S24+ with mobile AI, QHD+ display, ProVisual engine and more. "
-                    android:textSize="13sp" />
+                    android:textSize="13sp"
+                    android:paddingBottom="2dp"/>
 
                 <View
                     android:layout_width="180dp"
@@ -823,7 +696,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -903,7 +780,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -982,7 +863,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -1061,7 +946,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
@@ -1139,7 +1028,11 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="SEE MORE"
                     android:textColor="@color/light_grey"
-                    android:textSize="12sp" />
+                    android:textSize="12sp"
+                    android:background="@drawable/underline_effect"
+                    android:focusable="true"
+                    android:clickable="true"
+                    android:paddingBottom="2dp"/>
 
             </FrameLayout>
 
