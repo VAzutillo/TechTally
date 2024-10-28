@@ -335,7 +335,7 @@ class UserDashboardActivity : AppCompatActivity() {
         // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
         val xiaomiNotebookProFullDetails = findViewById<TextView>(R.id.xiaomiNotebookProSeeMoreButton)
         xiaomiNotebookProFullDetails.setOnClickListener {
-            val intent = Intent(this, xiaomiNotebookProFullDetails::class.java)
+            val intent = Intent(this, laptopXiaomiNotebookPro120gFullDetails::class.java)
             startActivity(intent)
         }
         //
