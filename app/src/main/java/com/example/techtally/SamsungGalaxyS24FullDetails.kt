@@ -52,6 +52,7 @@ class SamsungGalaxyS24FullDetails : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         val goToSamsungGalaxyS24ReviewsPage = findViewById<TextView>(R.id.numberOfReviews)
         goToSamsungGalaxyS24ReviewsPage.setOnClickListener {
             val intent = Intent(this, SamsungGalaxyS24ReviewsPage::class.java)

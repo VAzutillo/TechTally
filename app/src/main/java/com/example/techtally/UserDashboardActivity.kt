@@ -245,10 +245,10 @@ class UserDashboardActivity : AppCompatActivity() {
                 holder.imageView.setOnClickListener {
                     val intent = when (position) {
                         0 -> Intent(context, SamsungGalaxyS24UltraFullDetails::class.java)
-                        1 -> Intent(context, Xiaomi14UltraFullDetails::class.java)
-                        2 -> Intent(context, Iphone16ProMaxFullDetails::class.java)
-                        3 -> Intent(context, smartphoneOppoReno12ProFullDetails::class.java)
-                        4 -> Intent(context, Realme13ProPlusFullDetails::class.java)
+                        1 -> Intent(context, Xiaomi14UltraFullDetailsUserDashboard::class.java)
+                        2 -> Intent(context, Iphone16ProMaxUserDashboard::class.java)
+                        3 -> Intent(context, SmartphonesOppoReno12ProUserDashboard::class.java)
+                        4 -> Intent(context, Realme13ProPlusUserDashboard::class.java)
                         else -> null
                     }
                     intent?.let { context.startActivity(it) }
@@ -280,6 +280,10 @@ class UserDashboardActivity : AppCompatActivity() {
 
         val snapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(recyclerView)
+
+
+
+
 
 
 
@@ -329,7 +333,7 @@ class UserDashboardActivity : AppCompatActivity() {
         // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
         val iphone16ProMaxFullDetails = findViewById<TextView>(R.id.iphone16ProMaxSeeMoreButton)
         iphone16ProMaxFullDetails.setOnClickListener {
-            val intent = Intent(this, Iphone16ProMaxFullDetails::class.java)
+            val intent = Intent(this, Iphone16ProMaxUserDashboard::class.java)
             startActivity(intent)
         }
         // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity

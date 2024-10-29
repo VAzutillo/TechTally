@@ -110,23 +110,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -188,23 +190,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -266,23 +270,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -344,23 +350,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -422,23 +430,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -500,23 +510,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -578,23 +590,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -656,23 +670,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 
@@ -734,23 +750,25 @@
                     android:layout_marginTop="100dp"
                     android:background="?android:attr/listDivider" />
 
-                <ImageView
-
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="7dp"
-                    app:srcCompat="@drawable/userdashboard_logo" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="145dp"
+                    android:layout_marginTop="116dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="0"
+                    android:textColor="#2F2F2F"
+                    android:textSize="13sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginStart="50dp"
+                    android:layout_marginStart="35dp"
                     android:layout_marginTop="50dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="0 out of 5"
+                    android:text="out of 5 Tally"
                     android:textColor="#2F2F2F"
                     android:textSize="13sp" />
 

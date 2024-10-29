@@ -99,7 +99,7 @@
         android:layout_alignParentBottom="true"
         android:fontFamily="@font/roboto_bold"
         android:hint="Search Devices"
-        android:text="Discover phones"
+        android:text="Discover Devices"
         android:textColorHint="#FFFFFF"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -112,7 +112,6 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout6"
-
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:backgroundTint="#000000"
