@@ -85,7 +85,7 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/galaxy_tab_s10_ultra" />
+                    android:src="@drawable/samsung_galaxy_tab10_s10ultra_img2" />
 
                 <TextView
                     android:layout_width="180dp"
@@ -165,7 +165,7 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/ipad_13_pro" />
+                    android:src="@drawable/ipad13_pro_img2" />
 
 
                 <TextView
@@ -244,7 +244,7 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/oppo_pad_2_img1" />
+                    android:src="@drawable/oppo_pad2_img3" />
 
 
                 <TextView
@@ -478,7 +478,7 @@
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
                     android:padding="5dp"
-                    android:src="@drawable/lenovo_chromebook_duet_11" />
+                    android:src="@drawable/lenovo_chromebook_img2" />
 
                 <TextView
                     android:layout_width="180dp"

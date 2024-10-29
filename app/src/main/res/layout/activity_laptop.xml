@@ -178,7 +178,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Samsung Galaxy Book 3 is a lightweight laptop featuring a 15.6-inch display and powered by Intel processors and more."
+                    android:text="Samsung Galaxy Book4 is a sleek and lightweight laptop designed for portability, productivity and more."
                     android:textSize="13sp" />
 
                 <View
@@ -472,7 +472,7 @@
                     android:layout_width="130dp"
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/lenovo_thinkpad_t14s" />
+                    android:src="@drawable/lenovo_thinkpad_t14s"/>
 
                 <TextView
                     android:layout_width="180dp"
@@ -636,7 +636,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Samsung Galaxy Book 3"
+                    android:text="Samsung Galaxy Book3"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 
@@ -646,7 +646,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Samsung Galaxy Book 3 is a lightweight laptop featuring a 15.6-inch display and powered by Intel processors and more."
+                    android:text="Samsung Galaxy Book3 is a lightweight laptop featuring a 15.6-inch display and powered by Intel processors and more."
                     android:textSize="13sp" />
 
                 <View

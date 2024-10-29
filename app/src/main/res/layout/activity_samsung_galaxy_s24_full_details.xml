@@ -41,7 +41,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="51dp"
                 android:layout_marginBottom="40dp"
-                app:srcCompat="@drawable/samsung_galaxy_s24" />
+                app:srcCompat="@drawable/samsung_galaxy_s24img3" />
 
             <ImageView
                 android:id="@+id/samsungGalaxyS24FullDetailsBackButton"

@@ -414,7 +414,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Realme 13 Pro Plus features a dual 50MP camera setup for enhanced photography, and more."
+                    android:text="realme 13 Pro Plus features a dual 50MP camera setup for enhanced photography, and more."
                     android:textSize="13sp" />
 
                 <TextView
@@ -423,7 +423,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Realme 13 Pro Plus"
+                    android:text="realme 13 Pro Plus"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 
@@ -647,7 +647,7 @@
                     android:layout_height="150dp"
                     android:scaleType="fitCenter"
                     android:padding="10dp"
-                    android:src="@drawable/samsung_galaxy_s24" />
+                    android:src="@drawable/samsung_galaxy_s24img3" />
 
                 <TextView
                     android:layout_width="180dp"

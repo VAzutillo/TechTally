@@ -41,7 +41,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="51dp"
                 android:layout_marginBottom="40dp"
-                app:srcCompat="@drawable/xiaomi_14_ultra" />
+                app:srcCompat="@drawable/xiaomi_14_ultra_img2" />
 
             <ImageView
                 android:id="@+id/samsungGalaxyS24FullDetailsBackButton"

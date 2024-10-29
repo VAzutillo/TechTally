@@ -41,7 +41,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="51dp"
                 android:layout_marginBottom="40dp"
-                app:srcCompat="@drawable/ipad_13_pro" />
+                app:srcCompat="@drawable/ipad13_pro_img2" />
 
             <ImageView
                 android:id="@+id/samsungGalaxyS24FullDetailsBackButton"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
                 android:paddingLeft="30dp"
-                android:text="Ipad 13 Pro"
+                android:text="Apple iPad 13 Pro"
                 android:textColor="#2F2F2F"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
-                    android:text="Smartphone"
+                    android:text="Tablet"
                     android:textColor="#2F2F2F"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -209,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="iPad Pro 13 (2024) features a 13-inch OLED display and is powered by the M4 chip. It offers up to 16GB of RAM and storage options from 256GB to 2TB, along with 5G support for high-speed connectivity​"
+                android:text="Apple iPad Pro 13 (2024) features a 13-inch OLED display and is powered by the M4 chip. It offers up to 16GB of RAM and storage options from 256GB to 2TB, along with 5G support for high-speed connectivity​"
                 android:textColor="#2F2F2F"
                 android:textSize="14sp" />
         </LinearLayout>

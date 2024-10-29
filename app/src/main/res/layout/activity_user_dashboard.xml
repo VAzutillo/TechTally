@@ -14,6 +14,7 @@
 
     <ImageView
         android:id="@+id/profileBtn"
+        android:layout_marginEnd="2.5dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:backgroundTint="@color/grey"
@@ -32,6 +33,7 @@
 
     <TextView
         android:id="@+id/tv.share.review.discover"
+        android:layout_marginStart="2.5dp"
         android:layout_width="111dp"
         android:layout_height="15dp"
         android:layout_alignParentStart="true"
@@ -40,7 +42,7 @@
         android:layout_alignParentBottom="true"
         android:text="@string/share_review_discover_dashboard"
         android:textColor="@color/light_grey"
-        android:textColorHint="#FFFFFF"
+        android:textColorHint="#7A7A7A"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,11 +54,12 @@
 
     <TextView
         android:id="@+id/greetingTextView"
+        android:layout_marginStart="2.5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
         android:text="Signup / Login"
-        android:textColor="@android:color/black"
+        android:textColorHint="#2F2F2F"
         android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -87,6 +90,7 @@
 
     <TextView
         android:id="@+id/tvDiscover"
+        android:layout_marginStart="2.5dp"
         android:layout_width="125dp"
         android:layout_height="22dp"
         android:layout_alignParentStart="true"
@@ -131,8 +135,7 @@
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rounded_corner"
-            android:drawableEnd="@drawable/rivet"
+            android:background="@drawable/searchbar_rounded_corner"
             android:drawableTint="@color/white"
             android:ellipsize="end"
             android:hint="Search Devices"
@@ -142,7 +145,7 @@
             android:scrollHorizontally="true"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="14sp" />
+            android:textSize="10dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -524,8 +527,8 @@
 
     <ImageView
         android:id="@+id/smartphonBtn"
-        android:layout_width="70dp"
-        android:layout_height="60dp"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.143"
@@ -536,8 +539,8 @@
 
     <ImageView
         android:id="@+id/tabletBtn"
-        android:layout_width="55dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.865"
@@ -548,8 +551,8 @@
 
     <ImageView
         android:id="@+id/laptopBtn"
-        android:layout_width="55dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="55dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.501"
@@ -582,8 +585,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/RecyclerView"
-                android:layout_width="320dp"
+                android:layout_width="315dp"
                 android:layout_height="150dp"
+                android:layout_marginStart="2.5dp"
                 android:layout_marginTop="25dp"
                 android:scrollbarThumbHorizontal="@drawable/scrollbar_thumb"
                 android:scrollbarTrackHorizontal="@drawable/scrollbars_track"
@@ -604,6 +608,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="2.5dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="Devices"
