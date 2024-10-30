@@ -41,7 +41,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="51dp"
                 android:layout_marginBottom="40dp"
-                app:srcCompat="@drawable/oppo_pad_2" />
+                app:srcCompat="@drawable/oppo_pad2_img3" />
 
             <ImageView
                 android:id="@+id/samsungGalaxyS24FullDetailsBackButton"
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
-                    android:text="Smartphone"
+                    android:text="Tablet"
                     android:textColor="#2F2F2F"
                     android:textSize="16sp" />
             </LinearLayout>

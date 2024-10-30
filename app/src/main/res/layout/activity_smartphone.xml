@@ -97,7 +97,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="iPhone 16 Pro Max features a 6.9-inch OLED display, A18 Bionic chip And more..."
+                    android:text="Apple iPhone 16 Pro Max features a 6.9-inch OLED display, A18 Bionic chip And more..."
                     android:textSize="13sp" />
 
                 <TextView
@@ -106,7 +106,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Iphone 16 Pro Max"
+                    android:text="Apple iPhone 16 Pro Max"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 

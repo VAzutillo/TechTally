@@ -41,7 +41,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="51dp"
                 android:layout_marginBottom="40dp"
-                app:srcCompat="@drawable/realme_pad_2" />
+                app:srcCompat="@drawable/realme_pad_2_img1" />
 
             <ImageView
                 android:id="@+id/samsungGalaxyS24FullDetailsBackButton"
@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
                 android:paddingLeft="30dp"
-                android:text="Realme Pad 2"
+                android:text="realme Pad 2"
                 android:textColor="#2F2F2F"
                 android:textSize="24sp" />
         </LinearLayout>
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
-                    android:text="Smartphone"
+                    android:text="Tablet"
                     android:textColor="#2F2F2F"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -209,7 +209,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
-                android:text="Realme Pad 2 features an 11.5-inch 2K display with a 120Hz refresh rate, MediaTek Helio G99 processor, and up to 8GB RAM with 256GB storage. It has an 8,360mAh battery with 33W fast charging and quad speakers, making it ideal for entertainment and multitasking."
+                android:text="realme Pad 2 features an 11.5-inch 2K display with a 120Hz refresh rate, MediaTek Helio G99 processor, and up to 8GB RAM with 256GB storage. It has an 8,360mAh battery with 33W fast charging and quad speakers, making it ideal for entertainment and multitasking."
                 android:textColor="#2F2F2F"
                 android:textSize="14sp" />
         </LinearLayout>

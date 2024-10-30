@@ -78,7 +78,7 @@
                 android:paddingLeft="30dp"
                 android:text="Lenovo Chromebook Duet 11"
                 android:textColor="#2F2F2F"
-                android:textSize="24sp" />
+                android:textSize="22sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
-                    android:text="Smartphone"
+                    android:text="Tablet"
                     android:textColor="#2F2F2F"
                     android:textSize="16sp" />
             </LinearLayout>

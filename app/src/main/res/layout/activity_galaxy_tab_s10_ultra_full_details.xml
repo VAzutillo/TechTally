@@ -41,7 +41,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="51dp"
                 android:layout_marginBottom="40dp"
-                app:srcCompat="@drawable/galaxy_tab_s10_ultra" />
+                app:srcCompat="@drawable/samsung_galaxy_tab10_s10ultra_img2" />
 
             <ImageView
                 android:id="@+id/samsungGalaxyS24FullDetailsBackButton"
@@ -76,9 +76,9 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
                 android:paddingLeft="30dp"
-                android:text="Galaxy Tab S10 Ultra"
+                android:text="Samsung Galaxy Tab S10 Ultra"
                 android:textColor="#2F2F2F"
-                android:textSize="24sp" />
+                android:textSize="21sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -100,7 +100,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="30dp"
-                    android:text="Smartphone"
+                    android:text="Tablet"
                     android:textColor="#2F2F2F"
                     android:textSize="16sp" />
             </LinearLayout>

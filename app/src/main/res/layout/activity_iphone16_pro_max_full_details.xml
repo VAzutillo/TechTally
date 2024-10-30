@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_bold"
                 android:paddingLeft="30dp"
-                android:text="Iphone 16 Pro Max"
+                android:text="Apple iPhone 16 Pro Max"
                 android:textColor="#2F2F2F"
                 android:textSize="24sp" />
         </LinearLayout>

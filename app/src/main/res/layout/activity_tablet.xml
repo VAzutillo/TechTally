@@ -331,7 +331,7 @@
                     android:layout_height="65dp"
                     android:layout_gravity="end"
                     android:layout_marginTop="30dp"
-                    android:text="Realme Pad 2 features an 11.5-inch 2K display with a 120Hz refresh rate, MediaTek Helio G99 processor and more. "
+                    android:text="realme Pad 2 features an 11.5-inch 2K display with a 120Hz refresh rate, MediaTek Helio G99 processor and more. "
                     android:textSize="13sp" />
 
                 <TextView
@@ -340,7 +340,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Realme Pad 2"
+                    android:text="realme Pad 2"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 
@@ -496,7 +496,7 @@
                     android:fontFamily="@font/roboto_bold"
                     android:text="Lenovo Chromebook Duet 11"
                     android:textColor="@color/light_black"
-                    android:textSize="15sp" />
+                    android:textSize="13sp" />
 
                 <View
                     android:layout_width="180dp"
