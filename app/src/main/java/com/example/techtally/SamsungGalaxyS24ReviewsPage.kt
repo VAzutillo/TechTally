@@ -14,8 +14,8 @@ import retrofit2.Response
 class SamsungGalaxyS24ReviewsPage : AppCompatActivity() {
 
     private lateinit var reviewsRecyclerView: RecyclerView
-    private lateinit var reviewsAdapter: ReviewsAdapter
-    private val reviewsList = mutableListOf<Review>() // List to hold review data
+    private lateinit var samsungGalaxyS24ReviewsAdapter: SamsungGalaxyS24ReviewsAdapter
+    private val samsungGalaxyS24ReviewsList = mutableListOf<SamsungGalaxyS24Review>() // List to hold review data
     private var numberOfReviews: Int = 0 // Variable to hold the number of reviews
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,33 +26,35 @@ class SamsungGalaxyS24ReviewsPage : AppCompatActivity() {
         reviewsRecyclerView = findViewById(R.id.reviewsRecyclerView)
 
         // Set up the RecyclerView with a LinearLayoutManager in reverse order
-        val layoutManager = LinearLayoutManager(this)
-        layoutManager.reverseLayout = true // Reverse layout to show newest items at the top
-        layoutManager.stackFromEnd = true  // Stack items from the end
-        reviewsRecyclerView.layoutManager = layoutManager
+        val samsungLayoutManager = LinearLayoutManager(this)
+        samsungLayoutManager.reverseLayout = true // Reverse layout to show newest items at the top
+        samsungLayoutManager.stackFromEnd = true  // Stack items from the end
+        reviewsRecyclerView.layoutManager = samsungLayoutManager
 
         // Initialize the adapter
-        reviewsAdapter = ReviewsAdapter(reviewsList)
-        reviewsRecyclerView.adapter = reviewsAdapter
+        samsungGalaxyS24ReviewsAdapter = SamsungGalaxyS24ReviewsAdapter(samsungGalaxyS24ReviewsList)
+        reviewsRecyclerView.adapter = samsungGalaxyS24ReviewsAdapter
 
         // Retrieve the number of reviews from SharedPreferences
         numberOfReviews = getNumberOfReviews()
+        getSamsungGalaxyS24BySmartphoneId()
 
-        // Check if there's a new review passed from RateAndReviewActivity
-        intent.getParcelableExtra<Review>("NEW_REVIEW")?.let { newReview ->
-            reviewsList.add(0, newReview) // Add the new review at the top of the list
-            reviewsAdapter.notifyItemInserted(0) // Notify adapter that an item was inserted at position 0
+        // Check if there's a new review passed from SamsungGalaxyS24RateAndReviewActivity
+        intent.getParcelableExtra<SamsungGalaxyS24Review>("NEW_REVIEW")?.let { newReview ->
+            samsungGalaxyS24ReviewsList.add(0, newReview) // Add the new review at the top of the list
+            samsungGalaxyS24ReviewsAdapter.notifyItemInserted(0) // Notify adapter that an item was inserted at position 0
             reviewsRecyclerView.scrollToPosition(0) // Scroll to the top of the list
             onReviewSubmitted() // Call to update number of reviews
-        }
 
-        // Fetch reviews from the API
-        fetchReviews()
+            // Fetch reviews for the smartphone when the activity is created
+            val smartphoneId = intent.getIntExtra("SMARTPHONE_ID", 1)
+
+        }
 
         val backButton: ImageView = findViewById(R.id.samsungGalaxyS24ReviewsPageBackButton)
         backButton.setOnClickListener {
             val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java).apply {
-                putParcelableArrayListExtra("REVIEWS_LIST", ArrayList(reviewsList)) // Pass the reviews list
+                putParcelableArrayListExtra("REVIEWS_LIST", ArrayList(samsungGalaxyS24ReviewsList)) // Pass the reviews list
             }
             startActivity(intent) // Start SamsungGalaxyS24FullDetails activity
             finish()
@@ -64,28 +66,23 @@ class SamsungGalaxyS24ReviewsPage : AppCompatActivity() {
         return sharedPreferences.getInt("numberOfReviews", 0) // Default to 0 if not found
     }
 
-    private fun fetchReviews() {
-        RetrofitClient.apiService.getReviews().enqueue(object : Callback<List<Review>> {
-            override fun onResponse(call: Call<List<Review>>, response: Response<List<Review>>) {
+    private fun getSamsungGalaxyS24BySmartphoneId() {
+        val smartphoneId = 1 // Replace this with the desired smartphone ID
+        RetrofitClient.apiService.getSamsungGalaxyS24BySmartphoneId(smartphoneId).enqueue(object : Callback<List<SamsungGalaxyS24Review>> {
+            override fun onResponse(call: Call<List<SamsungGalaxyS24Review>>, response: Response<List<SamsungGalaxyS24Review>>) {
                 if (response.isSuccessful && response.body() != null) {
-                    reviewsList.clear() // Clear existing data
-                    reviewsList.addAll(response.body()!!) // Add the fetched reviews
+                    samsungGalaxyS24ReviewsList.clear()
+                    samsungGalaxyS24ReviewsList.addAll(response.body()!!)
+                    samsungGalaxyS24ReviewsAdapter.notifyDataSetChanged()
 
-                    // Log the reviews
-                    Log.d("SamsungGalaxyS24ReviewsPage", "Fetched Reviews: $reviewsList")
-
-                    // Update the number of reviews
-                    numberOfReviews = reviewsList.size // Update the number of reviews
-                    saveNumberOfReviews(numberOfReviews) // Save the number of reviews after fetching
-
-                    // Notify the adapter that data has changed
-                    reviewsAdapter.notifyDataSetChanged()
+                    numberOfReviews = samsungGalaxyS24ReviewsList.size
+                    saveNumberOfReviews(numberOfReviews)
                 } else {
                     Log.e("SamsungGalaxyS24ReviewsPage", "Error: ${response.message()}")
                 }
             }
 
-            override fun onFailure(call: Call<List<Review>>, t: Throwable) {
+            override fun onFailure(call: Call<List<SamsungGalaxyS24Review>>, t: Throwable) {
                 Log.e("SamsungGalaxyS24ReviewsPage", "Failure: ${t.message}")
             }
         })
@@ -104,6 +101,6 @@ class SamsungGalaxyS24ReviewsPage : AppCompatActivity() {
         val editor = sharedPreferences.edit()
         editor.putInt("numberOfReviews", count)
         editor.apply() // Save the changes asynchronously
-        Log.d("SamsungGalaxyS24ReviewsPage", "Saved numberOfReviews: $count") // Debug log
+        Log.d("SamsungGalaxyS24ReviewsPage", "Saved numberOfReviews: $count")
     }
 }

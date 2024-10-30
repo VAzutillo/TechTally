@@ -2,23 +2,40 @@ package com.example.techtally
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.techtally.databinding.ActivityLaptopBinding
+import com.example.techtally.databinding.ActivitySmartphoneBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class LaptopActivity : AppCompatActivity() {
+
+        private lateinit var binding: ActivityLaptopBinding
+
+        private var percentage_of_ratings: Float = 0.0f
+        private var smartphoneId = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_laptop)
+        binding = ActivityLaptopBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        smartphoneId = intent.getIntExtra("SMARTPHONE_ID", 3)
+        fetchAppleMacbookM3ProRatings()
+
         // Navigate from LaptopActivity to UserDashboardActivity
         val backToUserDashboardActivity = findViewById<ImageView>(R.id.laptopBackButton)
         backToUserDashboardActivity.setOnClickListener {
@@ -70,5 +87,27 @@ class LaptopActivity : AppCompatActivity() {
             val intent = Intent(this, laptopHuaweiMatebookXProFullDetails::class.java)
             startActivity(intent)
         }
+    }
+    // Function to fetch and display ratings for iPhone 16 Pro Max
+    private fun fetchAppleMacbookM3ProRatings() {
+        val iphoneSmartphoneId = 3 // Set the specific ID for iPhone 16 Pro Max
+        RetrofitClient.apiService.getRatings(iphoneSmartphoneId).enqueue(object :
+            Callback<SmartphoneRatingsResponse> {
+            override fun onResponse(
+                call: Call<SmartphoneRatingsResponse>,
+                response: Response<SmartphoneRatingsResponse>
+            ) {
+                if (response.isSuccessful && response.body() != null) {
+                    val ratingsData = response.body()!!
+
+                    val iphonePercentageOfRatings = ratingsData.percentage_of_ratings
+                    binding.AppleMacbookM3ProPercentageOfRatings1.text = "$iphonePercentageOfRatings"
+                }
+            }
+
+            override fun onFailure(call: Call<SmartphoneRatingsResponse>, t: Throwable) {
+                Log.e("UserDashboardActivity", "Error fetching iPhone 16 Pro Max ratings: ${t.message}")
+            }
+        })
     }
 }

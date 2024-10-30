@@ -1,11 +1,15 @@
 package com.example.techtally
 
+import okhttp3.ResponseBody
 import retrofit2.http.Body
 import retrofit2.http.POST
 import retrofit2.Call
+import retrofit2.http.DELETE
+import retrofit2.http.Field
 import retrofit2.http.GET
 import retrofit2.http.PUT
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 // Data class representing the user signup request payload for the API.
 // It includes the necessary fields for user registration: username, email, password, and password confirmation.
@@ -48,7 +52,8 @@ data class EmailCheckResponse(
 data class ReviewRequest(
     val username: String,
     val rating: Int,
-    val comment: String?
+    val comment: String?,
+    val smartphone_id: Int
 )
 
 data class ReviewResponse(
@@ -57,14 +62,22 @@ data class ReviewResponse(
     val data: ReviewData?
 )
 data class ReviewData(
-    val id: Int, // Adjust based on your database schema
+    val id: Int,
     val username: String,
     val rating: Int,
     val comment: String?
 )
-data class RatingUpdateRequest(
-    val numberOfReviews: Int,
-    val percentageOfRatings: Float
+
+data class SmartphoneRatingsResponse(
+    val number_of_reviews: Int,
+    val percentage_of_ratings: Float
+)
+data class Smartphone(
+    val id: Int,
+    val name: String,
+    val brand: String,
+    val model: String,
+    // Add other fields as needed
 )
 
 // Retrofit interface defining the API endpoints for the app.
@@ -88,8 +101,29 @@ interface ApiService {
     @POST("review")
     fun submitReview(@Body reviewRequest: ReviewRequest): Call<ReviewResponse>
 
-    @GET("review")
-    fun getReviews(): Call<List<Review>>
+    //@GET("review")
+    //fun getReviews(): Call<List<Review>>
 
+    @POST("review")
+    fun submitIphone16ProMaxReview(@Body reviewRequest: ReviewRequest): Call<ReviewResponse>
+
+    @POST("review")
+    fun submitAppleMacbookM3ProReview(@Body reviewRequest: ReviewRequest): Call<ReviewResponse>
+
+    //@GET("review")
+    //fun getIphone16ProMaxReviews(): Call<List<Iphone16ProMaxReview>>
+
+    @GET("reviews")
+    fun getIphone16ProMaxBySmartphoneId(@Query("smartphone_id") smartphoneId: Int): Call<List<Iphone16ProMaxReview>>
+
+    @GET("reviews")
+    fun getSamsungGalaxyS24BySmartphoneId(@Query("smartphone_id") smartphoneId: Int): Call<List<SamsungGalaxyS24Review>>
+
+    @GET("reviews")
+    fun getAppleMacbookM3ProBySmartphoneId(@Query("smartphone_id") smartphoneId: Int): Call<List<AppleMacbookM3ProReview>>
+
+
+    @GET("smartphone/{id}/ratings")
+    fun getRatings(@Path("id") smartphoneId: Int): Call<SmartphoneRatingsResponse>
 
 }

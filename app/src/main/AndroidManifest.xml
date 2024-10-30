@@ -28,6 +28,21 @@
             android:name=".Xiaomi14UltraFullDetailsUserDashboard"
             android:exported="false" />
         <activity
+            android:name=".laptopAppleMacbookM3ProReviewsPage"
+            android:exported="false" />
+        <activity
+            android:name=".laptopAppleMacbookM3ProRateAndReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Iphone16ProMaxReviewsPage"
+            android:exported="false" />
+        <activity
+            android:name=".Iphone16ProMaxRateAndReviewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Iphone16ProMaxReviewsPage"
+            android:exported="false" />
+        <activity
             android:name=".laptopHuaweiMatebookXProFullDetails"
             android:exported="false" />
         <activity
@@ -129,7 +144,7 @@
             android:name=".SamsungGalaxyS24ReviewsPage"
             android:exported="false" />
         <activity
-            android:name=".RateAndReviewActivity"
+            android:name=".SamsungGalaxyS24RateAndReviewActivity"
             android:exported="false" />
         <activity
             android:name=".ProfilePageActivity"

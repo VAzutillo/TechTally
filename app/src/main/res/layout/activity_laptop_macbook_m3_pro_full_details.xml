@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView
+    android:id="@+id/AppleMacbookM3ProFullDetailsScrollView"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -44,7 +45,7 @@
                 app:srcCompat="@drawable/macbook_m3_pro" />
 
             <ImageView
-                android:id="@+id/samsungGalaxyS24FullDetailsBackButton"
+                android:id="@+id/AppleMacbookM3ProFullDetailsBackButton"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_alignParentStart="true"
@@ -131,7 +132,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/percentageOfRatings"
+                        android:id="@+id/AppleMacbookM3ProPercentageOfRatings"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="140dp"
@@ -156,7 +157,7 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/numberOfReviews"
+                        android:id="@+id/AppleMacbookM3ProNumberOfReviews"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="140dp"
@@ -262,35 +263,35 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/samsungGalaxyS24FullDetailsRateButtonTally1"
+                    android:id="@+id/AppleMacbookM3ProFullDetailsRateButtonTally1"
                     android:layout_width="15dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="60dp"
                     android:backgroundTint="#D9D9D9" />
 
                 <Button
-                    android:id="@+id/samsungGalaxyS24FullDetailsRateButtonTally2"
+                    android:id="@+id/AppleMacbookM3ProFullDetailsRateButtonTally2"
                     android:layout_width="15dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="40dp"
                     android:backgroundTint="#D9D9D9" />
 
                 <Button
-                    android:id="@+id/samsungGalaxyS24FullDetailsRateButtonTally3"
+                    android:id="@+id/AppleMacbookM3ProFullDetailsRateButtonTally3"
                     android:layout_width="15dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="40dp"
                     android:backgroundTint="#D9D9D9" />
 
                 <Button
-                    android:id="@+id/samsungGalaxyS24FullDetailsRateButtonTally4"
+                    android:id="@+id/AppleMacbookM3ProFullDetailsRateButtonTally4"
                     android:layout_width="15dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="40dp"
                     android:backgroundTint="#D9D9D9" />
 
                 <Button
-                    android:id="@+id/samsungGalaxyS24FullDetailsRateButtonTally5"
+                    android:id="@+id/AppleMacbookM3ProFullDetailsRateButtonTally5"
                     android:layout_width="15dp"
                     android:layout_height="60dp"
                     android:layout_marginLeft="40dp"
@@ -956,10 +957,99 @@
                     android:background="#2F2F2F"
                     android:backgroundTint="#2F2F2F" />
 
-
-
             </LinearLayout>
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/RatingsAndReview1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Pricing1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="@font/roboto_bold"
+                    android:text="Rating and reviews"
+                    android:textColor="#2F2F2F"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/AppleMacbookM3ProSeeAllReviews1"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="100dp"
+                    app:srcCompat="@drawable/figma_arrow_right" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/AppleMacbookM3ProReviews1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/RatingsAndReview1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/AppleMacbookM3ProReviewsPageRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                tools:listitem="@layout/apple_macbook_m3_pro_review_item_layout" />
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/AppleMacbookM3ProSeeAllReviews"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AppleMacbookM3ProReviews1">
+
+
+            <TextView
+                android:id="@+id/AppleMacbookM3ProSeeAllReviews2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="See all reviews"
+                android:textColor="#2F2F2F" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AppleMacbookM3ProSeeAllReviews">
+
+
+            <TextView
+                android:id="@+id/AppleMacbookM3ProBackToTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="Back to top"
+                android:textColor="#2F2F2F" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
