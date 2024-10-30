@@ -101,7 +101,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Galaxy Tab S10 Ultra"
+                    android:text="Samsung Galaxy Tab S10 Ultra"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 
@@ -182,7 +182,7 @@
                     android:layout_gravity="end"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/roboto_bold"
-                    android:text="Ipad 13 Pro"
+                    android:text="Apple iPad 13 Pro"
                     android:textColor="@color/light_black"
                     android:textSize="15sp" />
 
