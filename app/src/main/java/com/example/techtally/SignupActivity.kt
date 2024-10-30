@@ -41,10 +41,13 @@ class SignupActivity : AppCompatActivity() {
         binding.signupPassword.addTextChangedListener(object : TextWatcher {
             override fun afterTextChanged(s: Editable?) {
                 val password = s?.toString() ?: ""
-                if (password.length < 8 || password.length > 16) {
-                    binding.passwordHint.text = "The minimum is 8 characters and maximum of 16 characters"
+                if (password.isEmpty() || password.contains(" ")) {
+                    binding.passwordHint.text = "Password cannot be empty or contain spaces"
                     binding.passwordHint.setTextColor(Color.RED)
                     binding.signupPassword.setTextColor(Color.BLACK)
+                } else if (password.length < 8 || password.length > 16) {
+                    binding.passwordHint.text = "The minimum is 8 characters and maximum of 16 characters"
+                    binding.passwordHint.setTextColor(Color.RED)
                 } else if (!containsSpecialCharacter(password)) {
                     binding.passwordHint.text = "The password must contain at least one special character (!@#\$&*)"
                     binding.passwordHint.setTextColor(Color.RED)
@@ -104,6 +107,14 @@ class SignupActivity : AppCompatActivity() {
                 allFieldsValid = false
             } else if (signupPassword.length < 8 || signupPassword.length > 16) {
                 binding.passwordHint.text = "The password must be between 8 and 16 characters"
+                binding.passwordHint.setTextColor(Color.RED)
+                allFieldsValid = false
+            } else if (signupPassword.contains(" ")) {
+                binding.passwordHint.text = "Password cannot contain spaces"
+                binding.passwordHint.setTextColor(Color.RED)
+                allFieldsValid = false
+            } else if (!containsSpecialCharacter(signupPassword)) {
+                binding.passwordHint.text = "The password must contain at least one special character (!@#\$&*)"
                 binding.passwordHint.setTextColor(Color.RED)
                 allFieldsValid = false
             }

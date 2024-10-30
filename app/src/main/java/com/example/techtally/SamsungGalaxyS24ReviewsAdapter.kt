@@ -6,9 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-// Declaring the ReviewsAdapter class which is a custom adapter for the RecyclerView.
+// Declaring the SamsungGalaxyS24ReviewsAdapter class which is a custom adapter for the RecyclerView.
 // It takes a list of Review objects as input passed in as 'reviews'.
-class ReviewsAdapter(private var reviews: MutableList<Review>) : RecyclerView.Adapter<ReviewsAdapter.ReviewViewHolder>() {
+class SamsungGalaxyS24ReviewsAdapter(private var reviews: MutableList<SamsungGalaxyS24Review>) : RecyclerView.Adapter<SamsungGalaxyS24ReviewsAdapter.ReviewViewHolder>() {
 
     // Inner class 'ReviewViewHolder' that represents a single item view in the RecyclerView.
     // It holds references to the TextViews inside the layout for displaying review details.
@@ -19,7 +19,7 @@ class ReviewsAdapter(private var reviews: MutableList<Review>) : RecyclerView.Ad
         private val commentOfTheUser: TextView = itemView.findViewById(R.id.commentOfTheUser)
 
         // bind function sets the review data (username, rating, comment) to the corresponding TextViews.
-        fun bind(review: Review) {
+        fun bind(review: SamsungGalaxyS24Review) {
             // Setting the username TextView with the 'username' property from the Review object.
             nameOfTheUser.text = review.username
             // Converting the rating (integer) to a string and setting it to the rating TextView.
@@ -50,7 +50,7 @@ class ReviewsAdapter(private var reviews: MutableList<Review>) : RecyclerView.Ad
     }
 
     // Method to add a new review to the list and notify the adapter
-    fun addReview(review: Review) {
+    fun addReview(review: SamsungGalaxyS24Review) {
         reviews.add(review) // Adding the new review to the list
         notifyItemInserted(reviews.size - 1) // Notifying the RecyclerView that a new item has been inserted at the last position in the list
     }

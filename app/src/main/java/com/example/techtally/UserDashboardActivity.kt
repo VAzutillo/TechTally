@@ -1,19 +1,13 @@
 package com.example.techtally
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.PagerSnapHelper
-import androidx.recyclerview.widget.RecyclerView
-import android.content.Context
+
 import android.content.Intent
-import android.graphics.Rect
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.MotionEvent
+import android.text.Editable
+import android.text.TextWatcher
+import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import android.view.animation.TranslateAnimation
 import android.widget.Button
 import android.widget.FrameLayout
-import android.widget.HorizontalScrollView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -21,8 +15,18 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.techtally.RetrofitClient.apiService
 import com.example.techtally.databinding.ActivityUserDashboardBinding
 import com.google.android.material.textfield.TextInputEditText
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class UserDashboardActivity : AppCompatActivity() {
     // View Binding for the layout
@@ -35,35 +39,13 @@ class UserDashboardActivity : AppCompatActivity() {
     private lateinit var profileBtn2: ImageView         // Profile Logo and exit button for pop up
     private lateinit var profileBtn: ImageView          // Profile Logo and to view pop up
     private lateinit var loginSignupBtn: TextView       // Another tvLogin/Signup and get User's name inside the pop up
-    // For User's search filter
-    private lateinit var filterFrame: FrameLayout       // Layout for search filter pop up
-    private lateinit var searchBar: TextInputEditText   // Search bar
-    private lateinit var buttonApple: Button            // Apple Button inside the pop up
-    private lateinit var buttonSamsung: Button          // Samsung Button inside the pop up
-    private lateinit var buttonXiaomi: Button           // Xiaomi Button inside the pop up
-    private lateinit var buttonRealme: Button           // Realme Button inside the pop up
-    private lateinit var buttonOppo: Button             // Oppo Button inside the pop up
-    private lateinit var buttonVivo: Button             // Vivo Button inside the pop up
-    private lateinit var buttonHuawei: Button           // Huawei Button inside the pop up
-    private lateinit var buttonLenovo: Button           // Lenovo Button inside the pop up
-    private lateinit var buttonInfinix: Button          // Infinix Button inside the pop up
-    private lateinit var buttonGooglePixel: Button      // GooglePixel Button inside the pop up
-    private lateinit var button_back: ImageView         // Back Button inside the pop up
-    private lateinit var button_check: ImageView        // check Button inside the pop up
-    // For type of device
-    private lateinit var buttonSmartphone: Button       // Type of device button inside the pop up
-    private lateinit var buttonTablet: Button           // Type of device button inside the pop up
-    // For ratings
-    private lateinit var buttonTally1: Button           // Rate 1 Tally Button
-    private lateinit var buttonTally2: Button           // Rate 2 Tally Button
-    private lateinit var buttonTally3: Button           // Rate 3 Tally Button
-    private lateinit var buttonTally4: Button           // Rate 4 Tally Button
-    private lateinit var buttonTally5: Button           // Rate 5 Tally Button
     // For logout
     private lateinit var logoutBtn: ImageView           // LogoutImageView
-    private lateinit var logoutPopup: FrameLayout       // Layout logOutPop-up
-    private lateinit var LogoutYesBtn: Button           // Yes button inside pop-up
-    private lateinit var LogoutNoBtn: Button            // No button inside pop-up
+    private var percentage_of_ratings: Float = 0.0f
+
+    private var smartphoneId = 1
+    private lateinit var searchBar: TextInputEditText
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,73 +59,33 @@ class UserDashboardActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        searchBar = findViewById(R.id.searchBar)
 
-        // Initialize UI components
+
+
         // For User's profile
         greetingTextView = findViewById(R.id.greetingTextView)      // Initialize tvLogin/Signup and User's name
         profilePopup = binding.profilePopup                         // Initialize Layout profile pop up
         profileBtn2 = binding.profileBtn2                           // Initialize profile button for open pop up
         profileBtn = binding.profileBtn                             // Initialize profile button for close pop up
         loginSignupBtn = binding.loginSignupBtn                     // Initialize tvLoginSignup and User's name inside the pop up
-        // For search filter
-        // Initialize search filter layout and buttons
-        filterFrame = findViewById(R.id.filterFrame)                // Initialize Layout search filter pop up
+
         searchBar = findViewById(R.id.searchBar)                    // Initialize search bar
-        buttonApple = findViewById(R.id.button_apple)               // Initialize Brand Apple button inside the pop up
-        buttonSamsung = findViewById(R.id.button_samsung)           // Initialize Brand Samsung button inside the pop up
-        buttonXiaomi = findViewById(R.id.button_xiaomi)             // Initialize Brand Xiaomi button inside the pop up
-        buttonRealme = findViewById(R.id.button_realme)             // Initialize Brand Realme button inside the pop up
-        buttonOppo = findViewById(R.id.button_oppo)                 // Initialize Brand Oppo button inside the pop up
-        buttonVivo = findViewById(R.id.button_vivo)                 // Initialize Brand Vivo button inside the pop up
-        buttonHuawei = findViewById(R.id.button_huawei)             // Initialize Brand Huawei button inside the pop up
-        buttonLenovo = findViewById(R.id.button_lenovo)             // Initialize Brand Lenovo button inside the pop up
-        buttonInfinix = findViewById(R.id.button_infinix)           // Initialize Brand Infinix button inside the pop up
-        buttonGooglePixel = findViewById(R.id.button_googlePixel)       // Initialize Brand GooglePixel button inside the pop up
-        button_back = findViewById(R.id.button_back)                    // Initialize back button inside the pop up
-        button_check = findViewById(R.id.button_check)                  // Initialize Brand check button inside the pop up
-        // Initialize device type buttons (Smartphone and Tablet)
-        buttonSmartphone = findViewById(R.id.button_smartphone)     // Initialize type of device -Smartphone button inside pop up
-        buttonTablet = findViewById(R.id.button_tablet)             // Initialize type of device -Tablet button inside pop up
-        // Initialize rating buttons
-        buttonTally1 = findViewById(R.id.Tally1Btn)             // Initialize 1 Tally button
-        buttonTally2 = findViewById(R.id.Tally2Btn)             // Initialize 2 Tally button
-        buttonTally3 = findViewById(R.id.Tally3Btn)             // Initialize 3 Tally button
-        buttonTally4 = findViewById(R.id.Tally4Btn)             // Initialize 4 Tally button
-        buttonTally5 = findViewById(R.id.Tally5Btn)             // Initialize 5 Tally button
+
         // Initialize logout button
         logoutBtn = findViewById(R.id.logoutBtn)
+
+        smartphoneId = intent.getIntExtra("SMARTPHONE_ID", 1)
+        smartphoneId = intent.getIntExtra("SMARTPHONE_ID", 2)
+        smartphoneId = intent.getIntExtra("SMARTPHONE_ID", 3)
+
+        fetchSamsungS24Ratings()
+        fetchIphone16ProMaxRatings()
+        fetchAppleMacbookM3ProRatings()
 
         // Display the logout confirmation popup
         logoutBtn.setOnClickListener {
             showLogoutDialog()
-        }
-
-        // Change styles and color when selecting between Smartphone and Tablet filters
-        buttonSmartphone.setOnClickListener {
-            changeButtonStyle(buttonSmartphone, "#FFFFFF", "#2F2F2F")   // Selected style
-            changeButtonStyle(buttonTablet, "#1E1E1E59", "#D9D9D9")     // Unselected style
-        }
-
-        buttonTablet.setOnClickListener {
-            changeButtonStyle(buttonTablet, "#FFFFFF", "#2F2F2F")           // Selected style
-            changeButtonStyle(buttonSmartphone, "#1E1E1E59", "#D9D9D9")     // Unselected style
-        }
-
-        // Set click listeners for Tally rating buttons 1 to 5
-        val tally = listOf(buttonTally1, buttonTally2, buttonTally3, buttonTally4, buttonTally5)
-        tally.forEach { button ->
-            button.setOnClickListener {
-                handleTallyClick(button, tally)
-            }
-        }
-
-        // Set up click listeners for brand buttons inside the search filter popup
-        val buttons = listOf(buttonApple, buttonSamsung, buttonXiaomi, buttonRealme, buttonOppo,
-                             buttonVivo, buttonHuawei, buttonLenovo, buttonInfinix, buttonGooglePixel)
-        buttons.forEach { button ->
-            button.setOnClickListener {
-                handleBrandsClick(button, buttons)  // Handle button selection
-            }
         }
 
         // Get SharedPreferences data for user login and guest status
@@ -186,6 +128,7 @@ class UserDashboardActivity : AppCompatActivity() {
                 val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
+
         }
 
         // Show popup when profile button is clicked
@@ -200,116 +143,31 @@ class UserDashboardActivity : AppCompatActivity() {
             profilePopup.visibility = View.GONE
         }
 
-        // Show search filter popup when the user clicks on the drawableEnd icon in the search bar
-        searchBar.setOnTouchListener { v, event ->
-            if (event.action == MotionEvent.ACTION_UP) {
-                val drawableEnd = searchBar.compoundDrawables[2]
-                if (drawableEnd != null) {
-                    val bounds: Rect = drawableEnd.bounds
-                    val drawableStart = searchBar.width - searchBar.paddingEnd - bounds.width()
-                    if (event.x >= drawableStart) {
-                        showFilterFrame()   // Show search filter popup
-                        return@setOnTouchListener true
-                    }
-                }
-            }
-            false
+        val  clickImage1 = findViewById<ImageView>(R.id.SamsungGalaxyS24)
+        clickImage1.setOnClickListener {
+            val intent = Intent(this, SamsungGalaxyS24FullDetails::class.java)
+            startActivity(intent)
         }
-
-
-
-
-
-
-        class ImageAdapter(
-            private val context: Context,
-            private val images: List<Int>,
-            private val titles: List<String>
-        ) : RecyclerView.Adapter<ImageAdapter.ImageViewHolder>() {
-
-            inner class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-                val imageView: ImageView = view.findViewById(R.id.samsung_galaxy_s24_ultra)
-                val imageTitle: TextView = view.findViewById(R.id.ImageTitle1)
-            }
-
-            override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-                val view = LayoutInflater.from(parent.context).inflate(R.layout.item_image, parent, false)
-                return ImageViewHolder(view)
-            }
-
-            override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
-                holder.imageView.setImageResource(images[position])
-                holder.imageTitle.text = titles[position]
-
-                // Set an OnClickListener for each image based on position
-                holder.imageView.setOnClickListener {
-                    val intent = when (position) {
-                        0 -> Intent(context, SamsungGalaxyS24UltraFullDetails::class.java)
-                        1 -> Intent(context, Xiaomi14UltraFullDetailsUserDashboard::class.java)
-                        2 -> Intent(context, Iphone16ProMaxUserDashboard::class.java)
-                        3 -> Intent(context, SmartphonesOppoReno12ProUserDashboard::class.java)
-                        4 -> Intent(context, Realme13ProPlusUserDashboard::class.java)
-                        else -> null
-                    }
-                    intent?.let { context.startActivity(it) }
-                }
-            }
-
-            override fun getItemCount() = images.size
+        val  clickImage2 = findViewById<ImageView>(R.id.Xiaomi_14_ultra)
+        clickImage2.setOnClickListener {
+            val intent = Intent(this, Xiaomi14UltraFullDetails::class.java)
+            startActivity(intent)
         }
-
-        val images = listOf(
-            R.drawable.samsung_galaxy_s24ultra,
-            R.drawable.xiaomi_14_ultra,
-            R.drawable.iphone_16_pro_max,
-            R.drawable.oppo_reno_12_pro,
-            R.drawable.realme_13_pro_plus
-        )
-
-        val titles = listOf(
-            "Samsung Galaxy S24 Ultra",
-            "Xiaomi 14 Ultra",
-            "iPhone 16 Pro Max",
-            "Oppo Reno 12 Pro",
-            "Realme 13 Pro Plus"
-        )
-
-        val recyclerView: RecyclerView = findViewById(R.id.RecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView.adapter = ImageAdapter(this, images, titles) // Pass the context as 'this'
-
-        val snapHelper = PagerSnapHelper()
-        snapHelper.attachToRecyclerView(recyclerView)
-
-
-
-
-
-
-
-
-
-        // diko alam kong need pa to
-        val searchBar: TextInputEditText = findViewById(R.id.searchBar)
-        val profileBtn: ImageView = findViewById(R.id.profileBtn)
-
-        searchBar.setOnFocusChangeListener { _, hasFocus ->
-            if (hasFocus) {
-                profileBtn.visibility = View.GONE // Hide the ImageView
-            } else {
-                profileBtn.visibility = View.VISIBLE // Show the ImageView
-            }
+        val  clickImage3 = findViewById<ImageView>(R.id.Iphone_16_Pro_Max)
+        clickImage3.setOnClickListener {
+            val intent = Intent(this, Iphone16ProMaxFullDetails::class.java)
+            startActivity(intent)
         }
-
-
-
-
-
-
-
-
-
-
+        /**val  clickImage4 = findViewById<ImageView>(R.id.Oppo_Reno_12_Pro)
+        clickImage4.setOnClickListener {
+            val intent = Intent(this, OppoReno12ProFullDetails::class.java)
+            startActivity(intent)
+        }**/
+        val  clickImage5 = findViewById<ImageView>(R.id.Realme_13_Pro_Plus)
+        clickImage5.setOnClickListener {
+            val intent = Intent(this, Realme13ProPlusFullDetails::class.java)
+            startActivity(intent)
+        }
 
         // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
         val goTopSamsungGalaxyS24FullDetails = findViewById<TextView>(R.id.samsungGalaxyS24SeeMoreButton)
@@ -329,56 +187,22 @@ class UserDashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
-        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
-        val iphone16ProMaxFullDetails = findViewById<TextView>(R.id.iphone16ProMaxSeeMoreButton)
-        iphone16ProMaxFullDetails.setOnClickListener {
-            val intent = Intent(this, Iphone16ProMaxUserDashboard::class.java)
-            startActivity(intent)
-        }
-        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
-        val xiaomiNotebookProFullDetails = findViewById<TextView>(R.id.xiaomiNotebookProSeeMoreButton)
-        xiaomiNotebookProFullDetails.setOnClickListener {
-            val intent = Intent(this, laptopXiaomiNotebookPro120gFullDetails::class.java)
-            startActivity(intent)
-        }
-        //
-        val ipad13ProFullDetails = findViewById<TextView>(R.id.ipad13ProSeeMoreButton)
-        ipad13ProFullDetails.setOnClickListener {
-            val intent = Intent(this, Ipad13ProFullDetails::class.java)
-            startActivity(intent)
-        }
-        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
-        val oppoPad2FullDetails = findViewById<TextView>(R.id.oppoPad2SeeMoreButton)
-        oppoPad2FullDetails.setOnClickListener {
-            val intent = Intent(this, OppoPad2FullDetails::class.java)
-            startActivity(intent)
-        }
-        // Navigate from UserDashboardActivity to SamsungGalaxyS24FullDetailsActivity
-        val galaxyBook4SeriesFullDetails = findViewById<TextView>(R.id.galaxyBook4SeeMoreButton)
-        galaxyBook4SeriesFullDetails.setOnClickListener {
-            val intent = Intent(this, laptopSamsungGalaxyBook4SeriesFullDetails::class.java)
+        // Navigate from UserDashboardActivity to Iphone16ProMaxFullDetailsActivity
+        val goToIphone16ProMaxFullDetails = findViewById<TextView>(R.id.Iphone16ProMaxSeeMoreButton)
+        goToIphone16ProMaxFullDetails.setOnClickListener {
+            // if the user is guess pass it to SamsungGalaxyS24FullDetails
+            val intent = Intent(this, Iphone16ProMaxFullDetails::class.java)
+            intent.putExtra("IS_GUEST", false) // Pass the guest flag
             startActivity(intent)
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // Close the search filter popup when the back button is clicked
-        val backButton = findViewById<ImageView>(R.id.button_back)
-        backButton.setOnClickListener {
-            hideFilterFrame()   // hide search filter popup
+        // Navigate from UserDashboardActivity to laptopAppleMacbookM3ProFullDetailsActivity
+        val goTolaptopAppleMacbookM3ProFullDetails = findViewById<TextView>(R.id.UserDashboardMacBookM3ProSeeMoreButton)
+        goTolaptopAppleMacbookM3ProFullDetails.setOnClickListener {
+            // if the user is guess pass it to SamsungGalaxyS24FullDetails
+            val intent = Intent(this, laptopAppleMacbookM3ProFullDetails::class.java)
+            intent.putExtra("IS_GUEST", false) // Pass the guest flag
+            startActivity(intent)
         }
 
         // Navigate from UserDashboardActivity to SmartphoneActivity
@@ -405,8 +229,9 @@ class UserDashboardActivity : AppCompatActivity() {
             val intent = Intent(this, ViewAllActivity::class.java)
             startActivity(intent)
         }
-
     }
+
+
     // Show logout confirmation dialog popup
     private fun showLogoutDialog() {
         // Inflate the custom layout
@@ -445,17 +270,73 @@ class UserDashboardActivity : AppCompatActivity() {
         // Show confirmation dialog when back button is pressed
         showExitConfirmationDialog()
     }
-    override fun onResume() {
-        super.onResume()
 
-        // Assuming you want to refresh the percentageOfRatings
-        // You can also call a method to refresh data here
-        val sharedPreferences = getSharedPreferences("RatingsPrefs", MODE_PRIVATE)
-        val percentageOfRatings = sharedPreferences.getFloat("PERCENTAGE_OF_RATINGS", 0f)
+    private fun fetchSamsungS24Ratings() {
+        val samsungSmartphoneId = 1 // Set the specific ID for Samsung Galaxy S24
+        RetrofitClient.apiService.getRatings(samsungSmartphoneId).enqueue(object :
+            Callback<SmartphoneRatingsResponse> {
+            override fun onResponse(
+                call: Call<SmartphoneRatingsResponse>,
+                response: Response<SmartphoneRatingsResponse>
+            ) {
+                if (response.isSuccessful && response.body() != null) {
+                    val ratingsData = response.body()!!
 
-        // Update your UI or perform any necessary actions based on the retrieved percentageOfRatings
-        val percentageTextView = findViewById<TextView>(R.id.SamsungS24percentageOfRatings1)
-        percentageTextView.text = String.format("%.2f", percentageOfRatings)
+                    val samsungPercentageOfRatings = ratingsData.percentage_of_ratings
+                    binding.SamsungS24percentageOfRatings1.text = "$samsungPercentageOfRatings"
+                }
+            }
+
+            override fun onFailure(call: Call<SmartphoneRatingsResponse>, t: Throwable) {
+                Log.e("UserDashboardActivity", "Error fetching Samsung S24 ratings: ${t.message}")
+            }
+        })
+    }
+
+    // Function to fetch and display ratings for iPhone 16 Pro Max
+    private fun fetchIphone16ProMaxRatings() {
+        val iphoneSmartphoneId = 2 // Set the specific ID for iPhone 16 Pro Max
+        RetrofitClient.apiService.getRatings(iphoneSmartphoneId).enqueue(object :
+            Callback<SmartphoneRatingsResponse> {
+            override fun onResponse(
+                call: Call<SmartphoneRatingsResponse>,
+                response: Response<SmartphoneRatingsResponse>
+            ) {
+                if (response.isSuccessful && response.body() != null) {
+                    val ratingsData = response.body()!!
+
+                    val iphonePercentageOfRatings = ratingsData.percentage_of_ratings
+                    binding.Iphone16ProMaxPercentageOfRatings1.text = "$iphonePercentageOfRatings"
+                }
+            }
+
+            override fun onFailure(call: Call<SmartphoneRatingsResponse>, t: Throwable) {
+                Log.e("UserDashboardActivity", "Error fetching iPhone 16 Pro Max ratings: ${t.message}")
+            }
+        })
+    }
+
+    // Function to fetch and display ratings for iPhone 16 Pro Max
+    private fun fetchAppleMacbookM3ProRatings() {
+        val SmartphoneId = 3 // Set the specific ID for iPhone 16 Pro Max
+        RetrofitClient.apiService.getRatings(SmartphoneId).enqueue(object :
+            Callback<SmartphoneRatingsResponse> {
+            override fun onResponse(
+                call: Call<SmartphoneRatingsResponse>,
+                response: Response<SmartphoneRatingsResponse>
+            ) {
+                if (response.isSuccessful && response.body() != null) {
+                    val ratingsData = response.body()!!
+
+                    val PercentageOfRatings = ratingsData.percentage_of_ratings
+                    binding.AppleMacbookM3ProPercentageOfRatings1.text = "$PercentageOfRatings"
+                }
+            }
+
+            override fun onFailure(call: Call<SmartphoneRatingsResponse>, t: Throwable) {
+                Log.e("UserDashboardActivity", "Error fetching iPhone 16 Pro Max ratings: ${t.message}")
+            }
+        })
     }
 
 
@@ -494,55 +375,4 @@ class UserDashboardActivity : AppCompatActivity() {
         editor.clear()  // Clear all data
         editor.apply()  // apply the changes
     }
-
-    // function to change the appearance of selected and unselected buttons
-    private fun handleTallyClick(selectedButton: Button, allButtons: List<Button>) {
-        allButtons.forEach { button ->
-            if (button == selectedButton) {
-                changeButtonStyle(button, "#FFFFFF", "#2F2F2F") // Selected state
-            } else {
-                changeButtonStyle(button, "#1E1E1E59", "#D9D9D9") // Default state
-            }
-        }
-    }
-
-    // Helper function to handle button clicks
-    private fun handleBrandsClick(selectedButton: Button, allButtons: List<Button>) {
-        allButtons.forEach { button ->
-            if (button == selectedButton) {
-                // Change style for the selected button
-                changeButtonStyle(button, "#FFFFFF", "#2F2F2F") // Selected state
-            } else {
-                // Change style for unselected buttons
-                changeButtonStyle(button, "#1E1E1E59", "#D9D9D9") // Default state
-            }
-        }
-    }
-
-    // method to change the background color and text color of a button
-    private fun changeButtonStyle(button: Button, textColor: String, backgroundColor: String) {
-        button.setBackgroundColor(android.graphics.Color.parseColor(backgroundColor))
-        button.setTextColor(android.graphics.Color.parseColor(textColor))
-    }
-
-    // Show the search filter pop-up with an animation
-    private fun showFilterFrame() {
-        filterFrame.visibility = View.VISIBLE
-        val animate = TranslateAnimation(
-            0f, 0f, filterFrame.height.toFloat(), 0f
-        )
-        animate.duration = 300
-        filterFrame.startAnimation(animate)
-    }
-    // Hide the search filter pop-up with an animation
-    private fun hideFilterFrame() {
-        val animate = TranslateAnimation(
-            0f, 0f, 0f, filterFrame.height.toFloat()
-        )
-        animate.duration = 300
-        filterFrame.startAnimation(animate)
-        filterFrame.visibility = View.GONE
-
-    }
-
 }
